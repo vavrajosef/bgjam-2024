@@ -36,5 +36,10 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 [node name="Control" parent="Cam/Camera3D" instance=ExtResource("4_j6en8")]
 unique_name_in_owner = true
 
+[node name="Label3D" type="Label3D" parent="Cam"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+text = "abc"
+
 [connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]

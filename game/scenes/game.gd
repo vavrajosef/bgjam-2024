@@ -28,10 +28,12 @@ func _process(delta):
 func switch():
 	char.set_active(is_active)
 	is_active = not is_active
-	cam.position = char.position
+	
 	if is_active:
 		char_inactive.emit()
 	else:
+		cam.position = Vector3(0,0,0)
+		cam.global_position = char.global_position
 		char_active.emit()
 
 func show_message():

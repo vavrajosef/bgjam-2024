@@ -33,6 +33,8 @@ func _physics_process(delta):
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 	else:
 		%AnimationPlayer.play("idle")
+		
+	label.text = str(global_position)
 	move_and_slide()
 
 func set_active(new_active):
@@ -41,7 +43,6 @@ func set_active(new_active):
 
 func show_message():
 	label.visible = true
-	label.text = "noooooo"
 	label.global_position = global_position
 	var pos : Vector3 = label.get_global_position()
 	pos.y += 0.85
