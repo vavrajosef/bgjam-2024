@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bckprw1nwic7b"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_vuqei"]
+[ext_resource type="PackedScene" uid="uid://dl5m0quv6vbqe" path="res://scenes/character_male_b_2.tscn" id="2_kcgla"]
+[ext_resource type="Script" path="res://scenes/Cam.gd" id="3_fj6v3"]
+[ext_resource type="PackedScene" uid="uid://q6tpt2nt2sbh" path="res://scenes/control.tscn" id="4_j6en8"]
+
+[sub_resource type="Environment" id="Environment_6nrvr"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_vuqei")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="character-male-b2" parent="." instance=ExtResource("2_kcgla")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0617541, 0, 0.165072)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6nrvr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 48, 0)
+
+[node name="Cam" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_fj6v3")
+
+[node name="Camera3D" type="Camera3D" parent="Cam"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.38201, 4.14169)
+
+[node name="Control" parent="Cam/Camera3D" instance=ExtResource("4_j6en8")]
+unique_name_in_owner = true
+
+[connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
+[connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]
