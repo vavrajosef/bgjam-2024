@@ -2701,8 +2701,10 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oh8sd"]
+radius = 0.25
+height = 0.8
 
-[node name="character-male-b2" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8lwss")
 
 [node name="character-male-b" type="Node3D" parent="."]
@@ -2774,6 +2776,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37434, 0)
 shape = SubResource("CapsuleShape3D_oh8sd")
 
 [node name="Label" type="Label3D" parent="."]

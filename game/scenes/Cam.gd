@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	if global_position == null:
 		return
-	label.text = "cam" + str(global_position)
+	label.text = "cam" + str(global_position) + ", " + str(position)
 
 
 func _on_game_char_active():

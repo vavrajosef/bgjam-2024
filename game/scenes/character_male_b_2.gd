@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 
 const SPEED = 5.0
@@ -28,9 +28,10 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if is_active:
-		var input_dir = Input.get_vector("d", "a", "s", "w")
+		var input_dir = Input.get_vector("a", "d", "w", "s")
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		body.look_at(direction)
+		if not global_transform.origin.is_equal_approx(global_position - direction):
+			body.look_at(global_position - direction, Vector3.UP)
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
@@ -39,11 +40,12 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 			animation.play("idle")
+		move_and_slide()
 	else:
 		animation.play("idle")
 	label.text = ""
-	label.text = str(position)
-	move_and_slide()
+	label.text = str(global_position) + ", " +str(position)
+	
 
 func set_active(new_active):
 	is_active = new_active

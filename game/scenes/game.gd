@@ -10,6 +10,7 @@ const CAMERA_SPEED := 10
 var is_active := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	ui.button_pressed.connect(func abc() -> void: 
 		show_message()
 		)
@@ -23,18 +24,28 @@ func _process(delta):
 	if is_active:
 		var input_dir = Input.get_vector("a", "d", "w", "s")
 		var movement_vector : Vector2 = input_dir * CAMERA_SPEED * delta
-		cam.position += Vector3(movement_vector.x, 0, movement_vector.y)
+		cam.global_position += Vector3(movement_vector.x, 0, movement_vector.y)
 
 func switch():
 	char.set_active(is_active)
 	is_active = not is_active
-	
+	cam.position = Vector3(0,0,0)
+	cam.global_position = Vector3(0,0,0)
+	cam.transform = char.transform
 	if is_active:
 		char_inactive.emit()
 	else:
-		cam.position = Vector3(0,0,0)
-		cam.global_position = char.global_position
 		char_active.emit()
+		cam.position = Vector3(0,0,0)
 
 func show_message():
 	char.show_message()
+
+
+func end_game():
+	get_tree().quit()
+	
+
+
+func _on_finish_player_entered(player):
+	end_game()

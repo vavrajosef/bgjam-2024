@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwbw6mlr2anya"]
+
+[ext_resource type="Script" path="res://scenes/finish.gd" id="1_e2tvx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7d6b"]
+size = Vector3(2, 1, 2)
+
+[node name="Finish" type="Area3D"]
+script = ExtResource("1_e2tvx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_k7d6b")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+text = "Finishline
+"

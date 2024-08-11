@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bckprw1nwic7b"]
+[gd_scene load_steps=7 format=3 uid="uid://bckprw1nwic7b"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_vuqei"]
-[ext_resource type="PackedScene" uid="uid://dl5m0quv6vbqe" path="res://scenes/character_male_b_2.tscn" id="2_kcgla"]
+[ext_resource type="PackedScene" uid="uid://dl5m0quv6vbqe" path="res://scenes/player.tscn" id="2_kcgla"]
 [ext_resource type="Script" path="res://scenes/Cam.gd" id="3_fj6v3"]
 [ext_resource type="PackedScene" uid="uid://q6tpt2nt2sbh" path="res://scenes/control.tscn" id="4_j6en8"]
+[ext_resource type="PackedScene" uid="uid://dwbw6mlr2anya" path="res://scenes/finish.tscn" id="5_m01y8"]
 
 [sub_resource type="Environment" id="Environment_6nrvr"]
 
@@ -17,7 +18,7 @@ size = Vector3(100, 1, 100)
 
 [node name="character-male-b2" parent="." instance=ExtResource("2_kcgla")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0617541, 0, 0.165072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169658, 0.0640431, 0.165072)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6nrvr")
@@ -41,5 +42,9 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 text = "abc"
 
+[node name="Finish" parent="." instance=ExtResource("5_m01y8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09512, 0, 0.0071063)
+
 [connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]
+[connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
