@@ -7,7 +7,8 @@ extends StaticBody3D
 @onready var collision := %CollisionShape3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if not is_key_required:
+		collision.call_deferred("set_disabled", true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

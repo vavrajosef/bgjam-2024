@@ -25,3 +25,23 @@ func _on_game_char_inactive():
 	var new_parent := get_parent().get_parent()
 	get_parent().remove_child(self)
 	new_parent.add_child(self)
+	
+
+var mouse_start_pos
+var screen_start_position
+
+var dragging = false
+
+func _input(event):
+	if event.is_action("drag"):
+		if event.is_pressed():
+			mouse_start_pos = event.position
+			screen_start_position = position
+			print(mouse_start_pos)
+			print(screen_start_position)
+			print("---")
+			dragging = true
+		else:
+			dragging = false
+	elif event is InputEventMouseMotion and dragging:
+		print("event")
