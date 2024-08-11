@@ -16,3 +16,32 @@ unique_name_in_owner = true
 [node name="Label3D" type="Label3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.05
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[connection signal="mouse_entered" from="Control/HBoxContainer" to="." method="_on_h_box_container_mouse_entered"]
+[connection signal="mouse_exited" from="Control/HBoxContainer" to="." method="_on_h_box_container_mouse_exited"]
+[connection signal="mouse_entered" from="Control/HBoxContainer2" to="." method="_on_h_box_container_2_mouse_entered"]
+[connection signal="mouse_exited" from="Control/HBoxContainer2" to="." method="_on_h_box_container_2_mouse_exited"]

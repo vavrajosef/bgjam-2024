@@ -2,6 +2,9 @@ extends Node3D
 
 @onready var label := %Label3D
 @onready var control := %Control
+var rotatingLeft := false
+var rotatingRight := false
+const CAM_SPEED := 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,6 +14,10 @@ func _ready():
 func _process(delta):
 	if global_position == null:
 		return
+	if rotatingLeft:
+		rotation += Vector3(0, -CAM_SPEED * delta ,0)
+	if rotatingRight:
+		rotation += Vector3(0, CAM_SPEED * delta ,0)
 
 
 func _on_game_char_active():
@@ -39,3 +46,19 @@ func _input(event):
 
 func get_ui() -> Control:
 	return control
+
+
+func _on_h_box_container_2_mouse_entered():
+	rotatingRight = true
+
+
+func _on_h_box_container_mouse_entered():
+	rotatingLeft = true
+
+
+func _on_h_box_container_mouse_exited():
+	rotatingLeft = false
+
+
+func _on_h_box_container_2_mouse_exited():
+	rotatingRight = false
