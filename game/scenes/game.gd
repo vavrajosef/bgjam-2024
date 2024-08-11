@@ -29,5 +29,4 @@ func end_game():
 	get_tree().quit()
 
 func _on_finish_player_entered(player):
-	print("here")
 	end_game()

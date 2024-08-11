@@ -68,4 +68,3 @@ func add_key(keyId):
 
 func set_rotation_angle(_rotationAngle: float):
 	rotationAngle = _rotationAngle
-	print(rotationAngle)

@@ -41,7 +41,6 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body is Player:
-		print("player is here")
 		body.add_key(pickupableId)
 		queue_free()
 
