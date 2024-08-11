@@ -4,7 +4,7 @@ signal char_active
 signal char_inactive
 @onready var cam := %Cam
 @onready var char := %"character-male-b2"
-@onready var ui := %Control
+@onready var ui : Control = cam.get_ui()
 
 const CAMERA_SPEED := 10
 var is_active := false

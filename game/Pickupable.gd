@@ -30,12 +30,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	t += delta * 0.4
-	if inst.rotation == vecTo:
-		vecFrom = vects[currentIndex]
-		update_index()
-		vecTo = vects[currentIndex]
-	inst.rotation = vecFrom.lerp(vecTo, t)
+	if shouldRotate:
+		t += delta * 0.4
+		if inst.rotation == vecTo:
+			vecFrom = vects[currentIndex]
+			update_index()
+			vecTo = vects[currentIndex]
+		inst.rotation = vecFrom.lerp(vecTo, t)
 
 
 func _on_area_3d_body_entered(body):

@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bckprw1nwic7b"]
+[gd_scene load_steps=9 format=3 uid="uid://bckprw1nwic7b"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_vuqei"]
 [ext_resource type="PackedScene" uid="uid://dl5m0quv6vbqe" path="res://scenes/player.tscn" id="2_kcgla"]
-[ext_resource type="Script" path="res://scenes/Cam.gd" id="3_fj6v3"]
-[ext_resource type="PackedScene" uid="uid://q6tpt2nt2sbh" path="res://scenes/control.tscn" id="4_j6en8"]
+[ext_resource type="PackedScene" uid="uid://dqjmrg523vt86" path="res://scenes/cam.tscn" id="3_ch1le"]
 [ext_resource type="PackedScene" uid="uid://dwbw6mlr2anya" path="res://scenes/finish.tscn" id="5_m01y8"]
 [ext_resource type="PackedScene" uid="uid://bw61ndmdbcjyp" path="res://scenes/door.tscn" id="6_vtuio"]
 [ext_resource type="PackedScene" uid="uid://deieh5702oyda" path="res://scenes/pickupable.tscn" id="7_o3dys"]
@@ -29,20 +28,8 @@ environment = SubResource("Environment_6nrvr")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 48, 0)
 
-[node name="Cam" type="Node3D" parent="."]
+[node name="Cam" parent="." instance=ExtResource("3_ch1le")]
 unique_name_in_owner = true
-script = ExtResource("3_fj6v3")
-
-[node name="Camera3D" type="Camera3D" parent="Cam"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.38201, 4.14169)
-
-[node name="Control" parent="Cam/Camera3D" instance=ExtResource("4_j6en8")]
-unique_name_in_owner = true
-
-[node name="Label3D" type="Label3D" parent="Cam"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Finish" parent="." instance=ExtResource("5_m01y8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09512, 0, 2.07852)
@@ -61,6 +48,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29357, 0, 2.44402)
 pickuable = ExtResource("8_f0x7b")
 pickupableId = 1
 
-[connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
-[connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]

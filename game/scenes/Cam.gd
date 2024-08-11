@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var label := %Label3D
+@onready var control := %Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -33,15 +34,8 @@ var screen_start_position
 var dragging = false
 
 func _input(event):
-	if event.is_action("drag"):
-		if event.is_pressed():
-			mouse_start_pos = event.position
-			screen_start_position = position
-			print(mouse_start_pos)
-			print(screen_start_position)
-			print("---")
-			dragging = true
-		else:
-			dragging = false
-	elif event is InputEventMouseMotion and dragging:
-		print("event")
+	pass
+
+
+func get_ui() -> Control:
+	return control
