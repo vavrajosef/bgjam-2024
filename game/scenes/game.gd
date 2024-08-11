@@ -48,4 +48,5 @@ func end_game():
 
 
 func _on_finish_player_entered(player):
+	print("here")
 	end_game()

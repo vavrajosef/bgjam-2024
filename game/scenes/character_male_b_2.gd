@@ -8,6 +8,7 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_active := true
 
+var keys := []
 @onready var label := %Label
 @onready var animation := %AnimationPlayer
 @onready var body := %"character-male-b"
@@ -43,8 +44,6 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		animation.play("idle")
-	label.text = ""
-	label.text = str(global_position) + ", " +str(position)
 	
 
 func set_active(new_active):
@@ -57,3 +56,10 @@ func show_message():
 	var pos : Vector3 = label.get_global_position()
 	pos.y += 0.85
 	label.set_global_position(pos)
+
+
+func has_key(keyId) -> bool : 
+	return keys.has(keyId)
+
+func add_key(keyId):
+	keys.append(keyId)

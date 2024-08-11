@@ -4,10 +4,9 @@ signal player_entered(player: CharacterBody3D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	area_entered.connect(func _on_area_entered(body: CharacterBody3D) -> void :
-		print("something")
+	body_entered.connect(func _on_area_entered(body: CharacterBody3D) -> void :
 		if body is Player:
-			player_entered.emit()
+			player_entered.emit(body)
 			)
 
 

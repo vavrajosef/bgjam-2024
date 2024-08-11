@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bckprw1nwic7b"]
+[gd_scene load_steps=10 format=3 uid="uid://bckprw1nwic7b"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_vuqei"]
 [ext_resource type="PackedScene" uid="uid://dl5m0quv6vbqe" path="res://scenes/player.tscn" id="2_kcgla"]
 [ext_resource type="Script" path="res://scenes/Cam.gd" id="3_fj6v3"]
 [ext_resource type="PackedScene" uid="uid://q6tpt2nt2sbh" path="res://scenes/control.tscn" id="4_j6en8"]
 [ext_resource type="PackedScene" uid="uid://dwbw6mlr2anya" path="res://scenes/finish.tscn" id="5_m01y8"]
+[ext_resource type="PackedScene" uid="uid://bw61ndmdbcjyp" path="res://scenes/door.tscn" id="6_vtuio"]
+[ext_resource type="PackedScene" uid="uid://deieh5702oyda" path="res://scenes/pickupable.tscn" id="7_o3dys"]
+[ext_resource type="PackedScene" uid="uid://dim2ydsx62n1c" path="res://scenes/key_12.tscn" id="8_f0x7b"]
 
 [sub_resource type="Environment" id="Environment_6nrvr"]
 
@@ -40,10 +43,22 @@ unique_name_in_owner = true
 [node name="Label3D" type="Label3D" parent="Cam"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-text = "abc"
 
 [node name="Finish" parent="." instance=ExtResource("5_m01y8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09512, 0, 0.0071063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09512, 0, 2.07852)
+
+[node name="Door" parent="." instance=ExtResource("6_vtuio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.826433, 0, -3.11621)
+key_id = 1
+
+[node name="Door2" parent="." instance=ExtResource("6_vtuio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9586, 0, -3.12521)
+key_id = 2
+
+[node name="Pickupable" parent="." instance=ExtResource("7_o3dys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29357, 0, 2.44402)
+pickuable = ExtResource("8_f0x7b")
+pickupableId = 1
 
 [connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]
