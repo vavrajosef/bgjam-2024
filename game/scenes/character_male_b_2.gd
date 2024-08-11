@@ -12,6 +12,7 @@ var keys := []
 @onready var label := %Label
 @onready var animation := %AnimationPlayer
 @onready var body := %"character-male-b"
+var rotationAngle : float = 0
 
 func _ready():
 	animation.play("idle")
@@ -30,6 +31,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if is_active:
 		var input_dir = Input.get_vector("a", "d", "w", "s")
+		input_dir = input_dir.rotated(rotationAngle)
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if not global_transform.origin.is_equal_approx(global_position - direction):
 			body.look_at(global_position - direction, Vector3.UP)
@@ -63,3 +65,7 @@ func has_key(keyId) -> bool :
 
 func add_key(keyId):
 	keys.append(keyId)
+
+func set_rotation_angle(_rotationAngle: float):
+	rotationAngle = _rotationAngle
+	print(rotationAngle)

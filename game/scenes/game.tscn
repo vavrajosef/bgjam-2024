@@ -48,4 +48,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29357, 0, 2.44402)
 pickuable = ExtResource("8_f0x7b")
 pickupableId = 1
 
+[connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
+[connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
