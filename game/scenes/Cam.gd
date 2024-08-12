@@ -53,25 +53,30 @@ func _on_game_char_inactive():
 func _input(event):
 	pass
 
-
 func get_ui() -> Control:
 	return control
 
+func get_rotation_camera_angle() -> float:
+	return -rotVec.angle()
 
-func _on_h_box_container_2_mouse_entered():
-	rotatingRight = true
+func display_text(text: String, time: float):
+	control.display_text(text, time)
+	
+func display_text_btn(text: String, btnText: String):
+	control.display_text_btn(text, btnText)
 
 
-func _on_h_box_container_mouse_entered():
+func _on_control_rotate_left():
 	rotatingLeft = true
 
 
-func _on_h_box_container_mouse_exited():
+func _on_control_rotate_left_stop():
 	rotatingLeft = false
 
 
-func _on_h_box_container_2_mouse_exited():
-	rotatingRight = false
+func _on_control_rotate_right():
+	rotatingRight = true
 
-func get_rotation_camera_angle() -> float:
-	return -rotVec.angle()
+
+func _on_control_rotate_right_stop():
+	rotatingRight = false
