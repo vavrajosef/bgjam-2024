@@ -26,7 +26,7 @@ func switch():
 		char_active.emit()
 
 func end_game():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/game_finished.tscn")
 
 func _on_finish_player_entered(player):
 	end_game()

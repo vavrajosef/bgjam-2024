@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_active := true
+var is_dead := false
 
 var keys := []
 @onready var label := %Label
@@ -19,6 +20,8 @@ func _ready():
 
 func _physics_process(delta):
 	# Add the gravity.
+	if is_dead:
+		return
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -68,3 +71,7 @@ func add_key(keyId):
 
 func set_rotation_angle(_rotationAngle: float):
 	rotationAngle = _rotationAngle
+	
+func end_game():
+	is_dead = true
+	animation.play("die")
