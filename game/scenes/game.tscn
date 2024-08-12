@@ -57,6 +57,10 @@ pickupableId = 1
 [node name="PlayerAnimationTriggerZone" parent="." instance=ExtResource("8_hcmul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14235, -2.38419e-07, 1.13002)
 
+[node name="Label3D" type="Label3D" parent="PlayerAnimationTriggerZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.217222, 0)
+text = "play dead animation"
+
 [node name="Tower_12" parent="." node_paths=PackedStringArray("turnOffVisibilityArea", "turnOffCollisionArea") instance=ExtResource("9_17gec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
 turnOffVisibilityArea = NodePath("../Area3D")

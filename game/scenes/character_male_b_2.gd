@@ -13,10 +13,11 @@ var keys := []
 @onready var label := %Label
 @onready var animation := %AnimationPlayer
 @onready var body := %"character-male-b"
+@onready var timer : Timer = %Timer
 var rotationAngle : float = 0
 
 func _ready():
-	play_animation("idle")
+	play_animation("idle", false)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -41,14 +42,14 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
-			play_animation("walk")
+			play_animation("walk", false)
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-			play_animation("idle")
+			play_animation("idle", false)
 		move_and_slide()
 	else:
-		play_animation("idle")
+		play_animation("idle", false)
 	
 
 func set_active(new_active):
@@ -74,7 +75,11 @@ func set_rotation_angle(_rotationAngle: float):
 	
 func end_game():
 	is_dead = true
-	play_animation("die")
+	play_animation("die", false)
 	
-func play_animation(animation_name: String) :
-	animation.play(animation_name)
+func play_animation(animation_name: String, force: bool) :
+	if force:
+		animation.play(animation_name)
+		timer.start()
+	elif timer.is_stopped() :
+		animation.play(animation_name)
