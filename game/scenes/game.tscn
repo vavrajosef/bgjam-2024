@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bckprw1nwic7b"]
+[gd_scene load_steps=13 format=3 uid="uid://bckprw1nwic7b"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_vuqei"]
 [ext_resource type="PackedScene" uid="uid://dl5m0quv6vbqe" path="res://scenes/player.tscn" id="2_kcgla"]
@@ -7,8 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://bw61ndmdbcjyp" path="res://scenes/door.tscn" id="6_vtuio"]
 [ext_resource type="PackedScene" uid="uid://deieh5702oyda" path="res://scenes/pickupable.tscn" id="7_o3dys"]
 [ext_resource type="PackedScene" uid="uid://dim2ydsx62n1c" path="res://scenes/key_12.tscn" id="8_f0x7b"]
+[ext_resource type="PackedScene" uid="uid://dsfui8m2rtibb" path="res://scenes/player_animation_trigger_zone.tscn" id="8_hcmul"]
+[ext_resource type="PackedScene" uid="uid://68xmdr0gepe7" path="res://scenes/tower_12.tscn" id="9_17gec"]
 
 [sub_resource type="Environment" id="Environment_6nrvr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvuv4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pcw38"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_vuqei")
@@ -47,6 +53,34 @@ key_id = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29357, 0, 2.44402)
 pickuable = ExtResource("8_f0x7b")
 pickupableId = 1
+
+[node name="PlayerAnimationTriggerZone" parent="." instance=ExtResource("8_hcmul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14235, -2.38419e-07, 1.13002)
+
+[node name="Tower_12" parent="." node_paths=PackedStringArray("turnOffVisibilityArea", "turnOffCollisionArea") instance=ExtResource("9_17gec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+turnOffVisibilityArea = NodePath("../Area3D")
+turnOffCollisionArea = NodePath("../turnoff")
+
+[node name="turnoff" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.42789, 0, -3.42671)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="turnoff"]
+shape = SubResource("BoxShape3D_kvuv4")
+
+[node name="Label3D" type="Label3D" parent="turnoff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+text = "This will turnoff collision"
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6688, 0, -3.10547)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_pcw38")
+
+[node name="Label3D" type="Label3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+text = "This will turnoff visibility"
 
 [connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]

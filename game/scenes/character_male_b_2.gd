@@ -16,7 +16,7 @@ var keys := []
 var rotationAngle : float = 0
 
 func _ready():
-	animation.play("idle")
+	play_animation("idle")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -41,14 +41,14 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
-			animation.play("walk")
+			play_animation("walk")
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-			animation.play("idle")
+			play_animation("idle")
 		move_and_slide()
 	else:
-		animation.play("idle")
+		play_animation("idle")
 	
 
 func set_active(new_active):
@@ -74,4 +74,7 @@ func set_rotation_angle(_rotationAngle: float):
 	
 func end_game():
 	is_dead = true
-	animation.play("die")
+	play_animation("die")
+	
+func play_animation(animation_name: String) :
+	animation.play(animation_name)
