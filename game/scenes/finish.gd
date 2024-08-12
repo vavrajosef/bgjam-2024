@@ -7,7 +7,6 @@ var b : CharacterBody3D = null
 func _ready():
 	body_entered.connect(func _on_area_entered(body: CharacterBody3D) -> void :
 		if body is Player:
-			get_tree().get_root().set_disable_input(true)
 			body.end_game()
 			b = body
 			timer.start()
