@@ -1,6 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bw61ndmdbcjyp"]
+[gd_scene load_steps=18 format=3 uid="uid://bw61ndmdbcjyp"]
 
+[ext_resource type="AudioStream" uid="uid://dlsu3h17mq2ks" path="res://sounds_and_music/sfx/SFX/door_open.wav" id="2_8euxp"]
 [ext_resource type="Script" path="res://scenes/door.gd" id="2_hibu1"]
+[ext_resource type="AudioStream" uid="uid://dolivualx7dai" path="res://sounds_and_music/sfx/SFX/door_locked.wav" id="3_jg51r"]
+[ext_resource type="AudioStream" uid="uid://cfp7j86ff3hh2" path="res://sounds_and_music/sfx/SFX/door_unlock.wav" id="4_08hi5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhssl"]
 resource_name = "Wood"
@@ -229,6 +232,18 @@ shape = SubResource("BoxShape3D_ddf55")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_3548r")
+
+[node name="door_open" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_8euxp")
+
+[node name="door_close" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_jg51r")
+
+[node name="door_unlock" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_08hi5")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
