@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_vuqei"]
 [ext_resource type="PackedScene" uid="uid://dl5m0quv6vbqe" path="res://scenes/player.tscn" id="2_kcgla"]
-[ext_resource type="PackedScene" uid="uid://dqjmrg523vt86" path="res://scenes/cam.tscn" id="3_ch1le"]
+[ext_resource type="PackedScene" path="res://scenes/cam.tscn" id="3_ch1le"]
 [ext_resource type="PackedScene" uid="uid://dwbw6mlr2anya" path="res://scenes/finish.tscn" id="5_m01y8"]
 [ext_resource type="PackedScene" uid="uid://bw61ndmdbcjyp" path="res://scenes/door.tscn" id="6_vtuio"]
 [ext_resource type="PackedScene" uid="uid://deieh5702oyda" path="res://scenes/pickupable.tscn" id="7_o3dys"]
 [ext_resource type="PackedScene" uid="uid://dim2ydsx62n1c" path="res://scenes/key_12.tscn" id="8_f0x7b"]
-[ext_resource type="PackedScene" uid="uid://dsfui8m2rtibb" path="res://scenes/player_animation_trigger_zone.tscn" id="8_hcmul"]
-[ext_resource type="PackedScene" uid="uid://68xmdr0gepe7" path="res://scenes/tower_12.tscn" id="9_17gec"]
+[ext_resource type="PackedScene" path="res://scenes/player_animation_trigger_zone.tscn" id="8_hcmul"]
+[ext_resource type="PackedScene" path="res://scenes/tower_12.tscn" id="9_17gec"]
 
 [sub_resource type="Environment" id="Environment_6nrvr"]
 
