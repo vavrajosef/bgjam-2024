@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm05tkqr4oop0"]
+[gd_scene load_steps=2 format=3 uid="uid://bm05tkqr4oop0"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_wt3k8"]
-[ext_resource type="PackedScene" uid="uid://crriu3bd6dm54" path="res://scenes/audio_player.tscn" id="2_lrr6x"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -44,9 +43,6 @@ text = "Credits"
 layout_mode = 2
 text = "Exit
 "
-
-[node name="AudioPlayer" parent="." instance=ExtResource("2_lrr6x")]
-unique_name_in_owner = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Credits" to="." method="_on_credits_pressed"]

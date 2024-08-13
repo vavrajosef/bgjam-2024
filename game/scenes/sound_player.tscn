@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://48cojh3jtlgp"]
+
+[ext_resource type="Script" path="res://scenes/sound_player.gd" id="1_lsafb"]
+[ext_resource type="AudioStream" uid="uid://biwrnkwqjxp68" path="res://sounds_and_music/Mystic Mountain test.mp3" id="2_klmxi"]
+[ext_resource type="AudioStream" uid="uid://c5b8ap7m3w4n4" path="res://sounds_and_music/ambience_outside.wav" id="3_ki3k0"]
+[ext_resource type="AudioStream" uid="uid://x36k6lvh0bmq" path="res://sounds_and_music/ambience_deepcave.wav" id="4_a51m3"]
+[ext_resource type="AudioStream" uid="uid://cadxtygy27nmg" path="res://sounds_and_music/ambience_cave.wav" id="5_iuh0n"]
+
+[node name="SoundPlayer" type="Node3D"]
+script = ExtResource("1_lsafb")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_klmxi")
+
+[node name="outside" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ki3k0")
+
+[node name="deepcave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_a51m3")
+
+[node name="cave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iuh0n")

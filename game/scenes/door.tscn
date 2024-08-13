@@ -1,9 +1,9 @@
 [gd_scene load_steps=22 format=3 uid="uid://p6wnubxxna6d"]
 
 [ext_resource type="Script" path="res://Door_animated.gd" id="1_prd0i"]
-[ext_resource type="AudioStream" uid="uid://dlsu3h17mq2ks" path="res://sounds_and_music/sfx/SFX/door_open.wav" id="2_8euxp"]
-[ext_resource type="AudioStream" uid="uid://dolivualx7dai" path="res://sounds_and_music/sfx/SFX/door_locked.wav" id="3_jg51r"]
-[ext_resource type="AudioStream" uid="uid://cfp7j86ff3hh2" path="res://sounds_and_music/sfx/SFX/door_unlock.wav" id="4_08hi5"]
+[ext_resource type="AudioStream" uid="uid://cqahuuba8guv4" path="res://sounds_and_music/door_open.wav" id="2_8euxp"]
+[ext_resource type="AudioStream" uid="uid://ddkjya034nbfv" path="res://sounds_and_music/door_locked.wav" id="3_jg51r"]
+[ext_resource type="AudioStream" uid="uid://kdl38upalf52" path="res://sounds_and_music/door_unlock.wav" id="4_08hi5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3omy"]
 resource_name = "Wood"

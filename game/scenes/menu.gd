@@ -1,15 +1,10 @@
 extends Control
 
-@onready var audio := %AudioPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	audio.start_playing()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	print(SoundPlayer.MUSIC)
+	SoundPlayer.start_playing(SoundPlayer.MUSIC, false)
 
 
 func _on_exit_pressed():
@@ -17,6 +12,7 @@ func _on_exit_pressed():
 
 
 func _on_start_pressed():
+	SoundPlayer.stop_playing(SoundPlayer.MUSIC)
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
