@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqjmrg523vt86"]
+
+[ext_resource type="Script" path="res://scenes/Cam.gd" id="1_3jwig"]
+[ext_resource type="PackedScene" uid="uid://q6tpt2nt2sbh" path="res://scenes/control.tscn" id="2_0rcwe"]
+
+[node name="Cam" type="Node3D"]
+script = ExtResource("1_3jwig")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.38201, 4.14169)
+
+[node name="Control" parent="Camera3D" instance=ExtResource("2_0rcwe")]
+unique_name_in_owner = true
+
+[node name="Label3D" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[connection signal="rotate_left" from="Camera3D/Control" to="." method="_on_control_rotate_left"]
+[connection signal="rotate_left_stop" from="Camera3D/Control" to="." method="_on_control_rotate_left_stop"]
+[connection signal="rotate_right" from="Camera3D/Control" to="." method="_on_control_rotate_right"]
+[connection signal="rotate_right_stop" from="Camera3D/Control" to="." method="_on_control_rotate_right_stop"]

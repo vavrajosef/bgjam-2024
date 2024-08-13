@@ -7,17 +7,22 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_active := true
+var is_dead := false
 
 var keys := []
 @onready var label := %Label
 @onready var animation := %AnimationPlayer
 @onready var body := %"character-male-b"
+@onready var timer : Timer = %Timer
+var rotationAngle : float = 0
 
 func _ready():
-	animation.play("idle")
+	play_animation("idle", false)
 
 func _physics_process(delta):
 	# Add the gravity.
+	if is_dead:
+		return
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -30,20 +35,21 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if is_active:
 		var input_dir = Input.get_vector("a", "d", "w", "s")
+		input_dir = input_dir.rotated(rotationAngle)
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if not global_transform.origin.is_equal_approx(global_position - direction):
 			body.look_at(global_position - direction, Vector3.UP)
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
-			animation.play("walk")
+			play_animation("walk", false)
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-			animation.play("idle")
+			play_animation("idle", false)
 		move_and_slide()
 	else:
-		animation.play("idle")
+		play_animation("idle", false)
 	
 
 func set_active(new_active):
@@ -63,3 +69,17 @@ func has_key(keyId) -> bool :
 
 func add_key(keyId):
 	keys.append(keyId)
+
+func set_rotation_angle(_rotationAngle: float):
+	rotationAngle = _rotationAngle
+	
+func end_game():
+	is_dead = true
+	play_animation("die", false)
+	
+func play_animation(animation_name: String, force: bool) :
+	if force:
+		animation.play(animation_name)
+		timer.start()
+	elif timer.is_stopped() :
+		animation.play(animation_name)

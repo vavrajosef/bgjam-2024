@@ -2775,6 +2775,10 @@ libraries = {
 "": SubResource("AnimationLibrary_5v3j4")
 }
 
+[node name="Timer" type="Timer" parent="AnimationPlayer"]
+unique_name_in_owner = true
+one_shot = true
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37434, 0)
 shape = SubResource("CapsuleShape3D_oh8sd")
