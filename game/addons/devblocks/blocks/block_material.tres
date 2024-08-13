@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bovtf6na6r6ow"]
+
+[ext_resource type="Texture2D" uid="uid://cu0tffp3d5qgi" path="res://models/character-male-b_colormap.png" id="1_j11k1"]
+
+[resource]
+albedo_texture = ExtResource("1_j11k1")
+uv1_scale = Vector3(100, 1, 100)
+uv1_offset = Vector3(1, 0.5, 1)
+uv1_triplanar = true
