@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b02wn51vat6wo"
-path="res://.godot/imported/Gem_09.glb-e737257d264108a095487ab7212ef345.scn"
+uid="uid://bfhfl0njv0ra5"
+path="res://.godot/imported/Lever_OFF.glb-3d4a1431bff6703c0eb0903b4754f6a5.scn"
 
 [deps]
 
-source_file="res://models/Environment/Gems/Gem_09.glb"
-dest_files=["res://.godot/imported/Gem_09.glb-e737257d264108a095487ab7212ef345.scn"]
+source_file="res://models/Environment/Lever_OFF.glb"
+dest_files=["res://.godot/imported/Lever_OFF.glb-3d4a1431bff6703c0eb0903b4754f6a5.scn"]
 
 [params]
 

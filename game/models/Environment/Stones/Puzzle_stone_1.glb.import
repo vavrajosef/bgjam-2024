@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b02wn51vat6wo"
-path="res://.godot/imported/Gem_09.glb-e737257d264108a095487ab7212ef345.scn"
+uid="uid://b8r1rh1yq8osg"
+path="res://.godot/imported/Puzzle_stone_1.glb-9f19b68ede4010dc794d55e396d245f8.scn"
 
 [deps]
 
-source_file="res://models/Environment/Gems/Gem_09.glb"
-dest_files=["res://.godot/imported/Gem_09.glb-e737257d264108a095487ab7212ef345.scn"]
+source_file="res://models/Environment/Stones/Puzzle_stone_1.glb"
+dest_files=["res://.godot/imported/Puzzle_stone_1.glb-9f19b68ede4010dc794d55e396d245f8.scn"]
 
 [params]
 

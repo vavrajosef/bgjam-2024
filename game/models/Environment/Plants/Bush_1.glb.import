@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b02wn51vat6wo"
-path="res://.godot/imported/Gem_09.glb-e737257d264108a095487ab7212ef345.scn"
+uid="uid://eoj81lgaekqt"
+path="res://.godot/imported/Bush_1.glb-e7ca0d5798ddaa26dc1dcd3f819e8875.scn"
 
 [deps]
 
-source_file="res://models/Environment/Gems/Gem_09.glb"
-dest_files=["res://.godot/imported/Gem_09.glb-e737257d264108a095487ab7212ef345.scn"]
+source_file="res://models/Environment/Plants/Bush_1.glb"
+dest_files=["res://.godot/imported/Bush_1.glb-e7ca0d5798ddaa26dc1dcd3f819e8875.scn"]
 
 [params]
 

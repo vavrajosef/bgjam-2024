@@ -1,15 +1,1 @@
 res://scenes/main-level.tscn
-res://scenes/player.tscn
-res://scenes/character_male_b_2.tscn
-res://scenes/control.tscn
-res://scenes/cam.tscn
-res://scenes/credits.tscn
-res://scenes/audio_player.tscn
-res://scenes/sfx_player.tscn
-res://scenes/interactive_object.tscn
-res://scenes/sound_player.tscn
-res://scenes/collision_obj.tscn
-res://scenes/game.tscn
-res://scenes/tower_12.tscn
-res://scenes/tower_interactive.tscn
-res://scenes/tower_62.tscn
