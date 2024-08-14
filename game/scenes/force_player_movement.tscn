@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtgktarfpjq1d"]
+
+[ext_resource type="Script" path="res://ForcePlayerMovement.gd" id="1_e6qbd"]
+
+[sub_resource type="Curve3D" id="Curve3D_fukq8"]
+
+[node name="ForcePlayerMovement" type="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7109, -0.673324, -0.515521)
+curve = SubResource("Curve3D_fukq8")
+script = ExtResource("1_e6qbd")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.629046, -0.242507, -0.738573, 3.26931e-05, 0.950103, -0.311935, 0.777368, 0.196197, 0.597667, 0.613294, 0.767276, -0.81268)
+progress = 2.71073
+loop = false
