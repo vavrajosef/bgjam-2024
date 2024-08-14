@@ -1,3 +1,4 @@
+res://scenes/main-level.tscn
 res://scenes/player.tscn
 res://scenes/character_male_b_2.tscn
 res://scenes/control.tscn
@@ -12,4 +13,3 @@ res://scenes/game.tscn
 res://scenes/tower_12.tscn
 res://scenes/tower_interactive.tscn
 res://scenes/tower_62.tscn
-res://scenes/main-level.tscn
