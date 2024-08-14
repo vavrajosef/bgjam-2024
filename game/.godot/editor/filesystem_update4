@@ -22,3 +22,13 @@ res://InvisibleCanBePickedUp.gd
 res://scenes/gem_032.tscn
 res://scenes/main-level.gd
 res://scenes/gem_022.tscn
+res://scenes/gem_tower.gd
+res://scenes/gem_tower.tscn
+res://dialogue.gd
+res://Control.gd
+res://scenes/Cam.gd
+res://scenes/door.tscn
+res://scenes/WalkSounds.gd
+res://ChangeFootsteps.gd
+res://scenes/change_footsteps.tscn
+res://scenes/game_finished.tscn

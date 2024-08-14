@@ -8,10 +8,6 @@ const CAMERA_ROT_SPEED := 1
 const CAMERA_MOV_SPEED := 10
 var is_active := false
 var rotVec := Vector2(1,0)
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cc8hyw6ynrgwk"]
+[gd_scene load_steps=48 format=3 uid="uid://cc8hyw6ynrgwk"]
 
 [ext_resource type="Texture2D" uid="uid://diti388ayn1a8" path="res://addons/devblocks/textures/orange/texture_01.png" id="1_4j57b"]
 [ext_resource type="PackedScene" uid="uid://cxmuaxcm0fl4u" path="res://scenes/player.tscn" id="1_haqi1"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://un3tcardutxt" path="res://models/Environment/Gem_05.glb" id="34_c5ax0"]
 [ext_resource type="PackedScene" uid="uid://cocqqspse352y" path="res://models/Environment/Buildings/Tower_3-mdedit.glb" id="34_eyxho"]
 [ext_resource type="PackedScene" uid="uid://vy6m7x4ftxlj" path="res://scenes/gem_022.tscn" id="34_ytygp"]
+[ext_resource type="PackedScene" uid="uid://dqdi7s36m5d23" path="res://scenes/gem_tower.tscn" id="35_f084r"]
 [ext_resource type="PackedScene" uid="uid://rilh62i1lypn" path="res://models/Environment/Gem_06.glb" id="35_h52rq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qefm"]
@@ -706,7 +707,7 @@ transform = Transform3D(-0.710251, -0.194238, 0.0439153, 0.190193, -0.613432, 0.
 transform = Transform3D(-0.643793, 0.354954, -0.0604354, -0.354954, -0.646437, -0.0155286, -0.0604354, 0.0155287, 0.734997, 0.310203, -0.442287, -0.338022)
 
 [node name="Cave_stone_104" parent="Gem Tower 2" instance=ExtResource("23_6cf4l")]
-transform = Transform3D(0.356024, 0.645819, -0.0166951, -0.645819, 0.355294, -0.0282535, -0.0166951, 0.0282535, 0.736911, -0.0894711, -0.326014, -0.355507)
+transform = Transform3D(0.356024, 0.645819, -0.0166951, -0.645819, 0.355294, -0.0282535, -0.0166951, 0.0282535, 0.736911, -0.0894709, -0.326015, -0.355507)
 
 [node name="Cave_stone_105" parent="Gem Tower 2" instance=ExtResource("23_6cf4l")]
 transform = Transform3D(0.712692, 0.161998, -0.0997027, -0.190193, 0.613432, -0.362824, 0.00323203, 0.37626, 0.634454, 0.118534, -0.469538, -0.346407)
@@ -1055,5 +1056,17 @@ turnOnVisibilityArea = NodePath("../vis on")
 pickupableId = 3
 canBePickedUpYet = false
 
+[node name="GemTower" parent="." instance=ExtResource("35_f084r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="GemTower2" parent="." instance=ExtResource("35_f084r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97943, -0.0203755, -4.16946)
+
+[node name="GemTower3" parent="." instance=ExtResource("35_f084r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65226, -0.0203758, 5.09903)
+
 [connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]
+[connection signal="gem_placed" from="GemTower" to="." method="_on_gem_tower_gem_placed"]
+[connection signal="gem_placed" from="GemTower2" to="." method="_on_gem_tower_gem_placed"]
+[connection signal="gem_placed" from="GemTower3" to="." method="_on_gem_tower_gem_placed"]
