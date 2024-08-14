@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=71 format=3 uid="uid://cc8hyw6ynrgwk"]
+=======
+[gd_scene load_steps=48 format=3 uid="uid://cc8hyw6ynrgwk"]
+>>>>>>> develop-branch
 
 [ext_resource type="PackedScene" uid="uid://cxmuaxcm0fl4u" path="res://scenes/player.tscn" id="1_haqi1"]
 [ext_resource type="PackedScene" uid="uid://dqjmrg523vt86" path="res://scenes/cam.tscn" id="1_m75pf"]
@@ -25,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://3swm6mfuj5pf" path="res://models/Environment/Gems/Gem_04.glb" id="33_od4yr"]
 [ext_resource type="PackedScene" uid="uid://un3tcardutxt" path="res://models/Environment/Gems/Gem_05.glb" id="34_c5ax0"]
 [ext_resource type="PackedScene" uid="uid://cocqqspse352y" path="res://models/Environment/Buildings/Tower_3-mdedit.glb" id="34_eyxho"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://crarim2jsu1x1" path="res://models/Environment/Plants/Tree_1.glb" id="35_8ghss"]
 [ext_resource type="PackedScene" uid="uid://rilh62i1lypn" path="res://models/Environment/Gems/Gem_06.glb" id="35_h52rq"]
 [ext_resource type="PackedScene" uid="uid://c6gtup4fy0mro" path="res://models/Environment/Plants/Tree_2.glb" id="36_seo6l"]
@@ -56,6 +61,11 @@
 [ext_resource type="PackedScene" uid="uid://dewo1dn0eeb0d" path="res://models/Environment/Ground/Path_tile_5.glb" id="57_yxc41"]
 [ext_resource type="PackedScene" uid="uid://b56cg6er3iph4" path="res://models/Environment/Ground/Path_tile_6.glb" id="58_udnfr"]
 [ext_resource type="PackedScene" uid="uid://dnqk33qf56su6" path="res://models/Environment/Ground/Path_tile_7.glb" id="59_layvg"]
+=======
+[ext_resource type="PackedScene" uid="uid://vy6m7x4ftxlj" path="res://scenes/gem_022.tscn" id="34_ytygp"]
+[ext_resource type="PackedScene" uid="uid://dqdi7s36m5d23" path="res://scenes/gem_tower.tscn" id="35_f084r"]
+[ext_resource type="PackedScene" uid="uid://rilh62i1lypn" path="res://models/Environment/Gem_06.glb" id="35_h52rq"]
+>>>>>>> develop-branch
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_chxsm"]
 load_path = "res://.godot/imported/texture_02.png-1d4d91039667173c055f73bd59d1ba0c.s3tc.ctex"
@@ -96,6 +106,10 @@ size = Vector3(1.54492, 2.10754, 2.78394)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ipa0n"]
 size = Vector3(12.0478, 1, 11.8185)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7n50"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0k053"]
 
 [node name="Main-level" type="Node3D"]
 script = ExtResource("1_sfw08")
@@ -949,7 +963,7 @@ transform = Transform3D(-0.710251, -0.194238, 0.0439153, 0.190193, -0.613432, 0.
 transform = Transform3D(-0.643793, 0.354954, -0.0604354, -0.354954, -0.646437, -0.0155286, -0.0604354, 0.0155287, 0.734997, 0.310203, -0.442287, -0.338022)
 
 [node name="Cave_stone_104" parent="Gem Tower 2" instance=ExtResource("23_6cf4l")]
-transform = Transform3D(0.356024, 0.645819, -0.0166951, -0.645819, 0.355294, -0.0282535, -0.0166951, 0.0282535, 0.736911, -0.0894711, -0.326014, -0.355507)
+transform = Transform3D(0.356024, 0.645819, -0.0166951, -0.645819, 0.355294, -0.0282535, -0.0166951, 0.0282535, 0.736911, -0.0894709, -0.326015, -0.355507)
 
 [node name="Cave_stone_105" parent="Gem Tower 2" instance=ExtResource("23_6cf4l")]
 transform = Transform3D(0.712692, 0.161998, -0.0997027, -0.190193, 0.613432, -0.362824, 0.00323203, 0.37626, 0.634454, 0.118534, -0.469538, -0.346407)
@@ -1380,5 +1394,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0915436, 0.0560604, 1.3481
 [node name="Path_tile_7" parent="." instance=ExtResource("59_layvg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282812, 0.0560602, 1.118)
 
+[node name="vis on" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21917, -0.0203758, -1.85965)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vis on"]
+shape = SubResource("BoxShape3D_q7n50")
+
+[node name="Label3D" type="Label3D" parent="vis on/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262631, 0)
+text = "turn on"
+
+[node name="vis off" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37068, -0.0203758, -1.76756)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vis off"]
+shape = SubResource("BoxShape3D_0k053")
+
+[node name="Label3D" type="Label3D" parent="vis off/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.276158, 0)
+text = "turn off
+"
+
+[node name="Gem_024" parent="." node_paths=PackedStringArray("turnOffVisibilityArea", "turnOnVisibilityArea") instance=ExtResource("34_ytygp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21917, 0.207034, 0.0869942)
+is_visible = false
+turnOffVisibilityArea = NodePath("../vis off")
+turnOnVisibilityArea = NodePath("../vis on")
+pickupableId = 3
+canBePickedUpYet = false
+
+[node name="GemTower" parent="." instance=ExtResource("35_f084r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="GemTower2" parent="." instance=ExtResource("35_f084r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97943, -0.0203755, -4.16946)
+
+[node name="GemTower3" parent="." instance=ExtResource("35_f084r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65226, -0.0203758, 5.09903)
+
 [connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]
+[connection signal="gem_placed" from="GemTower" to="." method="_on_gem_tower_gem_placed"]
+[connection signal="gem_placed" from="GemTower2" to="." method="_on_gem_tower_gem_placed"]
+[connection signal="gem_placed" from="GemTower3" to="." method="_on_gem_tower_gem_placed"]

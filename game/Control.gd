@@ -10,6 +10,10 @@ signal rotate_right_stop
 @onready var timer := %Timer
 @onready var label := %Label
 @onready var panel := %Panel
+
+var currentDialogue : Dialogue = null
+var dialogueQueue := []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	btn2.hide()
@@ -17,8 +21,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass 
+	if currentDialogue == null and not dialogueQueue.is_empty():
+		currentDialogue = dialogueQueue.pop_front()
+		if currentDialogue.is_btn:
+			display_text_btn(currentDialogue.label_text, currentDialogue.btn_text)
+		else:
+			display_text(currentDialogue.label_text, currentDialogue.timeout)
 
+func append_display_text_btn(text: String, btnText: String):
+	var new_dialogue : Dialogue = Dialogue.new()
+	new_dialogue.is_btn = true
+	new_dialogue.label_text = text
+	new_dialogue.btn_text = btnText
+	dialogueQueue.append(new_dialogue)
+
+func append_display_text(text: String, time: float):
+	var new_dialogue : Dialogue = Dialogue.new()
+	new_dialogue.is_btn = false
+	new_dialogue.label_text = text
+	new_dialogue.timeout = time
+	dialogueQueue.append(new_dialogue)
 
 func display_text_btn(text: String, btnText: String):
 	panel.show()
@@ -39,9 +61,11 @@ func display_text(text: String, time: float):
 	
 
 func _on_timer_timeout():
+	currentDialogue = null
 	panel.hide()
 
 func _on_button_2_pressed():
+	currentDialogue = null
 	btn2.hide()
 	panel.hide()
 

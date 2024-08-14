@@ -1,7 +1,24 @@
-[gd_scene load_steps=43 format=3 uid="uid://cxmuaxcm0fl4u"]
+[gd_scene load_steps=60 format=3 uid="uid://cxmuaxcm0fl4u"]
 
 [ext_resource type="Script" path="res://scenes/character_male_b_2.gd" id="1_8lwss"]
 [ext_resource type="Texture2D" uid="uid://cu0tffp3d5qgi" path="res://models/character-male-b_colormap.png" id="2_r6b4g"]
+[ext_resource type="Script" path="res://scenes/WalkSounds.gd" id="3_6582i"]
+[ext_resource type="AudioStream" uid="uid://bvv2e378eoh" path="res://sounds_and_music/Footsteps/Stone/footstep_walk_stone_A1.wav" id="4_3ombg"]
+[ext_resource type="AudioStream" uid="uid://0jk3ytwd16b4" path="res://sounds_and_music/Footsteps/Stone/footstep_walk_stone_A2.wav" id="5_jwdog"]
+[ext_resource type="AudioStream" uid="uid://e01uhe4f3muv" path="res://sounds_and_music/Footsteps/Stone/footstep_walk_stone_A3.wav" id="6_t3xsc"]
+[ext_resource type="AudioStream" uid="uid://m1jxo6vgmvpe" path="res://sounds_and_music/Footsteps/Stone/footstep_walk_stone_B1.wav" id="7_eb3cr"]
+[ext_resource type="AudioStream" uid="uid://tgm7nud33frq" path="res://sounds_and_music/Footsteps/Stone/footstep_walk_stone_B2.wav" id="8_dc1t5"]
+[ext_resource type="AudioStream" uid="uid://bt1wb4xmy5h1f" path="res://sounds_and_music/Footsteps/Stone/footstep_walk_stone_B3.wav" id="9_32ov1"]
+[ext_resource type="AudioStream" uid="uid://cmlu5617htbhe" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_A1.wav" id="10_fhbqy"]
+[ext_resource type="AudioStream" uid="uid://dp8mg2bo3bek" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_A2.wav" id="11_0b8hm"]
+[ext_resource type="AudioStream" uid="uid://cpi8ht5jjbnig" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_A3.wav" id="12_gxa5i"]
+[ext_resource type="AudioStream" uid="uid://7tsnudm1a32t" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_A4.wav" id="13_8ncb4"]
+[ext_resource type="AudioStream" uid="uid://bji3hv553rl13" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_A5.wav" id="14_ucnxd"]
+[ext_resource type="AudioStream" uid="uid://b2jn8uoqms5cv" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_B1.wav" id="15_fts8s"]
+[ext_resource type="AudioStream" uid="uid://bib8dct6e0yxx" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_B2.wav" id="16_msmo4"]
+[ext_resource type="AudioStream" uid="uid://mghixkm4vjfk" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_B3.wav" id="17_n8yjq"]
+[ext_resource type="AudioStream" uid="uid://c24qnev775iti" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_B4.wav" id="18_bl4a2"]
+[ext_resource type="AudioStream" uid="uid://cls0i6c71u0a7" path="res://sounds_and_music/Footsteps/Grass/footstep_walk_grass_B5.wav" id="19_6brcg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oh8sd"]
 radius = 0.25
@@ -2839,3 +2856,60 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="WalkSounds" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_6582i")
+
+[node name="walk_stone_1" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("4_3ombg")
+
+[node name="walk_stone_2" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("5_jwdog")
+
+[node name="walk_stone_3" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("6_t3xsc")
+
+[node name="walk_stone_4" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("7_eb3cr")
+
+[node name="walk_stone_5" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("8_dc1t5")
+
+[node name="walk_stone_6" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("9_32ov1")
+
+[node name="TimerWalk" type="Timer" parent="WalkSounds"]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+
+[node name="walk_grass_1" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("10_fhbqy")
+
+[node name="walk_grass_2" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("11_0b8hm")
+
+[node name="walk_grass_3" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("12_gxa5i")
+
+[node name="walk_grass_4" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("13_8ncb4")
+
+[node name="walk_grass_5" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("14_ucnxd")
+
+[node name="walk_grass_6" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("15_fts8s")
+
+[node name="walk_grass_7" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("16_msmo4")
+
+[node name="walk_grass_8" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("17_n8yjq")
+
+[node name="walk_grass_9" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("18_bl4a2")
+
+[node name="walk_grass_10" type="AudioStreamPlayer" parent="WalkSounds"]
+stream = ExtResource("19_6brcg")

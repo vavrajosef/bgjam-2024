@@ -6,10 +6,11 @@ signal char_inactive
 @onready var char := %"character-male-b2"
 var is_char_active := true
 
+var placed_gems := 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	switch()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,3 +31,12 @@ func end_game():
 
 func _on_finish_player_entered(player):
 	end_game()
+
+
+func _on_gem_tower_gem_placed():
+	placed_gems += 1
+	if placed_gems >= 3:
+		cam.get_ui().append_display_text_btn("abc", "answer")
+		
+func whatnow():
+	pass
