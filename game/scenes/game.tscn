@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bckprw1nwic7b"]
+[gd_scene load_steps=15 format=3 uid="uid://bckprw1nwic7b"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_vuqei"]
 [ext_resource type="PackedScene" uid="uid://cxmuaxcm0fl4u" path="res://scenes/player.tscn" id="2_kcgla"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dsfui8m2rtibb" path="res://scenes/player_animation_trigger_zone.tscn" id="8_hcmul"]
 [ext_resource type="PackedScene" uid="uid://68xmdr0gepe7" path="res://scenes/tower_12.tscn" id="9_17gec"]
 [ext_resource type="PackedScene" uid="uid://duoni6ssi6ooc" path="res://scenes/change_sound_area.tscn" id="10_cu2ap"]
+[ext_resource type="PackedScene" uid="uid://cnwsg4rlvcbtp" path="res://scenes/tower_interactive.tscn" id="11_es2sv"]
 
 [sub_resource type="Environment" id="Environment_6nrvr"]
 
@@ -54,7 +55,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.217222, 0)
 text = "play dead animation"
 
 [node name="Tower_12" parent="." node_paths=PackedStringArray("turnOffVisibilityArea", "turnOffCollisionArea") instance=ExtResource("9_17gec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09511, 0.904696, -4.48774)
 turnOffVisibilityArea = NodePath("../Area3D")
 turnOffCollisionArea = NodePath("../turnoff")
 
@@ -103,6 +104,9 @@ isTurnOn = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24097, 0)
 text = "Stop playing
 "
+
+[node name="InteractiveObject" parent="." instance=ExtResource("11_es2sv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.04463, 0, -13.0486)
 
 [connection signal="char_active" from="." to="Cam" method="_on_game_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_game_char_inactive"]
