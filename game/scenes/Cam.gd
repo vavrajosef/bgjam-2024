@@ -20,7 +20,6 @@ func _process(delta):
 	if is_active:
 		var input_dir = Input.get_vector("a", "d", "w", "s")
 		var movement_vector : Vector2 = input_dir * CAMERA_MOV_SPEED * delta
-		
 		movement_vector = movement_vector.rotated(-rotVec.angle())
 		global_position += Vector3(movement_vector.x, 0, movement_vector.y)
 	var rotatedBy : float = CAMERA_ROT_SPEED * delta
@@ -35,7 +34,7 @@ func _process(delta):
 func _on_game_char_active():
 	is_active = false
 	position = Vector3(0,0,0)
-	var siblings := get_node("/root/Game").get_children()
+	var siblings := get_node("/root/Main-level").get_children()
 	var new_parent : Node
 	for sibling in siblings:
 		if sibling.name == "character-male-b2":
@@ -80,3 +79,11 @@ func _on_control_rotate_right():
 
 func _on_control_rotate_right_stop():
 	rotatingRight = false
+
+
+func _on_mainlevel_char_active():
+	_on_game_char_active()
+
+
+func _on_mainlevel_char_inactive():
+	_on_game_char_inactive()

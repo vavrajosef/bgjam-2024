@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://diti388ayn1a8" path="res://addons/devblocks/textures/orange/texture_01.png" id="1_4j57b"]
 [ext_resource type="PackedScene" uid="uid://cxmuaxcm0fl4u" path="res://scenes/player.tscn" id="1_haqi1"]
-[ext_resource type="Script" path="res://scenes/Cam.gd" id="2_0a36l"]
+[ext_resource type="PackedScene" uid="uid://dqjmrg523vt86" path="res://scenes/cam.tscn" id="1_m75pf"]
+[ext_resource type="Script" path="res://scenes/main-level.gd" id="1_sfw08"]
 [ext_resource type="Texture2D" uid="uid://cqhqqf4xsg6mq" path="res://addons/devblocks/textures/light/texture_01.png" id="2_faog6"]
-[ext_resource type="PackedScene" uid="uid://q6tpt2nt2sbh" path="res://scenes/control.tscn" id="3_ub3we"]
 [ext_resource type="Texture2D" uid="uid://cypbqat3rg17o" path="res://addons/devblocks/textures/dark/texture_01.png" id="3_w258t"]
 [ext_resource type="PackedScene" uid="uid://dwbw6mlr2anya" path="res://scenes/finish.tscn" id="4_3ij56"]
 [ext_resource type="Texture2D" uid="uid://dqyf8pcng7cc1" path="res://addons/devblocks/textures/dark/texture_02.png" id="4_hcj0u"]
@@ -64,6 +64,10 @@ albedo_texture = ExtResource("3_w258t")
 size = Vector3(0.713928, 0.799683, 0.540466)
 
 [node name="Main-level" type="Node3D"]
+script = ExtResource("1_sfw08")
+
+[node name="Cam" parent="." instance=ExtResource("1_m75pf")]
+unique_name_in_owner = true
 
 [node name="Mid Level Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.520376, 0)
@@ -290,23 +294,6 @@ environment = SubResource("Environment_kj2x1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 48, 0)
-
-[node name="Cam" type="Node3D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_0a36l")
-
-[node name="Camera3D" type="Camera3D" parent="Cam"]
-unique_name_in_owner = true
-transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, -12.9884, 15.3623, 12.1951)
-current = true
-fov = 30.0
-
-[node name="Control" parent="Cam/Camera3D" instance=ExtResource("3_ub3we")]
-unique_name_in_owner = true
-
-[node name="Label3D" type="Label3D" parent="Cam"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Finish" parent="." instance=ExtResource("4_3ij56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04373, 0.202982, -5.35733)
@@ -1033,3 +1020,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85573, -8.81235, 2.34827)
 
 [node name="Tower_3-mdedit" parent="." instance=ExtResource("34_eyxho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54595, -0.020376, 4.04632)
+
+[connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
+[connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]

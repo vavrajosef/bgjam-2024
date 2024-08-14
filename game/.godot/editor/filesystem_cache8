@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1723619174
+::res://::1723621271
 Area3D.gd::GDScript::-1::1723586770::0::1::::<>Area3D<>::
 AudioPlayer.gd::GDScript::-1::1723552668::0::1::::<>Node3D<>::
 ChangeSoundArea.gd::GDScript::-1::1723586637::0::1::::<>Area3D<>::
@@ -225,38 +225,39 @@ Window_2.glb::PackedScene::7930651520762220073::1723374361::1723374368::1::::<><
 ::res://models/Textures/::1723586755
 colormap.png::CompressedTexture2D::4789923622235653738::1723144426::1723232029::1::::<><>::
 leverhint.png::CompressedTexture2D::1245003566364395181::1723586733::1723586755::1::::<><>::
-::res://scenes/::1723586771
-audio_player.tscn::PackedScene::6001669055248472433::1723586770::0::1::::<><>::res://AudioPlayer.gd<>uid://biwrnkwqjxp68::::res://sounds_and_music/Mystic Mountain test.mp3
-Cam.gd::GDScript::-1::1723547911::0::1::::<>Node3D<>::
-cam.tscn::PackedScene::8301622274233195797::1723586770::0::1::::<><>::res://scenes/Cam.gd<>uid://q6tpt2nt2sbh::::res://scenes/control.tscn
-change_sound_area.tscn::PackedScene::8592745476514088270::1723586770::0::1::::<><>::res://ChangeSoundArea.gd
+::res://scenes/::1723621263
+audio_player.tscn::PackedScene::6001669055248472433::1723621263::0::1::::<><>::res://AudioPlayer.gd<>uid://biwrnkwqjxp68::::res://sounds_and_music/Mystic Mountain test.mp3
+Cam.gd::GDScript::-1::1723620438::0::1::::<>Node3D<>::
+cam.tscn::PackedScene::8301622274233195797::1723621262::0::1::::<><>::res://scenes/Cam.gd<>uid://q6tpt2nt2sbh::::res://scenes/control.tscn
+change_sound_area.tscn::PackedScene::8592745476514088270::1723620070::0::1::::<><>::res://ChangeSoundArea.gd
 character_male_b_2.gd::GDScript::-1::1723547911::0::1::::Player<>CharacterBody3D<>::
 CollisionShape3D.gd::GDScript::-1::1723547911::0::1::::<>CollisionShape3D<>::
 collision_obj.gd::GDScript::-1::1723547911::0::1::::CollisionObj<>StaticBody3D<>::
 collision_obj.tscn::PackedScene::5164202192896842784::1723549804::0::1::::<><>::res://scenes/collision_obj.gd
-control.tscn::PackedScene::1188198658626012377::1723586770::0::1::::<><>::res://Control.gd
-credits.tscn::PackedScene::8110447953092755709::1723586770::0::1::::<><>::res://Credits.gd
+control.tscn::PackedScene::1188198658626012377::1723621262::0::1::::<><>::res://Control.gd
+credits.tscn::PackedScene::8110447953092755709::1723621263::0::1::::<><>::res://Credits.gd
 door.gd::GDScript::-1::1723586637::0::1::::<>StaticBody3D<>::
 door.tscn::PackedScene::1118188407196034457::1723586637::0::1::::<><>::res://Door_animated.gd<>uid://cqahuuba8guv4::::res://sounds_and_music/door_open.wav<>uid://ddkjya034nbfv::::res://sounds_and_music/door_locked.wav<>uid://kdl38upalf52::::res://sounds_and_music/door_unlock.wav
 finish.gd::GDScript::-1::1723547911::0::1::::<>Area3D<>::
 finish.tscn::PackedScene::8706872770403538804::1723549804::0::1::::<><>::res://scenes/finish.gd
-game.gd::GDScript::-1::1723547911::0::1::::<>Node3D<>::
-game.tscn::PackedScene::2548384458196639497::1723586771::0::1::::<><>::res://scenes/game.gd<>uid://cxmuaxcm0fl4u::::res://scenes/player.tscn<>uid://dqjmrg523vt86::::res://scenes/cam.tscn<>uid://dwbw6mlr2anya::::res://scenes/finish.tscn<>uid://p6wnubxxna6d::::res://scenes/door.tscn<>uid://deieh5702oyda::::res://scenes/pickupable.tscn<>uid://dim2ydsx62n1c::::res://scenes/key_12.tscn<>uid://dsfui8m2rtibb::::res://scenes/player_animation_trigger_zone.tscn<>uid://68xmdr0gepe7::::res://scenes/tower_12.tscn<>uid://duoni6ssi6ooc::::res://scenes/change_sound_area.tscn
+game.gd::GDScript::-1::1723621262::0::1::::<>Node3D<>::
+game.tscn::PackedScene::2548384458196639497::1723621263::0::1::::<><>::res://scenes/game.gd<>uid://cxmuaxcm0fl4u::::res://scenes/player.tscn<>uid://dqjmrg523vt86::::res://scenes/cam.tscn<>uid://dwbw6mlr2anya::::res://scenes/finish.tscn<>uid://p6wnubxxna6d::::res://scenes/door.tscn<>uid://deieh5702oyda::::res://scenes/pickupable.tscn<>uid://dim2ydsx62n1c::::res://scenes/key_12.tscn<>uid://dsfui8m2rtibb::::res://scenes/player_animation_trigger_zone.tscn<>uid://68xmdr0gepe7::::res://scenes/tower_12.tscn<>uid://duoni6ssi6ooc::::res://scenes/change_sound_area.tscn
 game_finished.gd::GDScript::-1::1723586637::0::1::::<>Control<>::
-game_finished.tscn::PackedScene::4057578913894012716::1723586771::0::1::::<><>::res://scenes/game_finished.gd
-interactive_object.tscn::PackedScene::2388584097677159058::1723586770::0::1::::<><>::res://InteractiveObject.gd
+game_finished.tscn::PackedScene::4057578913894012716::1723620070::0::1::::<><>::res://scenes/game_finished.gd
+interactive_object.tscn::PackedScene::2388584097677159058::1723621263::0::1::::<><>::res://InteractiveObject.gd
 key_12.tscn::PackedScene::7747227737554739794::1723549804::0::1::::<><>::uid://bymmam100qr47::::res://models/Environment/Key_1.glb
 key_22.tscn::PackedScene::7451428438745065925::1723549804::0::1::::<><>::uid://c7qr1deev8iw2::::res://models/Environment/Key_2.glb
-main-level.tscn::PackedScene::-1::1723586733::0::1::::<><>::
+main-level.gd::GDScript::-1::1723620227::0::1::::<>Node3D<>::
+main-level.tscn::PackedScene::4981812603060460710::1723621263::0::1::::<><>::uid://diti388ayn1a8::::res://addons/devblocks/textures/orange/texture_01.png<>uid://cxmuaxcm0fl4u::::res://scenes/player.tscn<>uid://dqjmrg523vt86::::res://scenes/cam.tscn<>res://scenes/main-level.gd<>uid://cqhqqf4xsg6mq::::res://addons/devblocks/textures/light/texture_01.png<>uid://cypbqat3rg17o::::res://addons/devblocks/textures/dark/texture_01.png<>uid://dwbw6mlr2anya::::res://scenes/finish.tscn<>uid://dqyf8pcng7cc1::::res://addons/devblocks/textures/dark/texture_02.png<>uid://p6wnubxxna6d::::res://scenes/door.tscn<>uid://ccji6i7wwhikr::::res://addons/devblocks/textures/light/texture_02.png<>uid://11ys888spdxj::::res://addons/devblocks/textures/green/texture_01.png<>uid://deieh5702oyda::::res://scenes/pickupable.tscn<>uid://dim2ydsx62n1c::::res://scenes/key_12.tscn<>uid://bm25tc3vlhujt::::res://addons/devblocks/textures/red/texture_01.png<>uid://cqnko81h48r4v::::res://models/Environment/Buildings/Tower_1.glb<>uid://di587w3x4nxih::::res://models/Environment/Buildings/Tower_6.glb<>uid://ddk8gtbmckui::::res://models/Environment/Buildings/Window_1.glb<>uid://dk8ww3w7n1su0::::res://models/Environment/Buildings/Window_2.glb<>uid://c4qe1l4cjhrus::::res://models/Environment/Cave.glb<>uid://be7ov701uq0fr::::res://models/Environment/Cave_stone_1.glb<>uid://cuff5vixg38r1::::res://models/Environment/Gem_03.glb<>uid://dc3h7wgox5dk5::::res://models/Environment/Chest_2.glb<>uid://bu0kl2xga38h8::::res://models/Environment/Cave_stone_26.glb<>uid://d16nqxjbgj21t::::res://models/Environment/Cave_stone_25.glb<>uid://c363t6efyyutq::::res://models/Environment/Cave_stone_24.glb<>uid://dp6kdqggr3kh0::::res://models/Environment/Cave_stone_23.glb<>uid://c1yph5g0rtw0w::::res://models/Environment/Cave_stone_19.glb<>uid://drbam57lmiwue::::res://models/Environment/Cave_stone_18.glb<>uid://dsy0euoqoupfd::::res://models/Environment/Gem_02.glb<>uid://3swm6mfuj5pf::::res://models/Environment/Gem_04.glb<>uid://un3tcardutxt::::res://models/Environment/Gem_05.glb<>uid://cocqqspse352y::::res://models/Environment/Buildings/Tower_3-mdedit.glb<>uid://rilh62i1lypn::::res://models/Environment/Gem_06.glb
 menu.gd::GDScript::-1::1723586637::0::1::::<>Control<>::
 menu.tscn::PackedScene::3282152241830266031::1723586637::0::1::::<><>::res://scenes/menu.gd
 object_with_interactive_collision.tscn::PackedScene::921758783385554965::1723547911::0::1::::<><>::res://ObjectWithInteractiveCollision.gd
 pickupable.tscn::PackedScene::7456789442499101446::1723549804::0::1::::<><>::res://Pickupable.gd
-player.tscn::PackedScene::6413172855670499410::1723586770::0::1::::<><>::res://scenes/character_male_b_2.gd
+player.tscn::PackedScene::6413172855670499410::1723621262::0::1::::<><>::res://scenes/character_male_b_2.gd
 player_animation_trigger_zone.tscn::PackedScene::8434213504599191371::1723583763::0::1::::<><>::res://Area3D.gd
-sfx_player.tscn::PackedScene::3531845119039084692::1723586770::0::1::::<><>::
+sfx_player.tscn::PackedScene::3531845119039084692::1723621263::0::1::::<><>::
 sound_player.gd::GDScript::-1::1723586637::0::1::::<>Node3D<>::
-sound_player.tscn::PackedScene::2103747851295874031::1723586770::0::1::::<><>::res://scenes/sound_player.gd<>uid://biwrnkwqjxp68::::res://sounds_and_music/Mystic Mountain test.mp3<>uid://c5b8ap7m3w4n4::::res://sounds_and_music/ambience_outside.wav<>uid://x36k6lvh0bmq::::res://sounds_and_music/ambience_deepcave.wav<>uid://cadxtygy27nmg::::res://sounds_and_music/ambience_cave.wav
+sound_player.tscn::PackedScene::2103747851295874031::1723621263::0::1::::<><>::res://scenes/sound_player.gd<>uid://biwrnkwqjxp68::::res://sounds_and_music/Mystic Mountain test.mp3<>uid://c5b8ap7m3w4n4::::res://sounds_and_music/ambience_outside.wav<>uid://x36k6lvh0bmq::::res://sounds_and_music/ambience_deepcave.wav<>uid://cadxtygy27nmg::::res://sounds_and_music/ambience_cave.wav
 tower_12.tscn::PackedScene::2245396723999267780::1723583324::0::1::::<><>::res://InteractiveObject.gd
 ::res://sounds_and_music/::1723586637
 ambience_cave.wav::AudioStreamWAV::4780466192523237506::1723586637::1723586637::1::::<><>::

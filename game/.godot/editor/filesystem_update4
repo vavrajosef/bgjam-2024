@@ -1,12 +1,12 @@
 res://scenes/player.tscn
+res://scenes/Cam.gd
 res://scenes/control.tscn
 res://scenes/cam.tscn
 res://scenes/credits.tscn
 res://scenes/audio_player.tscn
 res://scenes/sfx_player.tscn
 res://scenes/interactive_object.tscn
-res://scenes/change_sound_area.tscn
 res://scenes/sound_player.tscn
-res://scenes/game.tscn
-res://scenes/game_finished.tscn
 res://scenes/main-level.tscn
+res://scenes/game.tscn
+res://scenes/main-level.gd
