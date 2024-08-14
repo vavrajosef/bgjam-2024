@@ -14,5 +14,4 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is Player:
-		print("player entered")
 		body.play_animation(animation_name, true)

@@ -45,26 +45,14 @@ func _on_button_2_pressed():
 	btn2.hide()
 	panel.hide()
 
-
-func _on_button_2_mouse_entered():
-	print("aaaaa")
-
-
-func _on_panel_mouse_entered():
-	print("bbbbb")
-
-
 func _on_h_box_container_mouse_entered():
 	rotate_left.emit()
-
 
 func _on_h_box_container_mouse_exited():
 	rotate_left_stop.emit()
 
-
 func _on_h_box_container_2_mouse_entered():
 	rotate_right.emit()
-
 
 func _on_h_box_container_2_mouse_exited():
 	rotate_right_stop.emit()
