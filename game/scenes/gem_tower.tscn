@@ -13,6 +13,7 @@ size = Vector3(0.2, 0.8, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wxi5j"]
 
 [node name="GemTower" type="StaticBody3D"]
+transform = Transform3D(3.20399, 0, 0, 0, 3.20399, 0, 0, 0, 3.20399, 0, 0.168634, 0)
 script = ExtResource("1_qt8pa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -36,7 +37,7 @@ stream = ExtResource("5_jirf4")
 
 [node name="Gem_032" parent="." instance=ExtResource("6_s50xi")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.668, 0)
+transform = Transform3D(3.47812, 0, 0, 0, 3.47812, 0, 0, 0, 3.47812, -0.0133398, 0.6998, 0)
 
 [node name="Cave_stone_1" parent="." instance=ExtResource("1_tougd")]
 
