@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bx2lq347xwqj7"
-path="res://.godot/imported/Stone_portal.glb-12fcaf7781f357ee45797f2f68e85174.scn"
+uid="uid://y3a0q0iwtoko"
+path="res://.godot/imported/Portal_Wooden_Emission.glb-2ab4163dcc03342becc6728d04de7761.scn"
 
 [deps]
 
-source_file="res://models/Environment/Stone_portal.glb"
-dest_files=["res://.godot/imported/Stone_portal.glb-12fcaf7781f357ee45797f2f68e85174.scn"]
+source_file="res://models/Environment/Portal_Wooden_Emission.glb"
+dest_files=["res://.godot/imported/Portal_Wooden_Emission.glb-2ab4163dcc03342becc6728d04de7761.scn"]
 
 [params]
 
