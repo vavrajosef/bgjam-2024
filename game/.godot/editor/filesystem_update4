@@ -32,3 +32,4 @@ res://scenes/WalkSounds.gd
 res://ChangeFootsteps.gd
 res://scenes/change_footsteps.tscn
 res://scenes/game_finished.tscn
+res://scenes/menu.tscn
