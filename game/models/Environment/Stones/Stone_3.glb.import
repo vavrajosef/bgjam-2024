@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cmgbnutiegnlm"
-path="res://.godot/imported/Stone_3.glb-1884e6f88f24ef8cce7d8f516afbdd7c.scn"
+path="res://.godot/imported/Stone_3.glb-f8cb0c8c773ef3afb5018db2d1064df8.scn"
 
 [deps]
 
-source_file="res://models/Environment/Stone_3.glb"
-dest_files=["res://.godot/imported/Stone_3.glb-1884e6f88f24ef8cce7d8f516afbdd7c.scn"]
+source_file="res://models/Environment/Stones/Stone_3.glb"
+dest_files=["res://.godot/imported/Stone_3.glb-f8cb0c8c773ef3afb5018db2d1064df8.scn"]
 
 [params]
 

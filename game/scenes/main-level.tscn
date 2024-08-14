@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cc8hyw6ynrgwk"]
+[gd_scene load_steps=74 format=3 uid="uid://cc8hyw6ynrgwk"]
 
 [ext_resource type="PackedScene" uid="uid://cxmuaxcm0fl4u" path="res://scenes/player.tscn" id="1_haqi1"]
 [ext_resource type="PackedScene" uid="uid://dqjmrg523vt86" path="res://scenes/cam.tscn" id="1_m75pf"]
@@ -6,56 +6,59 @@
 [ext_resource type="PackedScene" uid="uid://dwbw6mlr2anya" path="res://scenes/finish.tscn" id="4_3ij56"]
 [ext_resource type="PackedScene" uid="uid://p6wnubxxna6d" path="res://scenes/door.tscn" id="5_0asly"]
 [ext_resource type="PackedScene" uid="uid://deieh5702oyda" path="res://scenes/pickupable.tscn" id="6_htfxh"]
+[ext_resource type="PackedScene" uid="uid://6ajcskwflf0v" path="res://models/Environment/Plants/Bush_3.glb" id="7_folwu"]
 [ext_resource type="PackedScene" uid="uid://dim2ydsx62n1c" path="res://scenes/key_12.tscn" id="7_st40m"]
 [ext_resource type="Script" path="res://InteractiveObject.gd" id="9_14cxj"]
 [ext_resource type="PackedScene" uid="uid://di587w3x4nxih" path="res://models/Environment/Buildings/Tower_6.glb" id="19_jwv8h"]
 [ext_resource type="PackedScene" uid="uid://ddk8gtbmckui" path="res://models/Environment/Buildings/Window_1.glb" id="20_pks8c"]
 [ext_resource type="PackedScene" uid="uid://dk8ww3w7n1su0" path="res://models/Environment/Buildings/Window_2.glb" id="21_l5eq6"]
-[ext_resource type="PackedScene" uid="uid://c4qe1l4cjhrus" path="res://models/Environment/Cave.glb" id="22_x8fng"]
-[ext_resource type="PackedScene" uid="uid://ugo7svctag6t" path="res://models/Environment/Cave_stone_1.glb" id="23_6cf4l"]
-[ext_resource type="PackedScene" uid="uid://cuff5vixg38r1" path="res://models/Environment/Gem_03.glb" id="25_4bi5u"]
+[ext_resource type="PackedScene" uid="uid://c4qe1l4cjhrus" path="res://models/Environment/Cave stones/Cave.glb" id="22_x8fng"]
+[ext_resource type="PackedScene" uid="uid://ugo7svctag6t" path="res://models/Environment/Cave stones/Cave_stone_1.glb" id="23_6cf4l"]
+[ext_resource type="PackedScene" uid="uid://cuff5vixg38r1" path="res://models/Environment/Gems/Gem_03.glb" id="25_4bi5u"]
 [ext_resource type="PackedScene" uid="uid://dc3h7wgox5dk5" path="res://models/Environment/Chest_2.glb" id="25_knq3y"]
-[ext_resource type="PackedScene" uid="uid://bicugnsripvmo" path="res://models/Environment/Cave_stone_26.glb" id="26_li1w3"]
-[ext_resource type="PackedScene" uid="uid://jxyd0tx7ba36" path="res://models/Environment/Cave_stone_25.glb" id="27_2fr8s"]
-[ext_resource type="PackedScene" uid="uid://bdnctovxvb3bd" path="res://models/Environment/Cave_stone_24.glb" id="28_wrn0c"]
-[ext_resource type="PackedScene" uid="uid://dp6kdqggr3kh0" path="res://models/Environment/Cave_stone_23.glb" id="29_tewy2"]
-[ext_resource type="PackedScene" uid="uid://dxi24p6hvbuy3" path="res://models/Environment/Cave_stone_19.glb" id="30_tr6p6"]
-[ext_resource type="PackedScene" uid="uid://blq2a63yx56tb" path="res://models/Environment/Cave_stone_18.glb" id="31_7d3c0"]
-[ext_resource type="PackedScene" uid="uid://dsy0euoqoupfd" path="res://models/Environment/Gem_02.glb" id="32_44sex"]
-[ext_resource type="PackedScene" uid="uid://3swm6mfuj5pf" path="res://models/Environment/Gem_04.glb" id="33_od4yr"]
-[ext_resource type="PackedScene" uid="uid://un3tcardutxt" path="res://models/Environment/Gem_05.glb" id="34_c5ax0"]
+[ext_resource type="PackedScene" uid="uid://bicugnsripvmo" path="res://models/Environment/Cave stones/Cave_stone_26.glb" id="26_li1w3"]
+[ext_resource type="PackedScene" uid="uid://bnk4dqcrdm7hw" path="res://models/Environment/Stones/Puzzle_stone_1.glb" id="26_vtq1j"]
+[ext_resource type="PackedScene" uid="uid://jxyd0tx7ba36" path="res://models/Environment/Cave stones/Cave_stone_25.glb" id="27_2fr8s"]
+[ext_resource type="PackedScene" uid="uid://bdnctovxvb3bd" path="res://models/Environment/Cave stones/Cave_stone_24.glb" id="28_wrn0c"]
+[ext_resource type="PackedScene" uid="uid://dp6kdqggr3kh0" path="res://models/Environment/Cave stones/Cave_stone_23.glb" id="29_tewy2"]
+[ext_resource type="PackedScene" uid="uid://dxi24p6hvbuy3" path="res://models/Environment/Cave stones/Cave_stone_19.glb" id="30_tr6p6"]
+[ext_resource type="PackedScene" uid="uid://blq2a63yx56tb" path="res://models/Environment/Cave stones/Cave_stone_18.glb" id="31_7d3c0"]
+[ext_resource type="PackedScene" uid="uid://dsy0euoqoupfd" path="res://models/Environment/Gems/Gem_02.glb" id="32_44sex"]
+[ext_resource type="PackedScene" uid="uid://3swm6mfuj5pf" path="res://models/Environment/Gems/Gem_04.glb" id="33_od4yr"]
+[ext_resource type="PackedScene" uid="uid://un3tcardutxt" path="res://models/Environment/Gems/Gem_05.glb" id="34_c5ax0"]
 [ext_resource type="PackedScene" uid="uid://cocqqspse352y" path="res://models/Environment/Buildings/Tower_3-mdedit.glb" id="34_eyxho"]
-[ext_resource type="PackedScene" uid="uid://crarim2jsu1x1" path="res://models/Environment/Tree_1.glb" id="35_8ghss"]
-[ext_resource type="PackedScene" uid="uid://rilh62i1lypn" path="res://models/Environment/Gem_06.glb" id="35_h52rq"]
-[ext_resource type="PackedScene" uid="uid://c6gtup4fy0mro" path="res://models/Environment/Tree_2.glb" id="36_seo6l"]
-[ext_resource type="PackedScene" uid="uid://crlcnl1nmppym" path="res://models/Environment/Tree_5.glb" id="37_hbbab"]
-[ext_resource type="PackedScene" uid="uid://6s2p56n3oloo" path="res://models/Environment/Tree_6.glb" id="38_wo1r5"]
+[ext_resource type="PackedScene" uid="uid://crarim2jsu1x1" path="res://models/Environment/Plants/Tree_1.glb" id="35_8ghss"]
+[ext_resource type="PackedScene" uid="uid://rilh62i1lypn" path="res://models/Environment/Gems/Gem_06.glb" id="35_h52rq"]
+[ext_resource type="PackedScene" uid="uid://crlcnl1nmppym" path="res://models/Environment/Plants/Tree_5.glb" id="37_hbbab"]
+[ext_resource type="PackedScene" uid="uid://6s2p56n3oloo" path="res://models/Environment/Plants/Tree_6.glb" id="38_wo1r5"]
 [ext_resource type="PackedScene" uid="uid://c23vso60r1rn3" path="res://models/Environment/Portal_Stone_Emission.glb" id="39_0juy1"]
-[ext_resource type="PackedScene" uid="uid://fss7ikqypg8q" path="res://models/Environment/Ground_1.glb" id="39_iov6q"]
-[ext_resource type="PackedScene" uid="uid://bl0i8qsfpyan4" path="res://models/Environment/Ground_2.glb" id="40_hw5tj"]
-[ext_resource type="PackedScene" uid="uid://begrm7kk4r2kh" path="res://models/Environment/Cloud_6.glb" id="41_y50jp"]
-[ext_resource type="PackedScene" uid="uid://h03318h5otiu" path="res://models/Environment/Stone_8.glb" id="42_0y4em"]
-[ext_resource type="PackedScene" uid="uid://bwdnvadoqkx8g" path="res://models/Environment/Stone_4.glb" id="43_okfya"]
-[ext_resource type="PackedScene" uid="uid://dmp7vvl61ii56" path="res://models/Environment/Stone_2.glb" id="44_acfl0"]
-[ext_resource type="PackedScene" uid="uid://q6q7upkym4jo" path="res://models/Environment/Stone_1.glb" id="45_2qemt"]
-[ext_resource type="PackedScene" uid="uid://citlh06p8kkw7" path="res://models/Environment/Path_tile_1.glb" id="46_mqa8l"]
-[ext_resource type="PackedScene" uid="uid://cncv3eewjad7i" path="res://models/Environment/Cloud_4.glb" id="47_nem0c"]
+[ext_resource type="PackedScene" uid="uid://fss7ikqypg8q" path="res://models/Environment/Ground/Ground_1.glb" id="39_iov6q"]
+[ext_resource type="PackedScene" uid="uid://bl0i8qsfpyan4" path="res://models/Environment/Ground/Ground_2.glb" id="40_hw5tj"]
+[ext_resource type="PackedScene" uid="uid://begrm7kk4r2kh" path="res://models/Environment/Clouds/Cloud_6.glb" id="41_y50jp"]
+[ext_resource type="PackedScene" uid="uid://h03318h5otiu" path="res://models/Environment/Stones/Stone_8.glb" id="42_0y4em"]
+[ext_resource type="PackedScene" uid="uid://bwdnvadoqkx8g" path="res://models/Environment/Stones/Stone_4.glb" id="43_okfya"]
+[ext_resource type="PackedScene" uid="uid://dmp7vvl61ii56" path="res://models/Environment/Stones/Stone_2.glb" id="44_acfl0"]
+[ext_resource type="PackedScene" uid="uid://q6q7upkym4jo" path="res://models/Environment/Stones/Stone_1.glb" id="45_2qemt"]
+[ext_resource type="PackedScene" uid="uid://citlh06p8kkw7" path="res://models/Environment/Ground/Path_tile_1.glb" id="46_mqa8l"]
+[ext_resource type="PackedScene" uid="uid://cncv3eewjad7i" path="res://models/Environment/Clouds/Cloud_4.glb" id="47_nem0c"]
 [ext_resource type="PackedScene" uid="uid://y3a0q0iwtoko" path="res://models/Environment/Portal_Wooden_Emission.glb" id="47_qs2lp"]
-[ext_resource type="PackedScene" uid="uid://dif3m18hl1et4" path="res://models/Environment/Cloud_3.glb" id="48_4ihga"]
-[ext_resource type="PackedScene" uid="uid://cd8kbeekkwup6" path="res://models/Environment/Ground_7.glb" id="49_flygo"]
-[ext_resource type="PackedScene" uid="uid://djobjh6h6e26" path="res://models/Environment/Cloud_2.glb" id="49_piy1i"]
-[ext_resource type="PackedScene" uid="uid://dykpjk783p0mq" path="res://models/Environment/Cloud_7.glb" id="50_g43dj"]
-[ext_resource type="PackedScene" uid="uid://c8kifqxlla3d2" path="res://models/Environment/Ground_6.glb" id="50_iqhlm"]
-[ext_resource type="PackedScene" uid="uid://bmhi4p0lvc0c2" path="res://models/Environment/Ground_5.glb" id="51_8kbmm"]
-[ext_resource type="PackedScene" uid="uid://bn4jy4cir3c21" path="res://models/Environment/Cloud_8.glb" id="51_uyp2o"]
-[ext_resource type="PackedScene" uid="uid://d20a0nkggwgs0" path="res://models/Environment/Ground_4.glb" id="52_jpc6d"]
-[ext_resource type="PackedScene" uid="uid://c71f4hdyq5a3c" path="res://models/Environment/Ground_3.glb" id="53_1ocgt"]
-[ext_resource type="PackedScene" uid="uid://5xxmuwqaqc0h" path="res://models/Environment/Path_tile_2.glb" id="54_nte3a"]
-[ext_resource type="PackedScene" uid="uid://d2lueqd1weok5" path="res://models/Environment/Path_tile_3.glb" id="55_3wjmu"]
-[ext_resource type="PackedScene" uid="uid://bi72e6cjir5u1" path="res://models/Environment/Path_tile_4.glb" id="56_wj07u"]
-[ext_resource type="PackedScene" uid="uid://dewo1dn0eeb0d" path="res://models/Environment/Path_tile_5.glb" id="57_yxc41"]
-[ext_resource type="PackedScene" uid="uid://b56cg6er3iph4" path="res://models/Environment/Path_tile_6.glb" id="58_udnfr"]
-[ext_resource type="PackedScene" uid="uid://dnqk33qf56su6" path="res://models/Environment/Path_tile_7.glb" id="59_layvg"]
+[ext_resource type="PackedScene" uid="uid://dif3m18hl1et4" path="res://models/Environment/Clouds/Cloud_3.glb" id="48_4ihga"]
+[ext_resource type="PackedScene" uid="uid://cd8kbeekkwup6" path="res://models/Environment/Ground/Ground_7.glb" id="49_flygo"]
+[ext_resource type="PackedScene" uid="uid://djobjh6h6e26" path="res://models/Environment/Clouds/Cloud_2.glb" id="49_piy1i"]
+[ext_resource type="PackedScene" uid="uid://dykpjk783p0mq" path="res://models/Environment/Clouds/Cloud_7.glb" id="50_g43dj"]
+[ext_resource type="PackedScene" uid="uid://c8kifqxlla3d2" path="res://models/Environment/Ground/Ground_6.glb" id="50_iqhlm"]
+[ext_resource type="PackedScene" uid="uid://bmhi4p0lvc0c2" path="res://models/Environment/Ground/Ground_5.glb" id="51_8kbmm"]
+[ext_resource type="PackedScene" uid="uid://bn4jy4cir3c21" path="res://models/Environment/Clouds/Cloud_8.glb" id="51_uyp2o"]
+[ext_resource type="PackedScene" uid="uid://d20a0nkggwgs0" path="res://models/Environment/Ground/Ground_4.glb" id="52_jpc6d"]
+[ext_resource type="PackedScene" uid="uid://c71f4hdyq5a3c" path="res://models/Environment/Ground/Ground_3.glb" id="53_1ocgt"]
+[ext_resource type="PackedScene" uid="uid://5xxmuwqaqc0h" path="res://models/Environment/Ground/Path_tile_2.glb" id="54_nte3a"]
+[ext_resource type="PackedScene" uid="uid://d2lueqd1weok5" path="res://models/Environment/Ground/Path_tile_3.glb" id="55_3wjmu"]
+[ext_resource type="PackedScene" uid="uid://bi72e6cjir5u1" path="res://models/Environment/Ground/Path_tile_4.glb" id="56_wj07u"]
+[ext_resource type="PackedScene" uid="uid://cj3qv8sb4ve72" path="res://models/Environment/Plants/Bush_1.glb" id="57_6mesd"]
+[ext_resource type="PackedScene" uid="uid://dewo1dn0eeb0d" path="res://models/Environment/Ground/Path_tile_5.glb" id="57_yxc41"]
+[ext_resource type="PackedScene" uid="uid://8uxwkwobbu6i" path="res://models/Environment/Plants/Bush_2.glb" id="58_erdy1"]
+[ext_resource type="PackedScene" uid="uid://b56cg6er3iph4" path="res://models/Environment/Ground/Path_tile_6.glb" id="58_udnfr"]
+[ext_resource type="PackedScene" uid="uid://dnqk33qf56su6" path="res://models/Environment/Ground/Path_tile_7.glb" id="59_layvg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_chxsm"]
 load_path = "res://.godot/imported/texture_02.png-1d4d91039667173c055f73bd59d1ba0c.s3tc.ctex"
@@ -321,8 +324,8 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.860362, 0.154622, 0.0532341)
 shape = SubResource("BoxShape3D_pvsdg")
 
-[node name="Tree_2" parent="Area3D - Hide Bush/Bush" instance=ExtResource("36_seo6l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160228, -0.704614, 0.239199)
+[node name="Bush_3" parent="Area3D - Hide Bush/Bush" instance=ExtResource("7_folwu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212693, -0.266853, -0.0431054)
 
 [node name="Label3D" type="Label3D" parent="Area3D - Hide Bush"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.670088, 0.833971, 1.47052)
@@ -1169,6 +1172,18 @@ metadata/_edit_group_ = true
 transform = Transform3D(0.297803, -0.12722, 0.178458, -0.0138494, -0.918182, -0.0604107, 0.203642, 0.123601, -0.265083, 0.111664, -0.0701232, -0.0204287)
 metadata/_edit_group_ = true
 
+[node name="Puzzle_stone_1" parent="Code Indicator 1" instance=ExtResource("26_vtq1j")]
+transform = Transform3D(0.786397, 0.148493, 0.599608, 0.554777, 0.257116, -0.791274, -0.271667, 0.954904, 0.119815, 0.0658312, 0.00990335, -0.0570097)
+
+[node name="Puzzle_stone_2" parent="Code Indicator 1" instance=ExtResource("26_vtq1j")]
+transform = Transform3D(-0.564505, -1.20359, -0.786879, 0.857032, 0.397199, -1.22238, 1.15469, -0.88322, 0.52258, 0.155741, 0.00990335, -0.0259616)
+
+[node name="Puzzle_stone_3" parent="Code Indicator 1" instance=ExtResource("26_vtq1j")]
+transform = Transform3D(1.05679, 0.150159, -0.0100061, -0.0292351, 0.274459, 1.03115, 0.147625, -1.02058, 0.27583, 0.0959785, 0.00990335, 0.105599)
+
+[node name="Puzzle_stone_4" parent="Code Indicator 1" instance=ExtResource("26_vtq1j")]
+transform = Transform3D(-0.82604, 0.150159, 0.659218, -0.612513, 0.274459, -0.830034, -0.286257, -1.02058, -0.126226, 0.00404048, 0.00817491, 0.0132034)
+
 [node name="Gem_054" parent="Code Indicator 1" instance=ExtResource("34_c5ax0")]
 transform = Transform3D(0.755172, -0.554776, 0.349196, 0.554777, 0.257116, -0.791274, 0.349196, 0.791274, 0.501944, 0.12773, 0.0236358, -0.0202308)
 metadata/_edit_group_ = true
@@ -1284,10 +1299,10 @@ transform = Transform3D(-0.700958, 0.0441899, -0.840004, 0.0217346, 1.42516, 0.0
 transform = Transform3D(-1.39751, 0, 0.195139, 0.00274159, 1.83793, 0.0196342, -0.195119, 0.0258245, -1.39737, -2.92895, 0.0781357, -2.60284)
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.164548, 0, 0, 0, 1, -1.32462, -0.0490333, 2.07618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32462, -0.0490333, 2.07618)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16458, -0.053153, -2.14828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, 0, -2.60151)
 shape = SubResource("BoxShape3D_ipa0n")
 
 [node name="Ground_1" parent="." instance=ExtResource("39_iov6q")]
@@ -1379,6 +1394,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0915436, 0.0560604, 1.3481
 
 [node name="Path_tile_7" parent="." instance=ExtResource("59_layvg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282812, 0.0560602, 1.118)
+
+[node name="Bush_1" parent="." instance=ExtResource("57_6mesd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85619, 0.450967, -0.731843)
+
+[node name="Bush_2" parent="." instance=ExtResource("58_erdy1")]
+transform = Transform3D(0.250194, 0, 0.968196, 0, 1, 0, -0.968196, 0, 0.250194, -5.83386, 0.450967, -2.08473)
 
 [connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]

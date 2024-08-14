@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cltwxxopjv1h2"
-path="res://.godot/imported/Cave_stone_21.glb-8c6a00e227eb2fd3aa4feae6c0ca5c2f.scn"
+path="res://.godot/imported/Cave_stone_21.glb-222f567e0368814ca72f7cb1c7239433.scn"
 
 [deps]
 
-source_file="res://models/Environment/Cave_stone_21.glb"
-dest_files=["res://.godot/imported/Cave_stone_21.glb-8c6a00e227eb2fd3aa4feae6c0ca5c2f.scn"]
+source_file="res://models/Environment/Cave stones/Cave_stone_21.glb"
+dest_files=["res://.godot/imported/Cave_stone_21.glb-222f567e0368814ca72f7cb1c7239433.scn"]
 
 [params]
 
