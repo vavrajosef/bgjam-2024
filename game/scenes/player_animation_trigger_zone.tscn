@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsfui8m2rtibb"]
 
-[ext_resource type="Script" path="res://Area3D.gd" id="1_bojvc"]
+[ext_resource type="Script" path="res://PlayerAnimationTriggerZone.gd" id="1_bojvc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_552s3"]
 

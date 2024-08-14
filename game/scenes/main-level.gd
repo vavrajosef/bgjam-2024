@@ -35,8 +35,11 @@ func _on_finish_player_entered(player):
 
 func _on_gem_tower_gem_placed():
 	placed_gems += 1
-	if placed_gems >= 3:
+	if placed_gems >= 4:
 		cam.get_ui().append_display_text_btn("abc", "answer")
 		
 func whatnow():
 	pass
+
+func get_ui() -> Control :
+	return cam.get_ui()
