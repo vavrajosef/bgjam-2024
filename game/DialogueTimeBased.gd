@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var text := ""
+@export_multiline var text := ""
 @export var time := 0.0
 @export var is_repeatable := true
 

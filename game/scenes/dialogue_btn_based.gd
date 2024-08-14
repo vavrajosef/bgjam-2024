@@ -1,7 +1,7 @@
 extends Area3D
 
-@export var text := ""
-@export var btnText := ""
+@export_multiline var text := ""
+@export_multiline var btnText := ""
 @export var is_repeatable := true
 
 var already_visited := false
