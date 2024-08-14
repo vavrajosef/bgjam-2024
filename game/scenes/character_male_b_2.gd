@@ -12,7 +12,7 @@ var is_dead := false
 var keys := []
 @onready var label := %Label
 @onready var animation := %AnimationPlayer
-@onready var body := %"character-male-b"
+@onready var body := %"character-male-b2"
 @onready var timer : Timer = %Timer
 var rotationAngle : float = 0
 

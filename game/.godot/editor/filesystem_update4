@@ -1,5 +1,4 @@
 res://scenes/player.tscn
-res://scenes/Cam.gd
 res://scenes/control.tscn
 res://scenes/cam.tscn
 res://scenes/credits.tscn
@@ -9,4 +8,10 @@ res://scenes/interactive_object.tscn
 res://scenes/sound_player.tscn
 res://scenes/main-level.tscn
 res://scenes/game.tscn
-res://scenes/main-level.gd
+res://scenes/finish.tscn
+res://scenes/character_male_b_2.tscn
+res://scenes/collision_obj.tscn
+res://scenes/tower_12.tscn
+res://scenes/tower_interactive.tscn
+res://scenes/tower_62.tscn
+res://scenes/character_male_b_2.gd

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnwsg4rlvcbtp"]
+
+[ext_resource type="Script" path="res://InteractiveObject.gd" id="1_s41lt"]
+[ext_resource type="PackedScene" uid="uid://di587w3x4nxih" path="res://models/Environment/Buildings/Tower_6.glb" id="2_35hrs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6i8ii"]
+size = Vector3(1.83643, 1, 1.23828)
+
+[node name="InteractiveObject" type="StaticBody3D"]
+script = ExtResource("1_s41lt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0069983, 0.475387, 0.978462)
+shape = SubResource("BoxShape3D_6i8ii")
+
+[node name="Tower_62" parent="." instance=ExtResource("2_35hrs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
