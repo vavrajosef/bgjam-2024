@@ -13,7 +13,7 @@ func _on_exit_pressed():
 
 func _on_start_pressed():
 	SoundPlayer.stop_playing(SoundPlayer.MUSIC)
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/main-level.tscn")
 
 
 func _on_credits_pressed():

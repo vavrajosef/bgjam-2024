@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://du3e836i5bdm5"]
+
+[ext_resource type="Script" path="res://ChangeFootsteps.gd" id="1_veoq0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_byy1t"]
+
+[node name="ChangeFootsteps" type="Area3D"]
+script = ExtResource("1_veoq0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_byy1t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
