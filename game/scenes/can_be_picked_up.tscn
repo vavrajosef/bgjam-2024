@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn3p22ag22rxt"]
+
+[ext_resource type="Script" path="res://StaticBody3D.gd" id="1_jkx8d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xls55"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kco5p"]
+
+[node name="CanBePickedUp" type="StaticBody3D"]
+script = ExtResource("1_jkx8d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xls55")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_kco5p")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

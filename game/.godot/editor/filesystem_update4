@@ -15,3 +15,10 @@ res://scenes/tower_12.tscn
 res://scenes/tower_interactive.tscn
 res://scenes/tower_62.tscn
 res://scenes/character_male_b_2.gd
+res://Pickupable.gd
+res://StaticBody3D.gd
+res://scenes/can_be_picked_up.tscn
+res://InvisibleCanBePickedUp.gd
+res://scenes/gem_032.tscn
+res://scenes/main-level.gd
+res://scenes/gem_022.tscn

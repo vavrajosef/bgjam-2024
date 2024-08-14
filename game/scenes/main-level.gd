@@ -10,7 +10,6 @@ var is_char_active := true
 func _ready():
 	switch()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("e"):

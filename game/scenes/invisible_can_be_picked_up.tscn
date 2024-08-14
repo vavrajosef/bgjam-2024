@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://tj8r80q2rtpf"]
+
+[ext_resource type="Script" path="res://InvisibleCanBePickedUp.gd" id="1_b3mvl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kcbve"]
+
+[node name="InvisibleCanBePickedUp" type="StaticBody3D"]
+script = ExtResource("1_b3mvl")
+is_visible = Callable()
+pickupableId = null
+canBePickedUpYet = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_kcbve")
