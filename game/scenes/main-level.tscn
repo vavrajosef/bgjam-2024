@@ -122,7 +122,7 @@ albedo_texture = SubResource("CompressedTexture2D_xp457")
 size = Vector3(1.54492, 2.10754, 2.78394)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ipa0n"]
-size = Vector3(12.0478, 1, 11.8185)
+size = Vector3(12.0478, 0.499023, 11.8185)
 
 [node name="Main-level" type="Node3D"]
 script = ExtResource("1_sfw08")
@@ -1288,7 +1288,7 @@ transform = Transform3D(-1.39751, 0, 0.195139, 0.00274159, 1.83793, 0.0196342, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32462, -0.0490333, 2.07618)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, 0, -2.60151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, -0.250488, -2.60151)
 shape = SubResource("BoxShape3D_ipa0n")
 
 [node name="Ground_1" parent="." instance=ExtResource("39_iov6q")]
