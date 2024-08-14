@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1h6u8dgh86ft"]
+
+[ext_resource type="Script" path="res://InteractiveObject.gd" id="1_giavf"]
+[ext_resource type="PackedScene" uid="uid://dk8ww3w7n1su0" path="res://models/Environment/Buildings/Window_2.glb" id="2_nf34a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvsdg"]
+
+[node name="Bush" type="StaticBody3D" node_paths=PackedStringArray("turnOffVisibilityArea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558085, -0.164761, 1.41696)
+script = ExtResource("1_giavf")
+has_collision = false
+turnOffVisibilityArea = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.558085, 0.164761, -1.41696)
+shape = SubResource("BoxShape3D_pvsdg")
+
+[node name="Window_28" parent="." instance=ExtResource("2_nf34a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.253781, 0.685383, -0.989526)
