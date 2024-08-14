@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://c188qfvad1cef"]
+
+[ext_resource type="Script" path="res://sequence.gd" id="1_maw7f"]
+[ext_resource type="PackedScene" uid="uid://k3qyk2uwyiq7" path="res://models/Environment/Cave stones/Cave_stone_9.glb" id="2_xa4o6"]
+[ext_resource type="PackedScene" uid="uid://un3tcardutxt" path="res://models/Environment/Gems/Gem_05.glb" id="3_j2tiw"]
+[ext_resource type="PackedScene" uid="uid://b554pyhcjsqbd" path="res://models/Environment/Cave stones/Cave_stone_13.glb" id="4_15bfl"]
+[ext_resource type="PackedScene" uid="uid://bay2uy1e4epv5" path="res://models/Environment/Cave stones/Cave_stone_15.glb" id="5_jg2ax"]
+
+[node name="sequence" type="Node3D"]
+script = ExtResource("1_maw7f")
+
+[node name="stone1" parent="." instance=ExtResource("2_xa4o6")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80071, 0.0645299, 0.0602373)
+
+[node name="gem11" parent="stone1" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11924, 0.150874, 0.244716)
+
+[node name="gem12" parent="stone1" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11924, 0.150874, -0.266771)
+
+[node name="gem13" parent="stone1" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408906, 0.150874, -0.0602373)
+
+[node name="gem14" parent="stone1" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170718, 0.150874, -0.0602373)
+
+[node name="gem15" parent="stone1" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11924, 0.150874, -0.0602373)
+
+[node name="stone2" parent="." instance=ExtResource("4_15bfl")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0536809, 1.19209e-07, 0.0233173)
+
+[node name="gem21" parent="stone2" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.104684, 0.225504, 0.563271)
+
+[node name="gem22" parent="stone2" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.104684, 0.225504, -0.459702)
+
+[node name="gem23" parent="stone2" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.684016, 0.225504, -0.0466347)
+
+[node name="gem24" parent="stone2" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.475232, 0.225504, -0.0466347)
+
+[node name="gem25" parent="stone2" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.104684, 0.225504, -0.0466347)
+
+[node name="stone3" parent="." instance=ExtResource("5_jg2ax")]
+unique_name_in_owner = true
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.65248, 0, -0.0213392)
+
+[node name="gem31" parent="stone3" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.145093, 0.563761, 1.63146)
+
+[node name="gem32" parent="stone3" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.145093, 0.563761, -0.925973)
+
+[node name="gem33" parent="stone3" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.59342, 0.563761, 0.106696)
+
+[node name="gem34" parent="stone3" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.3047, 0.563761, 0.106696)
+
+[node name="gem35" parent="stone3" instance=ExtResource("3_j2tiw")]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.145093, 0.563761, 0.106696)

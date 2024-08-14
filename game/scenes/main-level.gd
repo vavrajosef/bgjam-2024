@@ -43,3 +43,6 @@ func whatnow():
 
 func get_ui() -> Control :
 	return cam.get_ui()
+
+func start_moving_cloud():
+	
