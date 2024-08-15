@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5wkrujf1bn8b"]
+
+[ext_resource type="Script" path="res://Lever.gd" id="1_0owyn"]
+[ext_resource type="PackedScene" uid="uid://csjik33ywmii1" path="res://models/Environment/Lever_OFF.glb" id="2_40w3v"]
+[ext_resource type="PackedScene" uid="uid://cjj1rnfypxymm" path="res://models/Environment/Lever_ON.glb" id="3_f18wr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sr06l"]
+
+[node name="Lever" type="Area3D"]
+script = ExtResource("1_0owyn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_sr06l")
+
+[node name="Lever_OFF" parent="." instance=ExtResource("2_40w3v")]
+unique_name_in_owner = true
+
+[node name="Lever_ON" parent="." instance=ExtResource("3_f18wr")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
