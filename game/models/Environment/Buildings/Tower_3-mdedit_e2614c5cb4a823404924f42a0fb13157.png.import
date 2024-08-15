@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c18ibigw350m0"
+path.s3tc="res://.godot/imported/Tower_3-mdedit_e2614c5cb4a823404924f42a0fb13157.png-e87cc2b710c0b1b33c2d6c778bc109a9.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "244b1155d5198673878be4c491acc9e2"
+}
+
+[deps]
+
+source_file="res://models/Environment/Buildings/Tower_3-mdedit_e2614c5cb4a823404924f42a0fb13157.png"
+dest_files=["res://.godot/imported/Tower_3-mdedit_e2614c5cb4a823404924f42a0fb13157.png-e87cc2b710c0b1b33c2d6c778bc109a9.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

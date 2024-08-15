@@ -11,51 +11,51 @@ script = ExtResource("1_maw7f")
 
 [node name="stone1" parent="." instance=ExtResource("2_xa4o6")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80071, 0.0645299, 0.0602373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80071, 0.0129515, 0.0602373)
 
 [node name="gem11" parent="stone1" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11924, 0.150874, 0.244716)
+transform = Transform3D(0.743355, 0, -0.668897, 0, 1, 0, 0.668897, 0, 0.743355, 0.0469735, 0.0925623, 0.179409)
 
 [node name="gem12" parent="stone1" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11924, 0.150874, -0.266771)
+transform = Transform3D(0.841272, 0, 0, 0, 0.841272, 0, 0, 0, 0.841272, 0.11924, 0.0822405, -0.362537)
 
 [node name="gem13" parent="stone1" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408906, 0.150874, -0.0602373)
+transform = Transform3D(1.04275, 0, 1.05071, 0, 1.48031, 0, -1.05071, 0, 1.04275, 0.408669, 0.0763417, -0.063007)
 
 [node name="gem14" parent="stone1" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170718, 0.150874, -0.0602373)
+transform = Transform3D(0.515808, 0, -0.828132, 0, 0.975633, 0, 0.828132, 0, 0.515808, -0.277851, 0.119766, -0.0602373)
 
 [node name="gem15" parent="stone1" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11924, 0.150874, -0.0602373)
+transform = Transform3D(1.56027, 0, -1.49865, 0, 2.16433, 0, 1.49744, 0, 1.56152, 0.114371, 0.0949309, 0.0204098)
 
 [node name="stone2" parent="." instance=ExtResource("4_15bfl")]
 unique_name_in_owner = true
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0536809, 1.19209e-07, 0.0233173)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0536809, 0.0155083, 0.0233173)
 
 [node name="gem21" parent="stone2" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.104684, 0.225504, 0.563271)
+transform = Transform3D(1.87524, 0, 1.98287, 0, 2.72916, 0, -1.98287, 0, 1.87524, 0.104684, 0.0968943, 0.290892)
 
 [node name="gem22" parent="stone2" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.104684, 0.225504, -0.459702)
+transform = Transform3D(0.98227, 0, -1.07113, 0, 1.45333, 0, 1.07113, 0, 0.98227, 0.209117, 0.0760191, -0.459702)
 
 [node name="gem23" parent="stone2" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.684016, 0.225504, -0.0466347)
+transform = Transform3D(2.21488, 0, -1.90147, 0, 2.91912, 0, 1.90147, 0, 2.21488, 0.684016, 0.107817, 0.274469)
 
 [node name="gem24" parent="stone2" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.475232, 0.225504, -0.0466347)
+transform = Transform3D(2.11099, 0, -1.31086, 0, 2.48488, 0, 1.31086, 0, 2.11099, -0.348395, 0.117, -0.0466347)
 
 [node name="gem25" parent="stone2" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.104684, 0.225504, -0.0466347)
+transform = Transform3D(1.63859, 0, 0.467785, 0, 1.70405, 0, -0.467785, 0, 1.63859, -0.0816947, 0.113947, -0.0466347)
 
 [node name="stone3" parent="." instance=ExtResource("5_jg2ax")]
 unique_name_in_owner = true
@@ -63,20 +63,20 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.65248, 0, -0.0213392
 
 [node name="gem31" parent="stone3" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.145093, 0.563761, 1.63146)
+transform = Transform3D(2.80266, 0, -8.74552, 0, 9.18363, 0, 8.74552, 0, 2.80266, 0.145093, 0.563761, 1.63146)
 
 [node name="gem32" parent="stone3" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.145093, 0.563761, -0.925973)
+transform = Transform3D(-0.185462, 0, -3.55425, 0, 3.55908, 0, 3.55425, 0, -0.185462, 0.145093, 0.563761, -0.925973)
 
 [node name="gem33" parent="stone3" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.59342, 0.563761, 0.106696)
+transform = Transform3D(3.23527, 0, 7.95675, 0, 8.58935, 0, -7.95675, 0, 3.23527, 1.65433, 0.5467, 0.106696)
 
 [node name="gem34" parent="stone3" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.3047, 0.563761, 0.106696)
+transform = Transform3D(5.57716, 0, 3.01657, 0, 6.3407, 0, -3.01657, 0, 5.57716, -0.947339, 0.563761, 0.106696)
 
 [node name="gem35" parent="stone3" instance=ExtResource("3_j2tiw")]
 unique_name_in_owner = true
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.145093, 0.563761, 0.106696)
+transform = Transform3D(3.68798, 0, -1.81071, 0, 4.10851, 0, 1.81071, 0, 3.68798, 0.203547, 0.558663, 0.539917)

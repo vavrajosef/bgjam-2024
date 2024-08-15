@@ -10,6 +10,7 @@
 script = ExtResource("1_0owyn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.287301, 0, 0, 0, 0.287301, 0, 0, 0, 0.287301, 0, 0.144935, 0)
 shape = SubResource("BoxShape3D_sr06l")
 
 [node name="Lever_OFF" parent="." instance=ExtResource("2_40w3v")]
