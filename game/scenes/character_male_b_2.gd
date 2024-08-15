@@ -8,6 +8,7 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_active := true
 var is_dead := false
+var is_control_lost := false
 
 var keys := []
 @onready var label := %Label
@@ -25,7 +26,7 @@ func _physics_process(delta):
 	if is_dead:
 		return
 	
-	if not is_on_floor():
+	if not is_on_floor() and not is_control_lost:
 		velocity.y -= gravity * delta
 
 	# Get the input direction and handle the movement/deceleration.
@@ -34,9 +35,9 @@ func _physics_process(delta):
 		var input_dir = Input.get_vector("a", "d", "w", "s")
 		input_dir = input_dir.rotated(rotationAngle)
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if not global_transform.origin.is_equal_approx(global_position - direction):
+		if not global_transform.origin.is_equal_approx(global_position - direction) and not is_control_lost:
 			body.look_at(global_position - direction, Vector3.UP)
-		if direction:
+		if direction and not is_control_lost:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 			play_animation("walk", false)
@@ -84,3 +85,9 @@ func play_animation(animation_name: String, force: bool) :
 
 func change_footsteps(new_footsteps: int):
 	walk_sounds.set_new_terrain(new_footsteps)
+	
+func lost_control():
+	is_control_lost = true
+
+func control_back_on():
+	is_control_lost = false

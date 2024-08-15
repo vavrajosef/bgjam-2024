@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://3stc68c6f5v0"]
+
+[ext_resource type="Script" path="res://lost_control_area.gd" id="1_ssem3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xw7w"]
+
+[node name="LostControlArea" type="Area3D"]
+script = ExtResource("1_ssem3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5xw7w")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
