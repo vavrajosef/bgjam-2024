@@ -22,5 +22,4 @@ func _on_area_3d_body_entered(body):
 			var sound :AudioStreamPlayer = sounds.pick_random()
 			sound.play()
 			for line in line_array:
-				print(line)
 				line.visible = true
