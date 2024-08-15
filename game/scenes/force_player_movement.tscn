@@ -3,14 +3,15 @@
 [ext_resource type="Script" path="res://ForcePlayerMovement.gd" id="1_e6qbd"]
 
 [sub_resource type="Curve3D" id="Curve3D_fukq8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.00548196, 0.0280067, -0.0351678, 0, 0, 0, 0, 0, 0, -0.190666, 0.205828, -0.723976, 0, 0, 0, 0, 0, 0, 0.6677, 0.396683, -1.34691, 0, 0, 0, 0, 0, 0, 2.12821, 0.0596069, -1.62299, 0, 0, 0, 0, 0, 0, 3.49968, -0.137502, -1.24785, 0, 0, 0, 0, 0, 0, 4.23394, -0.203119, -0.508031, 0, 0, 0, 0, 0, 0, 4.54625, -0.218785, 0.675236),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [node name="ForcePlayerMovement" type="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7109, -0.673324, -0.515521)
 curve = SubResource("Curve3D_fukq8")
 script = ExtResource("1_e6qbd")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(0.629046, -0.242507, -0.738573, 3.26931e-05, 0.950103, -0.311935, 0.777368, 0.196197, 0.597667, 0.613294, 0.767276, -0.81268)
-progress = 2.71073
-loop = false
+[connection signal="path_finished" from="." to="." method="_on_path_finished"]
