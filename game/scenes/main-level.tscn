@@ -56,7 +56,6 @@
 [ext_resource type="PackedScene" uid="uid://b56cg6er3iph4" path="res://models/Environment/Ground/Path_tile_6.glb" id="58_udnfr"]
 [ext_resource type="PackedScene" uid="uid://dnqk33qf56su6" path="res://models/Environment/Ground/Path_tile_7.glb" id="59_layvg"]
 [ext_resource type="PackedScene" uid="uid://dcr0l2ng12fjv" path="res://scenes/pickupable_gem.tscn" id="62_pduic"]
-[ext_resource type="PackedScene" uid="uid://csjik33ywmii1" path="res://models/Environment/Lever_OFF.glb" id="62_w06so"]
 [ext_resource type="PackedScene" uid="uid://c188qfvad1cef" path="res://scenes/sequence.tscn" id="62_x2obt"]
 [ext_resource type="PackedScene" uid="uid://b5wkrujf1bn8b" path="res://scenes/lever.tscn" id="63_7fqdy"]
 [ext_resource type="PackedScene" uid="uid://cfhrwg0wjlmxv" path="res://scenes/dialogue_btn_based.tscn" id="63_83wes"]
@@ -73,15 +72,6 @@ size = Vector3(1, 1.09424, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6wmd7"]
 size = Vector3(5.69921, 0.314941, 5.01291)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tm0xl"]
-size = Vector3(5.58002, 0.189453, 11.2155)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7oj5k"]
-size = Vector3(3.78357, 0.400391, 6.99756)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gbqyk"]
-size = Vector3(4.63751, 2.245, 0.213379)
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_px47v"]
 rayleigh_coefficient = 0.8
@@ -118,8 +108,20 @@ albedo_texture = SubResource("CompressedTexture2D_xp457")
 [sub_resource type="BoxShape3D" id="BoxShape3D_oheup"]
 size = Vector3(1.54492, 2.10754, 2.78394)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_slkvd"]
+size = Vector3(0.167969, 1, 5.6933)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ipa0n"]
 size = Vector3(12.0478, 0.346375, 11.8185)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tm0xl"]
+size = Vector3(5.58002, 0.189453, 11.2155)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oj5k"]
+size = Vector3(3.78357, 0.400391, 9.96411)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbqyk"]
+size = Vector3(4.63751, 2.245, 0.213379)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u5qgn"]
 size = Vector3(9.78345, 1, 6.96118)
@@ -134,7 +136,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 4.31441, 0.941687, 4, 1, 0, 0, 0.941687, 4.0001, 1, 0, 0, 0.941687, 6, 1, 0, 2.62138, 0.941687, 6.0001, 1, 0, 2.62138, 0.941687, 8, 1, 0, 5.24276, 0.941687, 16, 1, 0, 15.7283, 0.941687, 16.0002, 1, 0, 18.4219, 0.941687)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0.941687)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_igkgx"]
 _data = {
@@ -146,11 +148,11 @@ script = ExtResource("1_sfw08")
 
 [node name="Cam" parent="." instance=ExtResource("1_m75pf")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.999355, 0.0359112, 0, -0.0359112, 0.999355, 0, 1.1745, 1.15822)
+transform = Transform3D(1, 0, 0, 0, 0.999355, 0.0359112, 0, -0.0359112, 0.999355, 0, 17.5752, 3.3725)
 
 [node name="character-male-b2" parent="." instance=ExtResource("1_haqi1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169658, 0.0937015, -2.93267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169658, 16.4944, -0.718394)
 
 [node name="GemTower3" parent="." instance=ExtResource("63_x4lqv")]
 transform = Transform3D(0.612598, 0.00317106, -0.358179, -0.00438536, 0.709617, -0.00121791, 0.358167, 0.00326469, 0.612601, -0.256171, 15.8978, -1.5588)
@@ -205,6 +207,7 @@ shape = SubResource("BoxShape3D_pvsdg")
 
 [node name="Bush_3" parent="Area3D - Hide Bush/Bush" instance=ExtResource("7_folwu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188074, -0.266413, -0.0431054)
+visible = false
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.999841, -0.0178538, -8.74158e-08, -0.017851, 0.999682, -0.0178538, 0.000318846, -0.017851, -0.999841, -0.120558, -16.3262, 0.901656)
@@ -212,21 +215,6 @@ transform = Transform3D(-0.999841, -0.0178538, -8.74158e-08, -0.017851, 0.999682
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 3.84262e-10, -8.23638e-09, 5.52063e-10, 1, 0, 0, 5.27129e-07, 1, -0.690444, 31.9315, 0.795165)
 shape = SubResource("BoxShape3D_6wmd7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37044e-08, -7.80413e-10, 1, -0.0178538, 0.999841, -7.61154e-16, -0.999841, -0.0178538, -4.37114e-08, -0.43823, -8.16766, 0.317672)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 2.12097e-12, 0, 1, 2.9976e-15, 0, 0, 1, 0.920806, -0.603236, 0.413391)
-shape = SubResource("BoxShape3D_tm0xl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 2.34124e-12, 0, 1, 3.4972e-15, 0, 0, 1, -3.74704, -0.73466, 1.68951)
-shape = SubResource("BoxShape3D_7oj5k")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 1.53122e-12, 0, 1, 8.43769e-15, 0, 0, 1, 1.30295, 0.622497, 6.02928)
-shape = SubResource("BoxShape3D_gbqyk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kj2x1")
@@ -343,12 +331,6 @@ disabled = true
 transform = Transform3D(0.416087, -2.09548e-08, 1.33227e-14, -5.12228e-09, 0.416087, 6.39488e-14, -8.88178e-15, -1.49214e-13, 0.416087, -4.11762, -0.238756, 3.34472)
 text = "This will turn on visibility"
 
-[node name="Cave_stone_2" parent="." instance=ExtResource("23_6cf4l")]
-transform = Transform3D(0.189674, 0, -4.33558, 0, 4.33972, 0, 4.33558, 0, 0.189674, 3.81625, -8.75655, 2.76554)
-
-[node name="Cave_stone_3" parent="." instance=ExtResource("23_6cf4l")]
-transform = Transform3D(0.189674, 0, -4.33558, 0, 4.33972, 0, 4.33558, 0, 0.189674, 5.06671, -8.75865, 6.01408)
-
 [node name="Chest_22" parent="." instance=ExtResource("25_knq3y")]
 transform = Transform3D(1.38573, -0.264843, 0, 0.264843, 1.38573, 0, 0, 0, 1.41081, -0.0697625, 0.211818, -0.771994)
 
@@ -375,7 +357,7 @@ shape = SubResource("BoxShape3D_pvsdg")
 disabled = true
 
 [node name="Power Line 2" type="CSGBox3D" parent="Area3D - Show Gem 2 And powerliine/Gem and powerline"]
-transform = Transform3D(-4.36916e-08, 1.06763e-08, 1, -0.0178538, 0.999841, -1.86265e-08, -0.99984, -0.0178538, -4.37114e-08, -4.4126, -0.164478, -2.47101)
+transform = Transform3D(-4.36917e-08, 1.06763e-08, 1, -0.0178538, 0.999841, -2.23517e-08, -0.99984, -0.0178538, -4.37114e-08, -4.4126, -0.164478, -2.47101)
 material_override = ExtResource("18_0oy85")
 size = Vector3(0.0524902, 0.053833, 6.8891)
 
@@ -549,131 +531,143 @@ gem_id = 1
 [node name="Cave_stone_262" parent="." instance=ExtResource("26_li1w3")]
 transform = Transform3D(0.694156, 0, 0.719825, 0, 1, 0, -0.719825, 0, 0.694156, 1.87219, -9.43984, 3.06224)
 
-[node name="Cave_stone_263" parent="." instance=ExtResource("26_li1w3")]
-transform = Transform3D(0.694156, 0, 0.719825, 0, 1, 0, -0.719825, 0, 0.694156, -1.37135, -9.43984, 0.942884)
+[node name="Cave_stone_263" parent="Cave_stone_262" instance=ExtResource("26_li1w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.725957, 0, -3.80594)
 
-[node name="Cave_stone_252" parent="." instance=ExtResource("27_2fr8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01349, -9.36182, 3.12333)
+[node name="Cave_stone_252" parent="Cave_stone_262" instance=ExtResource("27_2fr8s")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 1.44242, 0.0780201, 1.58377)
 
-[node name="Cave_stone_242" parent="." instance=ExtResource("28_wrn0c")]
-transform = Transform3D(1.41366, 0, 0, 0, 1.79417, 0, 0, 0, 2.11794, 3.13612, -8.80095, 4.61487)
+[node name="Cave_stone_242" parent="Cave_stone_262" instance=ExtResource("28_wrn0c")]
+transform = Transform3D(0.9813, 0, -1.52455, 0, 1.79417, 0, 1.01759, 0, 1.47018, -0.240257, 0.63889, 1.98757)
 
-[node name="Cave_stone_244" parent="." instance=ExtResource("28_wrn0c")]
-transform = Transform3D(1.41366, 0, 0, 0, 1.79417, 0, 0, 0, 2.11794, -2.2619, -9.35109, 1.70685)
+[node name="Cave_stone_244" parent="Cave_stone_262" instance=ExtResource("28_wrn0c")]
+transform = Transform3D(0.9813, 0, -1.52455, 0, 1.79417, 0, 1.01759, 0, 1.47018, -1.89406, 0.0887499, -3.91667)
 
-[node name="Cave_stone_243" parent="." instance=ExtResource("28_wrn0c")]
-transform = Transform3D(1.41366, 0, 0, 0, 1.79417, 0, 0, 0, 2.11794, 8.15956, -9.35109, -2.41996)
+[node name="Cave_stone_243" parent="Cave_stone_262" instance=ExtResource("28_wrn0c")]
+transform = Transform3D(0.9813, 0, -1.52455, 0, 1.79417, 0, 1.01759, 0, 1.47018, 8.31064, 0.0887499, 0.720304)
 
-[node name="Cave_stone_232" parent="." instance=ExtResource("29_tewy2")]
-transform = Transform3D(-7.99323e-08, -3.86548, 0, 1.82864, -1.68965e-07, 0, 0, 0, 1.82864, 6.2059, -6.55162, 1.6376)
+[node name="Cave_stone_232" parent="Cave_stone_262" instance=ExtResource("29_tewy2")]
+transform = Transform3D(-5.54855e-08, -2.68324, -1.3163, 1.82864, -1.68965e-07, 0, -5.75372e-08, -2.78247, 1.26936, 4.03376, 2.88822, 2.13059)
 
-[node name="Cave_stone_233" parent="." instance=ExtResource("29_tewy2")]
-transform = Transform3D(1.77592, -0.475857, 0, -2.73842e-09, 2.98023e-08, -1.83857, 0.475857, 1.77592, 2.98023e-08, 8.28128, -6.86775, -3.71993)
+[node name="Cave_stone_233" parent="Cave_stone_262" instance=ExtResource("29_tewy2")]
+transform = Transform3D(0.890231, -1.60867, -2.14524e-08, -2.73842e-09, 2.98023e-08, -1.83857, 1.60867, 0.890231, 2.06874e-08, 9.33088, 2.57209, -0.0944607)
 
-[node name="Cave_stone_192" parent="." instance=ExtResource("30_tr6p6")]
-transform = Transform3D(-4.37114e-08, 0.965926, -0.258819, 0, 0.258819, 0.965926, 1, 4.2222e-08, -1.13133e-08, 5.71936, -8.194, -2.08362)
+[node name="Cave_stone_192" parent="Cave_stone_262" instance=ExtResource("30_tr6p6")]
+transform = Transform3D(-0.719825, 0.670503, -0.179661, 0, 0.258819, 0.965926, 0.694156, 0.695297, -0.186304, 6.37465, 1.24584, -0.80274)
 
-[node name="Cave_stone_193" parent="." instance=ExtResource("30_tr6p6")]
-transform = Transform3D(0.47865, -0.759026, 0.441332, 0.128254, 0.557704, 0.820071, -0.868588, -0.335924, 0.364293, 6.40976, -8.29658, -0.970788)
+[node name="Cave_stone_193" parent="Cave_stone_262" instance=ExtResource("30_tr6p6")]
+transform = Transform3D(0.957489, -0.285076, 0.044126, 0.128254, 0.557704, 0.820071, -0.258391, -0.779549, 0.570558, 6.05285, 1.14326, 0.466706)
 
-[node name="Cave_stone_182" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(1, 0, 0, 0, 4.06847, 0, 0, 0, 1, 5.88938, -7.77606, -1.4733)
+[node name="Cave_stone_182" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 4.06847, 0, 0.719825, 0, 0.694156, 6.05335, 1.66378, -0.256698)
 
-[node name="Cave_stone_183" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 4.06847, 0, 0.866025, 0, -0.5, 5.88938, -7.69686, -2.61339)
+[node name="Cave_stone_183" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(-0.970464, 0, -0.241244, 0, 4.06847, 0, 0.241244, 0, -0.970464, 6.87401, 1.74298, -1.0481)
 
-[node name="Cave_stone_184" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(0.948821, 0, -0.315815, 0, 4.06847, 0, 0.315815, 0, 0.948821, 5.88938, -7.54657, -0.670951)
+[node name="Cave_stone_184" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.431298, 0, -0.902209, 0, 4.06847, 0, 0.902209, 0, 0.431298, 5.4758, 1.89327, 0.300257)
 
-[node name="Cave_stone_185" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(-0.992527, 0, -0.122025, -0.0440538, 3.79408, 0.358325, 0.113795, 1.46881, -0.925588, 6.22112, -6.93778, -1.91173)
+[node name="Cave_stone_185" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(-0.770881, -1.05729, 0.581557, -0.0440538, 3.79408, 0.358325, -0.635454, 1.01958, -0.730339, 6.59922, 2.50206, -0.322242)
 
-[node name="Cave_stone_186" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(-0.992527, 0, -0.122025, -0.0440538, 3.79408, 0.358325, 0.113795, 1.46881, -0.925588, 5.98951, -8.42121, -1.4554)
+[node name="Cave_stone_186" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(-0.770881, -1.05729, 0.581557, -0.0440538, 3.79408, 0.358325, -0.635454, 1.01958, -0.730339, 6.10997, 1.01863, -0.172197)
 
-[node name="Cave_stone_194" parent="." instance=ExtResource("30_tr6p6")]
-transform = Transform3D(0.492803, -0.840491, 0.225209, -8.88178e-16, 0.258819, 0.965926, -0.870141, -0.476011, 0.127547, 6.73753, -6.80979, -1.03477)
+[node name="Cave_stone_194" parent="Cave_stone_262" instance=ExtResource("30_tr6p6")]
+transform = Transform3D(0.968431, -0.240787, 0.0645186, -8.88178e-16, 0.258819, 0.965926, -0.249282, -0.935432, 0.250648, 6.32643, 2.63005, 0.65823)
 
-[node name="Cave_stone_195" parent="." instance=ExtResource("30_tr6p6")]
-transform = Transform3D(-0.844536, 0.494915, -0.204496, 0.128254, 0.557704, 0.820071, 0.519914, 0.666352, -0.534476, 6.68519, -6.91236, -2.34332)
+[node name="Cave_stone_195" parent="Cave_stone_262" instance=ExtResource("30_tr6p6")]
+transform = Transform3D(-0.960486, -0.136109, 0.242777, 0.128254, 0.557704, 0.820071, -0.247017, 0.818804, -0.518211, 7.23203, 2.52748, -0.287783)
 
-[node name="Cave_stone_188" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(-0.870141, 0, 0.492803, 0, 4.06847, 0, -0.492803, 0, -0.870141, 6.89036, -6.39185, -1.64961)
+[node name="Cave_stone_188" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(-0.249282, 0, 0.968431, 0, 4.06847, 0, -0.968431, 0, -0.249282, 6.8751, 3.04799, 0.341445)
 
-[node name="Cave_stone_189" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(0.861851, 0, 0.507162, 0, 4.06847, 0, -0.507162, 0, 0.861851, 6.32852, -6.31265, -0.657572)
+[node name="Cave_stone_189" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.963326, 0, -0.268332, 0, 4.06847, 0, 0.268332, 0, 0.963326, 5.771, 3.12719, 0.625648)
 
-[node name="Cave_stone_190" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(-0.669973, 0, 0.742385, 0, 4.06847, 0, -0.742385, 0, -0.669973, 7.28576, -6.16236, -2.34777)
+[node name="Cave_stone_190" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.0693215, 0, 0.997594, 0, 4.06847, 0, -0.997594, 0, 0.0693215, 7.65212, 3.27748, 0.141432)
 
-[node name="Cave_stone_191" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(0.919717, 0.723834, -0.349954, -0.0440538, 3.79408, 0.358325, 0.390103, -1.27807, 0.865526, 6.38564, -5.55356, -1.4316)
+[node name="Cave_stone_191" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.357621, 1.42244, -0.865949, -0.0440538, 3.79408, 0.358325, 0.932827, -0.366146, 0.348904, 6.36781, 3.88628, 0.129469)
 
-[node name="Cave_stone_196" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(0.919717, 0.723834, -0.349954, -0.0440538, 3.79408, 0.358325, 0.390103, -1.27807, 0.865526, 6.81206, -7.03699, -1.71453)
+[node name="Cave_stone_196" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.357621, 1.42244, -0.865949, -0.0440538, 3.79408, 0.358325, 0.932827, -0.366146, 0.348904, 6.86747, 2.40285, 0.240018)
 
-[node name="Cave_stone_197" parent="." instance=ExtResource("30_tr6p6")]
-transform = Transform3D(0.492803, -0.840491, 0.225209, -8.88178e-16, 0.258819, 0.965926, -0.870141, -0.476011, 0.127547, 7.76348, -6.11859, -1.25042)
+[node name="Cave_stone_197" parent="Cave_stone_262" instance=ExtResource("30_tr6p6")]
+transform = Transform3D(0.968431, -0.240787, 0.0645186, -8.88178e-16, 0.258819, 0.965926, -0.249282, -0.935432, 0.250648, 7.19383, 3.32125, 1.24704)
 
-[node name="Cave_stone_198" parent="." instance=ExtResource("30_tr6p6")]
-transform = Transform3D(-0.844536, 0.494915, -0.204496, 0.128254, 0.557704, 0.820071, 0.519914, 0.666352, -0.534476, 7.71114, -6.22117, -2.55896)
+[node name="Cave_stone_198" parent="Cave_stone_262" instance=ExtResource("30_tr6p6")]
+transform = Transform3D(-0.960486, -0.136109, 0.242777, 0.128254, 0.557704, 0.820071, -0.247017, 0.818804, -0.518211, 8.09942, 3.21867, 0.301033)
 
-[node name="Cave_stone_199" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(-0.870141, 0, 0.492803, 0, 4.06847, 0, -0.492803, 0, -0.870141, 7.91631, -5.70065, -1.86526)
+[node name="Cave_stone_199" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(-0.249282, 0, 0.968431, 0, 4.06847, 0, -0.968431, 0, -0.249282, 7.7425, 3.73919, 0.930255)
 
-[node name="Cave_stone_200" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(0.861851, 0, 0.507162, 0, 4.06847, 0, -0.507162, 0, 0.861851, 7.35446, -5.62145, -0.873221)
+[node name="Cave_stone_200" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.963326, 0, -0.268332, 0, 4.06847, 0, 0.268332, 0, 0.963326, 6.63839, 3.81839, 1.21445)
 
-[node name="Cave_stone_201" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(-0.669973, 0, 0.742385, 0, 4.06847, 0, -0.742385, 0, -0.669973, 8.31171, -5.47116, -2.56342)
+[node name="Cave_stone_201" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.0693215, 0, 0.997594, 0, 4.06847, 0, -0.997594, 0, 0.0693215, 8.51952, 3.96868, 0.730242)
 
-[node name="Cave_stone_202" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(0.919717, 0.723834, -0.349954, -0.0440538, 3.79408, 0.358325, 0.390103, -1.27807, 0.865526, 7.41158, -4.86236, -1.64725)
+[node name="Cave_stone_202" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.357621, 1.42244, -0.865949, -0.0440538, 3.79408, 0.358325, 0.932827, -0.366146, 0.348904, 7.23521, 4.57748, 0.718271)
 
-[node name="Cave_stone_203" parent="." instance=ExtResource("31_7d3c0")]
-transform = Transform3D(0.919717, 0.723834, -0.349954, -0.0440538, 3.79408, 0.358325, 0.390103, -1.27807, 0.865526, 7.838, -6.34579, -1.93018)
+[node name="Cave_stone_203" parent="Cave_stone_262" instance=ExtResource("31_7d3c0")]
+transform = Transform3D(0.357621, 1.42244, -0.865949, -0.0440538, 3.79408, 0.358325, 0.932827, -0.366146, 0.348904, 7.73487, 3.09405, 0.828821)
 
-[node name="Gem_022" parent="." instance=ExtResource("32_44sex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74481, -8.70482, 1.56983)
+[node name="Gem_022" parent="Cave_stone_262" instance=ExtResource("32_44sex")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, -3.51895, 0.735021, -5.79904)
 
-[node name="Gem_042" parent="." instance=ExtResource("33_od4yr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58746, -8.80632, -2.4927)
+[node name="Gem_042" parent="Cave_stone_262" instance=ExtResource("33_od4yr")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 0.208736, 0.63352, -7.78598)
 
-[node name="Gem_023" parent="." instance=ExtResource("32_44sex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.07367, -8.7889, -2.03451)
+[node name="Gem_023" parent="Cave_stone_262" instance=ExtResource("32_44sex")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, -1.15274, 0.65094, -8.53774)
 
-[node name="Gem_052" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74657, -8.54408, 0.649104)
+[node name="Gem_052" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, -2.85741, 0.895761, -6.43944)
 
-[node name="Gem_058" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54945, 1.25629, 4.29874)
+[node name="Gem_058" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 0.968372, 10.6961, 2.78548)
 
-[node name="Gem_054" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48441, 1.70478, 4.42505)
+[node name="Gem_054" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 0.832303, 11.1446, 2.82634)
 
-[node name="Gem_055" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58348, 1.70478, 4.16738)
+[node name="Gem_055" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 1.08655, 11.1446, 2.71879)
 
-[node name="Gem_059" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45479, 2.14918, 4.49524)
+[node name="Gem_059" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 0.761217, 11.589, 2.85374)
 
-[node name="Gem_060" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50823, 2.14476, 4.37309)
+[node name="Gem_060" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 0.88624, 11.5846, 2.80742)
 
-[node name="Gem_061" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.60171, 2.14476, 4.13818)
+[node name="Gem_061" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 1.12022, 11.5846, 2.71164)
 
-[node name="Gem_063" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.562, 2.14476, 4.26031)
+[node name="Gem_063" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 1.00475, 11.5846, 2.76784)
 
-[node name="Gem_056" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48441, 1.25469, 4.42505)
+[node name="Gem_056" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 0.832303, 10.6945, 2.82634)
 
-[node name="Gem_057" parent="." instance=ExtResource("34_c5ax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58348, 1.25469, 4.16738)
+[node name="Gem_057" parent="Cave_stone_262" instance=ExtResource("34_c5ax0")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 1.08655, 10.6945, 2.71879)
 
-[node name="Gem_062" parent="." instance=ExtResource("35_h52rq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85573, -8.81235, 2.34827)
+[node name="Gem_062" parent="Cave_stone_262" instance=ExtResource("35_h52rq")]
+transform = Transform3D(0.694156, 0, -0.719825, 0, 1, 0, 0.719825, 0, 0.694156, 1.89082, 0.62749, 0.932194)
+
+[node name="Cave_stone_2" parent="Cave_stone_262" instance=ExtResource("23_6cf4l")]
+transform = Transform3D(-2.98919, 0, -3.1461, 0, 4.33972, 0, 3.1461, 0, -2.98919, 1.56305, 0.68329, 1.19343)
+
+[node name="Cave_stone_4" parent="Cave_stone_262" instance=ExtResource("23_6cf4l")]
+transform = Transform3D(-4.2235, 0, 0.997618, 0, 4.33972, 0, -0.997618, 0, -4.2235, 2.86391, 0.379922, 1.93044)
+
+[node name="Cave_stone_5" parent="Cave_stone_262" instance=ExtResource("23_6cf4l")]
+transform = Transform3D(-4.2235, 0, 0.997618, 0, 4.33972, 0, -0.997618, 0, -4.2235, -4.09582, 0.0820761, -1.91336)
+
+[node name="Cave_stone_3" parent="Cave_stone_262" instance=ExtResource("23_6cf4l")]
+transform = Transform3D(-2.98919, 0, -3.1461, 0, 4.33972, 0, 3.1461, 0, -2.98919, 0.0926867, 0.68119, 4.34853)
 
 [node name="Tower_3-mdedit" parent="." instance=ExtResource("34_eyxho")]
 transform = Transform3D(1.00265, 0, 0, 0, 0.837414, 0, 0, 0, 1.00265, 3.9318, -0.020376, 4.04632)
@@ -702,16 +696,109 @@ transform = Transform3D(-0.700958, 0.0441899, -0.840004, 0.0217346, 1.42516, 0.0
 [node name="Tree_9" parent="." instance=ExtResource("38_wo1r5")]
 transform = Transform3D(-1.39751, 0, 0.195139, 0.00274159, 1.83793, 0.0196342, -0.195119, 0.0258245, -1.39737, -2.92895, 0.0781357, -2.60284)
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+[node name="level Collison" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32462, -0.0490333, 2.07618)
+visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(-0.701967, 0, -0.71221, 0, 1, 0, 0.71221, 0, -0.701967, 5.527, 0.390939, -7.31998)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(-0.473796, 0, 0.880635, 0, 1, 0, -0.880635, 0, -0.473796, 5.8378, 0.390939, 2.72345)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(-0.0154107, 0, -0.999881, 0, 1, 0, 0.999881, 0, -0.0154107, 1.43384, 15.9975, -4.67897)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.979035, 0, -0.203693, 0, 1, 0, 0.203693, 0, 0.979035, 2.77265, 15.9975, -3.10921)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.246475, 0, 0.969149, 0, 1, 0, -0.969149, 0, 0.246475, 1.64916, 15.9975, -0.66668)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.0302245, 0, 0.999543, 0, 1, 0, -0.999543, 0, 0.0302245, 1.1584, 0.390939, 3.58516)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(-0.957727, 0, 0.287678, 0, 1, 0, -0.287678, 0, -0.957727, 7.54408, 0.390939, -0.32631)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(-0.999974, 0, -0.00724304, 0, 1, 0, 0.00724304, 0, -0.999974, 7.02537, 0.390939, -2.84627)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.0130372, 0, -0.999915, 0, 1, 0, 0.999915, 0, 0.0130372, 2.03634, 0.390939, -7.81334)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(-0.226685, 0, -0.973968, 0, 1, 0, 0.973968, 0, -0.226685, -2.06694, 0.390939, -8.57859)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, -0.896649, -2.60151)
+shape = SubResource("BoxShape3D_ipa0n")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.679492, 0, -0.733683, 0, 1, 0, 0.733683, 0, 0.679492, -4.5079, 0.390939, -8.28205)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level Collison"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, -0.142548, -2.60151)
 shape = SubResource("BoxShape3D_ipa0n")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, -0.896649, -2.60151)
-shape = SubResource("BoxShape3D_ipa0n")
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.991213, 0, 0.132274, 0, 1, 0, -0.132274, 0, 0.991213, -4.52423, 0.390939, 0.226767)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99291, 0.390939, -5.1023)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.991213, 0, 0.132274, 0, 1, 0, -0.132274, 0, 0.991213, -4.05213, -8.1522, -1.06862)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.991718, 0, -0.128432, 0, 1, 0, 0.128432, 0, 0.991718, 6.70839, -8.1522, 1.13704)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.339592, 0, -0.940573, 0, 1, 0, 0.940573, 0, 0.339592, -1.60459, -8.1522, -4.14924)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(-0.0776761, 0, -0.996979, 0, 1, 0, 0.996979, 0, -0.0776761, 3.62173, -8.1522, -5.13182)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.246475, 0, 0.969149, 0, 1, 0, -0.969149, 0, 0.246475, -1.58635, 0.390939, 3.74953)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.0865647, 0, 0.996246, 0, 1, 0, -0.996246, 0, 0.0865647, 3.5866, -8.1522, 3.55841)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.488972, 0, 0.8723, 0, 1, 0, -0.8723, 0, 0.488972, -1.56946, -8.1522, 2.25657)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.0388761, 0, 0.999244, 0, 1, 2.9976e-15, -0.999244, 0, 0.0388761, 0.701252, -8.51592, -2.31626)
+shape = SubResource("BoxShape3D_tm0xl")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.0388761, 0, 0.999244, 0, 1, 1.22125e-14, -0.999244, 0, 0.0388761, 0.312784, -8.64735, 2.34001)
+shape = SubResource("BoxShape3D_7oj5k")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.0388761, 0, 0.999244, 0, 1, 8.43769e-15, -0.999244, 0, 0.0388761, 6.32775, -7.29019, -2.47979)
+shape = SubResource("BoxShape3D_gbqyk")
 
 [node name="Ground_1" parent="." instance=ExtResource("39_iov6q")]
 transform = Transform3D(1, 0, 0, 0, 0.164548, 0, 0, 0, 1, -1.32407, -0.044211, 2.07109)
@@ -756,7 +843,7 @@ transform = Transform3D(0.839847, 0, 0.542823, 0, 1, 0, -0.542823, 0, 0.839847, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40091, 7.83767, -20.624)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.226814, 0, 0, 0, 0.226814, 0, 0, 0, 0.226814, 0, 15.7283, 0.941687)
+transform = Transform3D(0.226814, 0, 0, 0, 0.226814, 0, 0, 0, 0.226814, 0, 0, 0.941687)
 axis_lock_linear_z = true
 sync_to_physics = false
 
@@ -770,7 +857,7 @@ libraries = {
 }
 
 [node name="Cloud_9" parent="AnimatableBody3D" instance=ExtResource("47_nem0c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.0713, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.14707, 0)
 
 [node name="Cloud_3" parent="." instance=ExtResource("48_4ihga")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0424786, 9.70033, -14.8967)
@@ -790,8 +877,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0424786, 9.70033, 18.8645)
 [node name="Cloud_12" parent="." instance=ExtResource("49_piy1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0697, 9.39342, 0.971298)
 
+[node name="Cloud_13" parent="." instance=ExtResource("49_piy1i")]
+transform = Transform3D(0.17942, 0, -0.983773, 0, 1, 0, 0.983773, 0, 0.17942, 25.6815, 6.39436, 0.971298)
+
 [node name="Cloud_7" parent="." instance=ExtResource("50_g43dj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0091, 4.23576, -3.89343)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13023, 15.8653, 0.0197277)
 
 [node name="Cloud_8" parent="." instance=ExtResource("51_uyp2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82891, 10.4349, -15.264)
@@ -834,9 +924,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38702, -0.00951666, -2.255
 
 [node name="Bush_2" parent="." instance=ExtResource("58_erdy1")]
 transform = Transform3D(0.250194, 0, 0.968196, 0, 1, 0, -0.968196, 0, 0.250194, -5.83386, -0.0293708, -2.08473)
-
-[node name="Lever_OFF4" parent="." instance=ExtResource("62_w06so")]
-transform = Transform3D(-0.0348101, 0, 1.65081, 0, 1.65118, 0, -1.65081, 0, -0.0348101, 5.05536, -0.308068, 3.74433)
 
 [node name="Gem_034" parent="." instance=ExtResource("62_pduic")]
 transform = Transform3D(2.76194, 0.617062, 0, -0.617062, 2.76194, 0, 0, 0, 2.83003, 4.91053, -8.59468, -1.26517)
@@ -890,7 +977,7 @@ is_repeatable = false
 [node name="dialogue_btn_based Start6" parent="." instance=ExtResource("63_83wes")]
 transform = Transform3D(0.0513949, 0, 0.998677, 0, 1, 0, -0.998677, 0, 0.0513949, -0.0150021, 0.242222, 1.2109)
 text = "I really dont know what im Looking at...."
-btnText = "The Ground is compressed here, there might have been something here at one point."
+btnText = "The ground is compressed here, there might have been something here at one point."
 is_repeatable = false
 
 [node name="dialogue_btn_based Start17" parent="." instance=ExtResource("63_83wes")]
@@ -916,6 +1003,11 @@ is_repeatable = false
 transform = Transform3D(0.0513949, 0, 0.998677, 0, 1, 0, -0.998677, 0, 0.0513949, -0.390989, 0.242222, 3.1095)
 text = "Who are you talking to?"
 btnText = "I can even rotate the camera by moving the curser to the edges on the screen."
+is_repeatable = false
+
+[node name="dialogue_btn_based Start22" parent="." instance=ExtResource("63_83wes")]
+transform = Transform3D(0.0513949, 0, 0.998677, 0, 1, 0, -0.998677, 0, 0.0513949, -2.2603, 0.242222, 2.59243)
+btnText = "I even look around the map by pressing \"E\""
 is_repeatable = false
 
 [node name="dialogue_btn_based Start19" parent="." instance=ExtResource("63_83wes")]
@@ -975,7 +1067,7 @@ is_repeatable = false
 [node name="dialogue_btn_based Start12" parent="." instance=ExtResource("63_83wes")]
 transform = Transform3D(0.0513949, 0, 0.998677, 0, 1, 0, -0.998677, 0, 0.0513949, -3.80674, -8.35816, -0.527946)
 text = "Woah a beam of light!"
-btnText = "We are powering something up!"
+btnText = "We are powered something up!"
 is_repeatable = false
 
 [node name="dialogue_btn_based Start10" parent="." instance=ExtResource("63_83wes")]
@@ -996,13 +1088,10 @@ transform = Transform3D(0.694683, 0, -0.719316, 0, 1, 0, 0.719316, 0, 0.694683, 
 loc = NodePath("Portal to Cave")
 
 [node name="Portal to Cave" type="Node3D" parent="Teleport --> Cave"]
-transform = Transform3D(0.996902, 0, -0.0786505, 0, 1, 0, 0.0786505, 0, 0.996902, 1.57192, -8.60413, -0.361958)
+transform = Transform3D(0.996902, 0, -0.0786505, 0, 1, 0, 0.0786505, 0, 0.996902, 0.0933642, -6.30586, -1.26645)
 
 [node name="sequence" parent="." instance=ExtResource("62_x2obt")]
 transform = Transform3D(0.827907, 0.0135984, 0, -0.0135984, 0.827907, 0, 0, 0, 0.828018, -0.904268, 0.00625677, 4.6276)
-firstVisibility = false
-secondVisibility = false
-thirdVisibility = false
 
 [node name="Lever" parent="." instance=ExtResource("63_7fqdy")]
 transform = Transform3D(2.05403, 0, 0, 0, 2.05403, 0, 0, 0, 2.05403, -5.45417, 0.104482, -1.13254)
