@@ -74,7 +74,7 @@ func set_rotation_angle(_rotationAngle: float):
 	
 func end_game():
 	is_dead = true
-	play_animation("die", false)
+	set_active(false)
 	
 func play_animation(animation_name: String, force: bool) :
 	if force:

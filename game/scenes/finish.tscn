@@ -12,11 +12,6 @@ script = ExtResource("1_e2tvx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_k7d6b")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-text = "Finishline
-"
-
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 3.0
