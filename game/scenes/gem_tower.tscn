@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqdi7s36m5d23"]
+
+[ext_resource type="Script" path="res://scenes/gem_tower.gd" id="1_qt8pa"]
+[ext_resource type="PackedScene" uid="uid://ugo7svctag6t" path="res://models/Environment/Cave stones/Cave_stone_1.glb" id="1_tougd"]
+[ext_resource type="AudioStream" uid="uid://du1txvhe40q07" path="res://sounds_and_music/portal_random_ambient_1.wav" id="3_xef17"]
+[ext_resource type="AudioStream" uid="uid://bd5f0v8otf8k5" path="res://sounds_and_music/portal_random_ambient_2.wav" id="4_gux6k"]
+[ext_resource type="AudioStream" uid="uid://dvrq2exf2uf1p" path="res://sounds_and_music/portal_random_ambient_3.wav" id="5_jirf4"]
+[ext_resource type="PackedScene" uid="uid://cuff5vixg38r1" path="res://models/Environment/Gems/Gem_03.glb" id="6_s50xi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wfhcp"]
+size = Vector3(0.2, 0.8, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wxi5j"]
+
+[node name="GemTower" type="StaticBody3D"]
+transform = Transform3D(3.20399, 0, 0, 0, 3.20399, 0, 0, 0, 3.20399, 0, 0.168634, 0)
+script = ExtResource("1_qt8pa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_wfhcp")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_wxi5j")
+
+[node name="gem_placed_sound_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xef17")
+
+[node name="gem_placed_sound_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gux6k")
+
+[node name="gem_placed_sound_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jirf4")
+
+[node name="Gem_032" parent="." instance=ExtResource("6_s50xi")]
+unique_name_in_owner = true
+transform = Transform3D(3.47812, 0, 0, 0, 3.47812, 0, 0, 0, 3.47812, -0.0133398, 0.6998, 0)
+
+[node name="Cave_stone_1" parent="." instance=ExtResource("1_tougd")]
+
+[node name="Cave_stone_38" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-0.999954, 0.00961662, 0, -0.00961662, -0.999954, 0, 0, 0, 1, -0.0189187, 0.497333, 0)
+
+[node name="Cave_stone_39" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-0.469846, 0.17101, 0, -0.17101, -0.469846, 0, 0, 0, 0.5, 0.0770042, 0.580602, 0)
+
+[node name="Cave_stone_40" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(0.383022, 0.321394, 0, -0.321394, 0.383022, 0, 0, 0, 0.5, -0.132466, 0.580602, 0)
+
+[node name="Cave_stone_41" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.383022, 0.321394, 0, -0.321394, 0.383022, -0.0165887, 0.580602, 0.0908021)
+
+[node name="Cave_stone_42" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.383022, -0.321394, 0, 0.321394, 0.383022, -0.0165887, 0.580602, -0.0950541)
+
+[node name="Cave_stone_2" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, 0.167726, 0.145788, 0.00259846)
+
+[node name="Cave_stone_3" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-9.00471e-09, 0.206004, 0.45559, -0.5, -2.18557e-08, 0, 1.99145e-08, -0.45559, 0.206004, 0.0763515, 0.145788, -0.160157)
+
+[node name="Cave_stone_4" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(1.41776e-08, -0.324346, 0.380526, -0.5, -2.18557e-08, 0, 1.66333e-08, -0.380526, -0.324346, -0.127419, 0.145788, -0.160157)
+
+[node name="Cave_stone_5" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(2.13611e-08, -0.488684, -0.105773, -0.5, -2.18557e-08, -1.139e-15, -4.6235e-09, 0.105773, -0.488684, -0.221565, 0.145788, -0.00504643)
+
+[node name="Cave_stone_6" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(1.04286e-08, -0.238579, -0.439409, -0.5, -2.18557e-08, -1.2894e-15, -1.92072e-08, 0.439409, -0.238579, -0.140731, 0.145788, 0.15623)
+
+[node name="Cave_stone_7" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-1.29109e-08, 0.295366, -0.403434, -0.5, -2.18557e-08, -1.79825e-15, -1.76346e-08, 0.403434, 0.295366, 0.0603733, 0.145788, 0.15623)
+
+[node name="Cave_stone_8" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-1.65158e-08, 0.377838, 0.131296, -0.4, -1.74846e-08, -3.55271e-16, 5.73913e-09, -0.131296, 0.377838, 0.158138, 0.330039, -0.0628302)
+
+[node name="Cave_stone_9" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-1.57525e-09, 0.0360375, 0.398373, -0.4, -1.74846e-08, 3.55271e-16, 1.74135e-08, -0.398373, 0.0360375, 0.018404, 0.330039, -0.186575)
+
+[node name="Cave_stone_10" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(1.50814e-08, -0.345023, 0.202383, -0.4, -1.74846e-08, 1.92033e-15, 8.84646e-09, -0.202383, -0.345023, -0.174077, 0.330039, -0.11969)
+
+[node name="Cave_stone_11" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(1.49279e-08, -0.341511, -0.208255, -0.4, -1.74846e-08, 2.06147e-15, -9.10311e-09, 0.208255, -0.341511, -0.212093, 0.330039, 0.0577295)
+
+[node name="Cave_stone_12" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(2.83701e-09, -0.0649033, -0.394699, -0.4, -1.74846e-08, 2.82465e-15, -1.72529e-08, 0.394699, -0.0649033, -0.0827996, 0.330039, 0.183537)
+
+[node name="Cave_stone_13" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-1.43872e-08, 0.32914, -0.227304, -0.4, -1.74846e-08, 1.36947e-15, -9.93577e-09, 0.227304, 0.32914, 0.107162, 0.330039, 0.117526)
+
+[node name="Cave_stone_14" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-9.08132e-09, 0.207756, 0.216419, -0.3, -1.31134e-08, 9.86451e-16, 9.45999e-09, -0.216419, 0.207756, 0.109773, 0.476578, -0.142)
+
+[node name="Cave_stone_15" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(4.87819e-09, -0.1116, 0.27847, -0.3, -1.31134e-08, -3.98597e-16, 1.21723e-08, -0.27847, -0.1116, -0.0709174, 0.476578, -0.188795)
+
+[node name="Cave_stone_16" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(1.30905e-08, -0.299476, 0.0177239, -0.3, -1.31134e-08, 1.33864e-15, 7.74735e-10, -0.0177239, -0.299476, -0.212033, 0.476578, -0.0417951)
+
+[node name="Cave_stone_17" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(6.87455e-09, -0.157272, -0.255471, -0.3, -1.31134e-08, 1.62733e-15, -1.1167e-08, 0.255471, -0.157272, -0.165335, 0.476578, 0.133539)
+
+[node name="Cave_stone_18" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-3.98037e-09, 0.0910603, -0.285846, -0.3, -1.31134e-08, 1.6276e-15, -1.24947e-08, 0.285846, 0.0910603, 0.00698947, 0.476578, 0.186912)
+
+[node name="Cave_stone_19" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-1.29976e-08, 0.29735, -0.0397858, -0.3, -1.31134e-08, 7.38079e-16, -1.73909e-09, 0.0397858, 0.29735, 0.146258, 0.476578, 0.0418364)
+
+[node name="Cave_stone_20" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-2.42216e-09, 0.0554126, 0.19217, -0.2, -8.74228e-09, 1.83107e-16, 8.40003e-09, -0.19217, 0.0554126, 0.0282947, 0.476578, -0.19135)
+
+[node name="Cave_stone_21" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(6.656e-09, -0.152271, 0.129667, -0.2, -8.74228e-09, -2.01688e-16, 5.6679e-09, -0.129667, -0.152271, -0.153406, 0.476578, -0.148646)
+
+[node name="Cave_stone_22" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(7.96409e-09, -0.182197, -0.0824874, -0.2, -8.74228e-09, 4.46552e-17, -3.60564e-09, 0.0824874, -0.182197, -0.209863, 0.476578, 0.0471474)
+
+[node name="Cave_stone_23" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(5.90343e-10, -0.0135055, -0.199543, -0.2, -8.74228e-09, 6.61143e-16, -8.72232e-09, 0.199543, -0.0135055, -0.086909, 0.476578, 0.180583)
+
+[node name="Cave_stone_24" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-6.22634e-09, 0.142442, -0.140393, -0.2, -8.74228e-09, 5.62481e-16, -6.13678e-09, 0.140393, 0.142442, 0.0904498, 0.476578, 0.147597)
+
+[node name="Cave_stone_25" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-8.20856e-09, 0.18779, 0.0688107, -0.2, -8.74228e-09, 3.26821e-16, 3.00781e-09, -0.0688107, 0.18779, 0.146168, 0.476578, -0.0456343)
+
+[node name="Cave_stone_26" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-6.20359e-09, 0.141922, 0.140919, -0.2, -8.74228e-09, 2.48504e-17, 6.15978e-09, -0.140919, 0.141922, 0.113094, 0.406061, -0.13859)
+
+[node name="Cave_stone_27" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(3.05675e-09, -0.0699303, 0.187376, -0.2, -8.74228e-09, -6.73864e-16, 8.19046e-09, -0.187376, -0.0699303, -0.0664233, 0.406061, -0.1897)
+
+[node name="Cave_stone_28" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(8.71213e-09, -0.19931, 0.0165964, -0.2, -8.74228e-09, 7.06012e-16, 7.25452e-10, -0.0165964, -0.19931, -0.211021, 0.406061, -0.0461243)
+
+[node name="Cave_stone_29" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(4.7601e-09, -0.108898, -0.167753, -0.2, -8.74228e-09, 6.13365e-16, -7.33272e-09, 0.167753, -0.108898, -0.168537, 0.406061, 0.130278)
+
+[node name="Cave_stone_30" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-2.45323e-09, 0.0561233, -0.191964, -0.2, -8.74228e-09, 6.26184e-16, -8.39101e-09, 0.191964, 0.0561233, 0.00245884, 0.406061, 0.187765)
+
+[node name="Cave_stone_31" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-8.63479e-09, 0.197541, -0.0312662, -0.2, -8.74228e-09, 3.20061e-16, -1.36669e-09, 0.0312662, 0.197541, 0.145164, 0.406061, 0.0460682)
+
+[node name="Cave_stone_32" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-6.20359e-09, 0.141922, 0.140919, -0.2, -8.74228e-09, 2.48504e-17, 6.15978e-09, -0.140919, 0.141922, 0.113094, 0.262398, -0.13859)
+
+[node name="Cave_stone_33" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(3.05675e-09, -0.0699303, 0.187376, -0.2, -8.74228e-09, -6.73864e-16, 8.19046e-09, -0.187376, -0.0699303, -0.0664233, 0.262398, -0.1897)
+
+[node name="Cave_stone_34" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(8.71213e-09, -0.19931, 0.0165964, -0.2, -8.74228e-09, 7.06012e-16, 7.25452e-10, -0.0165964, -0.19931, -0.211021, 0.262398, -0.0461243)
+
+[node name="Cave_stone_35" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(4.7601e-09, -0.108898, -0.167753, -0.2, -8.74228e-09, 6.13365e-16, -7.33272e-09, 0.167753, -0.108898, -0.168537, 0.262398, 0.130278)
+
+[node name="Cave_stone_36" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-2.45323e-09, 0.0561233, -0.191964, -0.2, -8.74228e-09, 6.26184e-16, -8.39101e-09, 0.191964, 0.0561233, 0.00245884, 0.262398, 0.187765)
+
+[node name="Cave_stone_37" parent="." instance=ExtResource("1_tougd")]
+transform = Transform3D(-8.63479e-09, 0.197541, -0.0312662, -0.2, -8.74228e-09, 3.20061e-16, -1.36669e-09, 0.0312662, 0.197541, 0.145164, 0.262398, 0.0460682)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

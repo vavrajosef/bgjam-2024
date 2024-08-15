@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dim2ydsx62n1c"]
+
+[ext_resource type="PackedScene" uid="uid://bymmam100qr47" path="res://models/Environment/Key_1.glb" id="1_vkhs3"]
+
+[node name="Key_12" instance=ExtResource("1_vkhs3")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

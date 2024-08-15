@@ -1,0 +1,134 @@
+[gd_scene load_steps=2 format=3 uid="uid://dns05mebdt6tt"]
+
+[ext_resource type="Script" path="res://Credits.gd" id="1_ydu0w"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ydu0w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control5" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="Control5"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control5/Control2"]
+layout_mode = 0
+offset_right = 101.0
+offset_bottom = 49.0
+text = "Level Design:
+D1ll1ng"
+
+[node name="Control3" type="Control" parent="Control5"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label2" type="Label" parent="Control5/Control3"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_bottom = 49.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "3D Art:
+Nadzeya Khmelnitskaya"
+horizontal_alignment = 2
+
+[node name="Control" type="Control" parent="Control5"]
+layout_mode = 1
+anchor_top = 0.911
+anchor_right = 0.154
+anchor_bottom = 1.0
+offset_top = -0.128021
+offset_right = -106.608
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Control5/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_right = 138.0
+grow_vertical = 0
+text = "Programming:
+generic-nickname"
+
+[node name="Control4" type="Control" parent="Control5"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="Control5/Control4"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Sound & Music:
+Fogheart"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -15.5
+offset_right = 26.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

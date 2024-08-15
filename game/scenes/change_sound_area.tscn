@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://duoni6ssi6ooc"]
+
+[ext_resource type="Script" path="res://ChangeSoundArea.gd" id="1_l6stu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wpr2"]
+
+[node name="ChangeSoundArea" type="Area3D"]
+script = ExtResource("1_l6stu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_0wpr2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

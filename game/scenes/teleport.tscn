@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://37jhbl5bdkqv"]
+
+[ext_resource type="Script" path="res://Teleport.gd" id="1_os616"]
+[ext_resource type="AudioStream" uid="uid://cpdjwkufn4acn" path="res://sounds_and_music/portal_activate.wav" id="2_kanlo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tm03j"]
+
+[node name="Teleport" type="Area3D"]
+script = ExtResource("1_os616")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tm03j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_kanlo")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.001
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

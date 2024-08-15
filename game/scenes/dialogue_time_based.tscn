@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk43cocwt8ipm"]
+
+[ext_resource type="Script" path="res://DialogueTimeBased.gd" id="1_r1hu0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uh5om"]
+
+[node name="DialogueTimeBased" type="Area3D"]
+script = ExtResource("1_r1hu0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_uh5om")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
