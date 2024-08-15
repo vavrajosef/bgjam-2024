@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cc8hyw6ynrgwk"]
+[gd_scene load_steps=81 format=3 uid="uid://cc8hyw6ynrgwk"]
 
 [ext_resource type="PackedScene" uid="uid://cxmuaxcm0fl4u" path="res://scenes/player.tscn" id="1_haqi1"]
 [ext_resource type="PackedScene" uid="uid://dqjmrg523vt86" path="res://scenes/cam.tscn" id="1_m75pf"]
@@ -56,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://b56cg6er3iph4" path="res://models/Environment/Ground/Path_tile_6.glb" id="58_udnfr"]
 [ext_resource type="PackedScene" uid="uid://dnqk33qf56su6" path="res://models/Environment/Ground/Path_tile_7.glb" id="59_layvg"]
 [ext_resource type="PackedScene" uid="uid://dcr0l2ng12fjv" path="res://scenes/pickupable_gem.tscn" id="62_pduic"]
+[ext_resource type="PackedScene" uid="uid://du3e836i5bdm5" path="res://scenes/change_footsteps.tscn" id="62_vj5d6"]
 [ext_resource type="PackedScene" uid="uid://c188qfvad1cef" path="res://scenes/sequence.tscn" id="62_x2obt"]
 [ext_resource type="PackedScene" uid="uid://b5wkrujf1bn8b" path="res://scenes/lever.tscn" id="63_7fqdy"]
 [ext_resource type="PackedScene" uid="uid://cfhrwg0wjlmxv" path="res://scenes/dialogue_btn_based.tscn" id="63_83wes"]
@@ -154,9 +155,10 @@ transform = Transform3D(1, 0, 0, 0, 0.999355, 0.0359112, 0, -0.0359112, 0.999355
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169658, 16.4944, -0.718394)
 
-[node name="GemTower3" parent="." instance=ExtResource("63_x4lqv")]
+[node name="GemTower3" parent="." node_paths=PackedStringArray("line_array") instance=ExtResource("63_x4lqv")]
 transform = Transform3D(0.612598, 0.00317106, -0.358179, -0.00438536, 0.709617, -0.00121791, 0.358167, 0.00326469, 0.612601, -0.256171, 15.8978, -1.5588)
 gem_id = 3
+line_array = [NodePath("../Power Line 4")]
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87967, -0.486176, -1.11565)
@@ -273,63 +275,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.647079, -9.29359, -0.60264
 [node name="Cave_stone_1" parent="." instance=ExtResource("23_6cf4l")]
 transform = Transform3D(4.33972, 0, 0, 0, 4.33972, 0, 0, 0, 4.33972, -1.49041, -9.13219, 2.25701)
 
-[node name="Area3D - Show Gem 4 And powerliine4" type="Area3D" parent="."]
-transform = Transform3D(2.76103, 0.0493023, -8.11258e-08, -0.0493026, 2.76103, -2.15481e-07, -1.54877e-07, -6.00267e-07, 2.76147, 11.1727, 17.5164, -10.9177)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 4 And powerliine4"]
-transform = Transform3D(0.444926, -1.67638e-08, -1.77636e-15, -1.86265e-09, 0.444926, 9.59233e-14, -3.55271e-14, -7.10543e-15, 0.444925, -4.13219, -0.458383, 3.35609)
-shape = SubResource("BoxShape3D_pvsdg")
-
-[node name="Gem and powerline" type="StaticBody3D" parent="Area3D - Show Gem 4 And powerliine4" node_paths=PackedStringArray("turnOnVisibilityArea")]
-transform = Transform3D(1, -7.45059e-09, 7.10543e-15, -4.40509e-15, 1, 2.84217e-14, -7.10543e-15, -2.84217e-14, 1, -0.558085, -0.164761, 1.41696)
-script = ExtResource("9_14cxj")
-is_visible = false
-has_collision = false
-turnOnVisibilityArea = NodePath("..")
-
-[node name="Power Line 4" type="CSGBox3D" parent="Area3D - Show Gem 4 And powerliine4/Gem and powerline"]
-transform = Transform3D(0.000115404, -0.00646424, 0.362068, -0.00646433, 0.362011, 0.00646532, -0.362069, -0.00646525, 5.88289e-09, -4.72181, -6.24893, 3.08796)
+[node name="Power Line 4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.29208e-08, 6.11243e-09, 0.999999, -0.0178538, 0.999842, 4.84288e-08, -0.999843, -0.0178538, -4.37115e-08, -3.72159, 0.0684557, 1.52251)
+visible = false
 material_override = ExtResource("18_0oy85")
 size = Vector3(0.0524902, 0.053833, 0.977249)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Area3D - Show Gem 4 And powerliine4/Gem and powerline/Power Line 4"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="Power Line 4"]
 transform = Transform3D(0.000318713, -0.0178509, -0.999841, -0.0178509, 0.999681, -0.0178538, 0.999841, 0.0178538, -4.37114e-08, 2.96947, 0.0530247, -0.451027)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 5.88928)
 
-[node name="CSGBox3D21" type="CSGBox3D" parent="Area3D - Show Gem 4 And powerliine4/Gem and powerline/Power Line 4"]
+[node name="CSGBox3D21" type="CSGBox3D" parent="Power Line 4"]
 transform = Transform3D(0.000318713, -0.0178509, 0.999841, -0.0178509, 0.999681, 0.0178538, -0.999841, -0.0178538, -4.37114e-08, -1.76783, -0.0315675, 0.451954)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 3.51531)
 
-[node name="CSGBox3D28" type="CSGBox3D" parent="Area3D - Show Gem 4 And powerliine4/Gem and powerline/Power Line 4"]
+[node name="CSGBox3D28" type="CSGBox3D" parent="Power Line 4"]
 transform = Transform3D(0.017851, -0.999681, -0.0178538, 0.000318671, -0.017851, 0.999841, -0.999841, -0.0178538, -8.74228e-08, -3.66526, 7.84135, 0.451953)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 15.9171)
 
-[node name="CSGBox3D29" type="CSGBox3D" parent="Area3D - Show Gem 4 And powerliine4/Gem and powerline/Power Line 4"]
+[node name="CSGBox3D29" type="CSGBox3D" parent="Power Line 4"]
 transform = Transform3D(0.000318713, -0.0178509, 0.999841, -0.0178509, 0.999681, 0.0178538, -0.999841, -0.0178538, -4.37114e-08, -0.478245, 15.831, 0.451954)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 6.69167)
 
-[node name="CSGBox3D30" type="CSGBox3D" parent="Area3D - Show Gem 4 And powerliine4/Gem and powerline/Power Line 4"]
+[node name="CSGBox3D30" type="CSGBox3D" parent="Power Line 4"]
 transform = Transform3D(-0.999362, -0.0357018, -8.74088e-08, -0.0357018, 0.999362, -1.56083e-09, 8.74088e-08, 1.56083e-09, -1, 2.84938, 15.8615, 1.92832)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 2.96821)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 4 And powerliine4/Gem and powerline"]
-transform = Transform3D(0.444926, -2.04891e-08, 8.88178e-15, -1.95994e-15, 0.444926, 7.81597e-14, -3.55271e-15, -7.10543e-15, 0.444926, -3.5747, -0.364192, 1.94222)
-shape = SubResource("BoxShape3D_pvsdg")
-disabled = true
-
-[node name="Label3D" type="Label3D" parent="Area3D - Show Gem 4 And powerliine4"]
-transform = Transform3D(0.416087, -2.09548e-08, 1.33227e-14, -5.12228e-09, 0.416087, 6.39488e-14, -8.88178e-15, -1.49214e-13, 0.416087, -4.11762, -0.238756, 3.34472)
-text = "This will turn on visibility"
 
 [node name="Chest_22" parent="." instance=ExtResource("25_knq3y")]
 transform = Transform3D(1.38573, -0.264843, 0, 0.264843, 1.38573, 0, 0, 0, 1.41081, -0.0697625, 0.211818, -0.771994)
@@ -337,31 +317,13 @@ transform = Transform3D(1.38573, -0.264843, 0, 0.264843, 1.38573, 0, 0, 0, 1.410
 [node name="Cave_stone_187" parent="Chest_22" instance=ExtResource("31_7d3c0")]
 transform = Transform3D(-0.696872, 0.504846, -0.0372762, 0.101396, 2.64149, 0.265707, 0.0806597, 1.04111, -0.65607, -0.035956, -0.19003, -0.0444341)
 
-[node name="Area3D - Show Gem 2 And powerliine" type="Area3D" parent="."]
-transform = Transform3D(1.0024, 0.0178994, -2.94531e-08, -0.0178995, 1.0024, -7.82311e-08, -5.62286e-08, -2.17929e-07, 1.00256, 4.16157, 0.346256, -3.39035)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 2 And powerliine"]
-transform = Transform3D(1, 7.45057e-09, -1.77636e-15, -7.45059e-09, 1, 7.10543e-15, -1.77636e-14, 0, 1, -1.55557, 0.127018, 1.90601)
-shape = SubResource("BoxShape3D_pvsdg")
-
-[node name="Gem and powerline" type="StaticBody3D" parent="Area3D - Show Gem 2 And powerliine" node_paths=PackedStringArray("turnOnVisibilityArea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558085, -0.164761, 1.41696)
-script = ExtResource("9_14cxj")
-is_visible = false
-has_collision = false
-turnOnVisibilityArea = NodePath("..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 2 And powerliine/Gem and powerline"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.998836, 0.133164, 0.496)
-shape = SubResource("BoxShape3D_pvsdg")
-disabled = true
-
-[node name="Power Line 2" type="CSGBox3D" parent="Area3D - Show Gem 2 And powerliine/Gem and powerline"]
-transform = Transform3D(-4.36917e-08, 1.06763e-08, 1, -0.0178538, 0.999841, -2.23517e-08, -0.99984, -0.0178538, -4.37114e-08, -4.4126, -0.164478, -2.47101)
+[node name="Power Line 2" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.000319587, 0.0178966, 1.0024, -0.0178966, 1.00224, -0.0178995, -1.0024, -0.0178997, -1.00052e-07, -0.826938, 0.1052, -4.4471)
+visible = false
 material_override = ExtResource("18_0oy85")
 size = Vector3(0.0524902, 0.053833, 6.8891)
 
-[node name="CSGBox3D54" type="CSGBox3D" parent="Area3D - Show Gem 2 And powerliine/Gem and powerline/Power Line 2"]
+[node name="CSGBox3D54" type="CSGBox3D" parent="Power Line 2"]
 transform = Transform3D(0.000318713, -0.0178509, 0.999841, -0.0178509, 0.999681, 0.0178538, -0.999841, -0.0178538, -4.37114e-08, -1.50064, -0.0267963, 3.42456)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
@@ -460,73 +422,39 @@ transform = Transform3D(0.285225, -0.59943, 0.321627, 0.680089, 0.259198, -0.120
 [node name="Gem_034" parent="Portal Power" instance=ExtResource("25_4bi5u")]
 transform = Transform3D(4.50548, 0.278751, 4.50548, -4.50979, -2.86614e-07, 4.50979, 0.197107, -6.37171, 0.197107, 0.157789, -0.295512, -1.42661)
 
-[node name="Area3D - Show Gem 3 And powerliine 3" type="Area3D" parent="."]
-transform = Transform3D(0.85742, -0.828128, 0.0368581, 0.0521164, 0.000930746, -1.19147, 0.827308, 0.858211, 0.0368581, -14.8263, -3.52273, 17.2087)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 3 And powerliine 3"]
-transform = Transform3D(0.436484, 0.442389, -0.0320692, -0.442828, 0.437202, 0.00398233, 0.0253616, 0.0200268, 0.621461, -3.77748, -17.2794, 3.81742)
-shape = SubResource("BoxShape3D_pvsdg")
-
-[node name="Gem and powerline" type="StaticBody3D" parent="Area3D - Show Gem 3 And powerliine 3" node_paths=PackedStringArray("turnOnVisibilityArea")]
-transform = Transform3D(1, 1.49012e-07, -1.86265e-09, 2.98023e-08, 1, 3.72529e-09, 0, 0, 1, -0.558087, -0.164764, 1.41696)
-script = ExtResource("9_14cxj")
-is_visible = false
-has_collision = false
-turnOnVisibilityArea = NodePath("..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 3 And powerliine 3/Gem and powerline"]
-transform = Transform3D(0.321261, 0.306955, -0.0114067, -0.306903, 0.321447, 0.00646242, 0.0127123, 0.00320518, 0.444284, -3.24125, -17.092, 2.5019)
-shape = SubResource("BoxShape3D_pvsdg")
-disabled = true
-
-[node name="CSGBox3D59" type="CSGBox3D" parent="Area3D - Show Gem 3 And powerliine 3/Gem and powerline"]
-transform = Transform3D(0.719555, 0.691106, -0.0679161, -0.693815, 0.719598, -0.0282755, 0.0293309, 0.0674672, 0.997289, -3.19451, -17.1344, -0.585755)
+[node name="Power Line 3" type="CSGBox3D" parent="."]
+transform = Transform3D(1.19261, -0.000864261, 0.00194127, 0.00190796, -0.0436974, -1.19181, 0.00093499, 1.19181, -0.0436957, -3.6873, -4.72476, -0.711552)
+visible = false
 material_override = ExtResource("18_0oy85")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 6.96674)
 
-[node name="Area3D - Show Gem 1 And powerliine1" type="Area3D" parent="."]
-transform = Transform3D(0.311289, -0.300655, 0.0133814, 0.0189211, 0.000337939, -0.432568, 0.300357, 0.311577, 0.0133814, -4.05791, 1.61582, 6.46592)
+[node name="GemTower" parent="." node_paths=PackedStringArray("line_array") instance=ExtResource("63_x4lqv")]
+transform = Transform3D(0.00837255, 0.00223433, 0.964454, -0.00650189, 0.964469, -0.00217822, -0.964437, -0.00648264, 0.0083859, -5.07446, 0.0384432, 5.10491)
+line_array = [NodePath("../Power Line 1")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 1 And powerliine1"]
-transform = Transform3D(0.931056, 0.941415, -0.0164592, -0.941385, 0.930302, -0.0414842, -0.0179297, 0.0408708, 1.3234, -4.37316, -1.12262, 2.79318)
-shape = SubResource("BoxShape3D_pvsdg")
-
-[node name="Gem and powerline" type="StaticBody3D" parent="Area3D - Show Gem 1 And powerliine1" node_paths=PackedStringArray("turnOnVisibilityArea")]
-transform = Transform3D(1, 1.49012e-07, -1.86265e-09, 2.98023e-08, 1, 3.72529e-09, 0, 0, 1, -0.558087, -0.164764, 1.41696)
-script = ExtResource("9_14cxj")
-is_visible = false
-has_collision = false
-turnOnVisibilityArea = NodePath("..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D - Show Gem 1 And powerliine1/Gem and powerline"]
-transform = Transform3D(0.999151, -0.000185311, -0.0412444, 0.0011265, 0.999741, 0.0227616, 0.0412295, -0.0227886, 0.99889, -3.34661, -0.609749, 1.46734)
-shape = SubResource("BoxShape3D_pvsdg")
-disabled = true
-
-[node name="Power Line 1" type="CSGBox3D" parent="Area3D - Show Gem 1 And powerliine1/Gem and powerline"]
-transform = Transform3D(-1.54622, 0.091511, 1.62971, -1.63141, -0.012737, -1.54708, -0.053737, -2.24645, 0.0751597, -8.63227, -6.92974, 1.79044)
+[node name="Power Line 1" type="CSGBox3D" parent="."]
+transform = Transform3D(0.00845113, 0.00225517, 0.973454, -0.0065626, 0.97347, -0.0021986, -0.973447, -0.00654323, 0.00846595, -4.74285, 0.0521122, 1.53797)
+visible = false
 material_override = ExtResource("18_0oy85")
 size = Vector3(0.0524902, 0.053833, 0.643265)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Area3D - Show Gem 1 And powerliine1/Gem and powerline/Power Line 1"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Power Line 1"]
 transform = Transform3D(0.000318713, -0.0178509, -0.999841, -0.0178509, 0.999681, -0.0178538, 0.999841, 0.0178538, -4.37114e-08, 2.96947, 0.0530247, 0.29071)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 5.88928)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Area3D - Show Gem 1 And powerliine1/Gem and powerline/Power Line 1"]
+[node name="CSGBox3D11" type="CSGBox3D" parent="Power Line 1"]
 transform = Transform3D(0.000318713, -0.0178509, 0.999841, -0.0178509, 0.999681, 0.0178538, -0.999841, -0.0178538, -4.37114e-08, -1.76783, -0.0315675, -0.291128)
 material_override = SubResource("StandardMaterial3D_w3e2o")
 use_collision = true
 size = Vector3(0.0524902, 0.053833, 3.51531)
 
-[node name="GemTower" parent="Area3D - Show Gem 1 And powerliine1" instance=ExtResource("63_x4lqv")]
-transform = Transform3D(-1.53191, 0.0906651, 1.61464, -1.61631, -0.0126191, -1.53278, -0.0532396, -2.22568, 0.0744646, -4.02765, -0.634542, 3.46987)
-
-[node name="GemTower2" parent="Area3D - Show Gem 1 And powerliine1" instance=ExtResource("63_x4lqv")]
-transform = Transform3D(-1.53191, 0.090665, 1.61464, -1.61631, -0.0126191, -1.53278, -0.0532395, -2.22568, 0.0744645, -1.9201, -23.9825, 3.46405)
+[node name="GemTower4" parent="." node_paths=PackedStringArray("line_array") instance=ExtResource("63_x4lqv")]
+transform = Transform3D(0.00837255, 0.0022343, 0.964454, -0.00650193, 0.964469, -0.00217818, -0.964437, -0.00648267, 0.00838589, 2.6012, 0.0729477, -1.53684)
 gem_id = 1
+line_array = [NodePath("../Power Line 2")]
 
 [node name="Cave_stone_262" parent="." instance=ExtResource("26_li1w3")]
 transform = Transform3D(0.694156, 0, 0.719825, 0, 1, 0, -0.719825, 0, 0.694156, 1.87219, -9.43984, 3.06224)
@@ -940,9 +868,10 @@ pickupableId = 3
 [node name="Gem_033" parent="." instance=ExtResource("62_pduic")]
 transform = Transform3D(2.86607, 0, 0, 0, 2.86607, 0, 0, 0, 2.86607, 4.84313, -8.59734, -1.00189)
 
-[node name="GemTower2" parent="." instance=ExtResource("63_x4lqv")]
+[node name="GemTower2" parent="." node_paths=PackedStringArray("line_array") instance=ExtResource("63_x4lqv")]
 transform = Transform3D(-0.601748, 0.035614, 0.634246, 0.020913, 0.874268, -0.0292502, -0.634901, -0.00495689, -0.602091, -3.65306, -8.64307, -0.533936)
 gem_id = 2
+line_array = [NodePath("../Power Line 3")]
 
 [node name="dialogue_btn_based Start" parent="." instance=ExtResource("63_83wes")]
 transform = Transform3D(0.996902, 0, -0.0786505, 0, 1, 0, 0.0786505, 0, 0.996902, -0.0134969, 0.495609, -2.88472)
@@ -1100,5 +1029,15 @@ transform = Transform3D(2.05403, 0, 0, 0, 2.05403, 0, 0, 0, 2.05403, -5.45417, 0
 transform = Transform3D(-8.97843e-08, 0, 2.05403, 0, 2.05403, 0, -2.05403, 0, -8.97843e-08, 5.09478, -0.273833, 3.69996)
 leverId = 2
 
+[node name="grassfootsteps" parent="." instance=ExtResource("62_vj5d6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.40022, -0.0183938, 4.4294)
+terrain_id = 1
+
+[node name="stonefootsteprs" parent="." instance=ExtResource("62_vj5d6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.2986, -8.49619, 4.39716)
+
 [connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]
+[connection signal="lever_moved" from="Area3D - Show lever/lever/Lever2" to="sequence" method="_on_gem_visibility_update"]
+[connection signal="lever_moved" from="Lever" to="sequence" method="_on_gem_visibility_update"]
+[connection signal="lever_moved" from="Lever3" to="sequence" method="_on_gem_visibility_update"]
