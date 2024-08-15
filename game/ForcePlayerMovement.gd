@@ -25,6 +25,7 @@ func set_is_on():
 func add_child_to_follow(player : Player):
 	follow.add_child(player)
 	_player = player
+	_player.position = Vector3(0,0,0)
 	set_is_on()
 
 func remove_child_from_follow(player: Player) -> Vector3:

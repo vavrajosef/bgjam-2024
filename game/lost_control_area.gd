@@ -26,8 +26,6 @@ func _on_body_entered(body):
 		if should_run_on_its_own:
 			body.get_parent().remove_child(body)
 			pathFollow.add_child_to_follow(body)
-		if shouldTeleport:
-			body.global_position = teleportPoint.global_position
 
 
 func _on_timer_timeout():
@@ -35,7 +33,10 @@ func _on_timer_timeout():
 		_body.control_back_on()
 		
 func _on_path_finished():
-	var new_position : Vector3 = pathFollow.remove_child_from_follow(_body)
 	get_parent().add_child(_body)
-	_body.global_position = new_position
 	_body.control_back_on()
+	if shouldTeleport:
+		_body.global_position = teleportPoint.global_position
+	else:
+		var new_position : Vector3 = pathFollow.remove_child_from_follow(_body)
+		_body.global_position = new_position

@@ -16,12 +16,11 @@ func start_playing(id: int, only: bool):
 	if only:
 		for soundId in range(soundArray.size()):
 			var currentSound : AudioStreamPlayer = soundArray[soundId]
-			if currentSound.playing and soundId != id:
+			if soundId != id:
 				currentSound.stop()
 	var currentSound : AudioStreamPlayer = soundArray[id]
 	if not currentSound.playing:
 		currentSound.play()
-	
 	
 	
 func stop_playing(id: int):

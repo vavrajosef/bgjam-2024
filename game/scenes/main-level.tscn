@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://cc8hyw6ynrgwk"]
+[gd_scene load_steps=85 format=3 uid="uid://cc8hyw6ynrgwk"]
 
 [ext_resource type="PackedScene" uid="uid://cxmuaxcm0fl4u" path="res://scenes/player.tscn" id="1_haqi1"]
 [ext_resource type="PackedScene" uid="uid://dqjmrg523vt86" path="res://scenes/cam.tscn" id="1_m75pf"]
@@ -34,7 +34,9 @@
 [ext_resource type="PackedScene" uid="uid://bwdnvadoqkx8g" path="res://models/Environment/Stones/Stone_4.glb" id="43_okfya"]
 [ext_resource type="PackedScene" uid="uid://dmp7vvl61ii56" path="res://models/Environment/Stones/Stone_2.glb" id="44_acfl0"]
 [ext_resource type="PackedScene" uid="uid://q6q7upkym4jo" path="res://models/Environment/Stones/Stone_1.glb" id="45_2qemt"]
+[ext_resource type="PackedScene" uid="uid://e1v0xvjo6ucj" path="res://scenes/cloud_path.tscn" id="46_hrxj3"]
 [ext_resource type="PackedScene" uid="uid://citlh06p8kkw7" path="res://models/Environment/Ground/Path_tile_1.glb" id="46_mqa8l"]
+[ext_resource type="PackedScene" uid="uid://dhh75nc45sxw2" path="res://scenes/turn_off_collision_for_ground.tscn" id="47_8r70j"]
 [ext_resource type="PackedScene" uid="uid://cncv3eewjad7i" path="res://models/Environment/Clouds/Cloud_4.glb" id="47_nem0c"]
 [ext_resource type="PackedScene" uid="uid://y3a0q0iwtoko" path="res://models/Environment/Portal_Wooden_Emission.glb" id="47_qs2lp"]
 [ext_resource type="PackedScene" uid="uid://dif3m18hl1et4" path="res://models/Environment/Clouds/Cloud_3.glb" id="48_4ihga"]
@@ -62,6 +64,8 @@
 [ext_resource type="PackedScene" uid="uid://cfhrwg0wjlmxv" path="res://scenes/dialogue_btn_based.tscn" id="63_83wes"]
 [ext_resource type="PackedScene" uid="uid://dqdi7s36m5d23" path="res://scenes/gem_tower.tscn" id="63_x4lqv"]
 [ext_resource type="PackedScene" uid="uid://37jhbl5bdkqv" path="res://scenes/teleport.tscn" id="64_w7hy8"]
+[ext_resource type="PackedScene" uid="uid://duoni6ssi6ooc" path="res://scenes/change_sound_area.tscn" id="66_p0lam"]
+[ext_resource type="PackedScene" uid="uid://cstel5upq5jft" path="res://scenes/turn_on_collision_for_ground.tscn" id="67_hupy6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pvsdg"]
 size = Vector3(1, 1.09424, 1)
@@ -107,9 +111,6 @@ size = Vector3(1.54492, 2.10754, 2.78394)
 [sub_resource type="BoxShape3D" id="BoxShape3D_slkvd"]
 size = Vector3(0.167969, 3.06531, 5.6933)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ipa0n"]
-size = Vector3(12.0478, 0.346375, 11.8185)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_tm0xl"]
 size = Vector3(5.58002, 0.189453, 11.2155)
 
@@ -118,6 +119,13 @@ size = Vector3(3.78357, 0.400391, 9.96411)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbqyk"]
 size = Vector3(4.63751, 2.245, 0.213379)
+
+[sub_resource type="Curve3D" id="Curve3D_1d6a0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u5qgn"]
 size = Vector3(9.78345, 1, 6.96118)
@@ -172,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999355, 0.0359112, 0, -0.0359112, 0.999355
 
 [node name="character-male-b2" parent="." instance=ExtResource("1_haqi1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555481, 0.0804601, -4.25196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260757, 1.57325, -2.79849)
 
 [node name="GemTower3" parent="." node_paths=PackedStringArray("line_array") instance=ExtResource("63_x4lqv")]
 transform = Transform3D(0.612598, 0.00317106, -0.358179, -0.00438536, 0.709617, -0.00121791, 0.358167, 0.00326469, 0.612601, -0.256171, 15.8978, -1.5588)
@@ -639,7 +647,19 @@ transform = Transform3D(0.979035, 0, -0.203693, 0, 1, 0, 0.203693, 0, 0.979035, 
 shape = SubResource("BoxShape3D_slkvd")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="level Collison"]
-transform = Transform3D(0.246475, 0, 0.969149, 0, 1, 0, -0.969149, 0, 0.246475, 1.64916, 15.9975, -0.66668)
+transform = Transform3D(0.999291, 0, 0.0376549, 0, 1, 0, -0.0376549, 0, 0.999291, -3.75507, 15.9975, -0.66668)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.999291, 0, 0.0376549, 0, 1, 0, -0.0376549, 0, 0.999291, -3.75507, 13.3121, -0.66668)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.999291, 0, 0.0376549, 0, 1, 0, -0.0376549, 0, 0.999291, -3.75507, 10.5014, -0.66668)
+shape = SubResource("BoxShape3D_slkvd")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="level Collison"]
+transform = Transform3D(0.999291, 0, 0.0376549, 0, 1, 0, -0.0376549, 0, 0.999291, -3.75507, 7.9042, -0.66668)
 shape = SubResource("BoxShape3D_slkvd")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="level Collison"]
@@ -662,18 +682,9 @@ shape = SubResource("BoxShape3D_slkvd")
 transform = Transform3D(-0.226685, 0, -0.973968, 0, 1, 0, 0.973968, 0, -0.226685, -2.06694, 0.390939, -8.57859)
 shape = SubResource("BoxShape3D_slkvd")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="level Collison"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, -0.896649, -2.60151)
-shape = SubResource("BoxShape3D_ipa0n")
-
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="level Collison"]
 transform = Transform3D(0.679492, 0, -0.733683, 0, 1, 0, 0.733683, 0, 0.679492, -4.5079, 0.390939, -8.28205)
 shape = SubResource("BoxShape3D_slkvd")
-
-[node name="SurfaceGroundCollision" type="CollisionShape3D" parent="level Collison"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02058, -0.142548, -2.60151)
-shape = SubResource("BoxShape3D_ipa0n")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="level Collison"]
 transform = Transform3D(0.991213, 0, 0.132274, 0, 1, 0, -0.132274, 0, 0.991213, -4.52423, 0.390939, 0.226767)
@@ -792,8 +803,25 @@ transform = Transform3D(0.839847, 0, 0.542823, 0, 1, 0, -0.542823, 0, 0.839847, 
 [node name="Moveing cloud" parent="." instance=ExtResource("47_nem0c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40091, 7.83767, -20.624)
 
+[node name="CloudPath" parent="." instance=ExtResource("46_hrxj3")]
+unique_name_in_owner = true
+transform = Transform3D(0.226814, 0, 0, 0, 0.226814, 0, 0, 0, 0.226814, 0, 3.79172, 0.948689)
+curve = SubResource("Curve3D_1d6a0")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="CloudPath"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="Cloud_9" parent="CloudPath/PathFollow3D" instance=ExtResource("47_nem0c")]
+transform = Transform3D(1, 4.20174e-08, 4.36786e-08, 4.20174e-08, 0.038754, -0.999249, -4.36785e-08, 0.999249, 0.038754, 0, 0, 0)
+
+[node name="TurnOffCollisionForGround" parent="CloudPath/PathFollow3D/Cloud_9" node_paths=PackedStringArray("nodesToDisable") instance=ExtResource("47_8r70j")]
+unique_name_in_owner = true
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 0, -1.22016, 0)
+nodesToDisable = [NodePath("../../../../Ground_1"), NodePath("../../../../Ground_2"), NodePath("../../../../Ground_3"), NodePath("../../../../Ground_4"), NodePath("../../../../Ground_5"), NodePath("../../../../Ground_7"), NodePath("../../../../Ground_8"), NodePath("../../../../Ground_9")]
+is_active = true
+
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
-transform = Transform3D(0.226814, 0, 0, 0, 0.226814, 0, 0, 0, 0.226814, 0, 1.31924, 0.948689)
+transform = Transform3D(0.226814, 0, 0, 0, 0.226814, 0, 0, 0, 0.226814, 0, 15.67, 0.948689)
 sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
@@ -804,9 +832,6 @@ shape = SubResource("BoxShape3D_u5qgn")
 libraries = {
 "": SubResource("AnimationLibrary_igkgx")
 }
-
-[node name="Cloud_9" parent="AnimatableBody3D" instance=ExtResource("47_nem0c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508588, 0)
 
 [node name="Area3D" type="Area3D" parent="AnimatableBody3D"]
 
@@ -872,7 +897,7 @@ btnText = "Hello there."
 is_repeatable = false
 
 [node name="dialogue_btn_based Start2" parent="All Dialogue" instance=ExtResource("63_83wes")]
-transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -1.13965, 0, 0.0899129)
+transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, -0.0900331, -0.674197, -0.0734251)
 text = "Who are you!! And how do you have control over my body?"
 btnText = "Hmmm. Not sure!"
 is_repeatable = false
@@ -921,18 +946,18 @@ btnText = "Hmm. This could be some kind of code"
 is_repeatable = false
 
 [node name="dialogue_btn_based Start8" parent="All Dialogue" instance=ExtResource("63_83wes")]
-transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 0.0951258, -0.253387, 6.00534)
+transform = Transform3D(-0.0273108, 0, 0.999627, 0, 1, 0, -0.999627, 0, -0.0273108, -0.17914, -0.518241, -0.13897)
 text = "Who are you talking to?"
 btnText = "I can even rotate the camera by moving the cursor to the edges on the screen."
 is_repeatable = false
 
 [node name="dialogue_btn_based Start22" parent="All Dialogue" instance=ExtResource("63_83wes")]
-transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, -1.80906, -0.253387, 5.6369)
+transform = Transform3D(-0.0273108, 0, 0.999627, 0, 1, 0, -0.999627, 0, -0.0273108, -0.215261, -0.537479, -0.0875101)
 btnText = "I even look around the map by pressing \"E\""
 is_repeatable = false
 
 [node name="dialogue_btn_based Start19" parent="All Dialogue" instance=ExtResource("63_83wes")]
-transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 3.038, -0.253387, 5.77317)
+transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 2.2199, -0.253387, 5.83771)
 text = "That is a odd place for a window in the tower..."
 btnText = "Really?"
 is_repeatable = false
@@ -945,18 +970,18 @@ is_repeatable = false
 
 [node name="dialogue_btn_based Start21" parent="All Dialogue" instance=ExtResource("63_83wes")]
 transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 5.582, -0.152671, 6.6245)
-text = "What that up on the wall?"
+text = "What is that up on the wall?"
 btnText = "... a sequence?"
 is_repeatable = false
 
 [node name="dialogue_btn_based Start14" parent="All Dialogue" instance=ExtResource("63_83wes")]
-transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 0.376284, 15.681, 3.80769)
+transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 0.277292, 15.681, 2.55296)
 text = "I Swear if you try something up here... I'm going cut you hands off where ever you are!"
 btnText = "Yeah yeah"
 is_repeatable = false
 
 [node name="dialogue_btn_based Start15" parent="All Dialogue" instance=ExtResource("63_83wes")]
-transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, -0.240537, 15.681, 1.15058)
+transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, -0.142673, 15.681, 2.39102)
 text = "No more of this, lets take it easy and get back down..."
 btnText = "Nah, we can't wait for that. Let's jump!"
 is_repeatable = false
@@ -1008,6 +1033,7 @@ transform = Transform3D(0.996902, 0, -0.0786505, 0, 1, 0, 0.0786505, 0, 0.996902
 unique_name_in_owner = true
 transform = Transform3D(0.694683, 0, -0.719316, 0, 1, 0, 0.719316, 0, 0.694683, 2.40072, 0.394749, 5.0333)
 loc = NodePath("Portal to Cave")
+is_active = false
 
 [node name="Portal to Cave" type="Node3D" parent="Teleport --> Cave"]
 transform = Transform3D(0.996902, 0, -0.0786505, 0, 1, 0, 0.0786505, 0, 0.996902, 0.0933642, -6.30586, -1.26645)
@@ -1065,6 +1091,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18391, 16.2317, 4.67608)
 [node name="Ground_9" parent="." instance=ExtResource("61_oddid")]
 transform = Transform3D(0.122112, 0, -0.992516, 0, 1, 0, 0.992516, 0, 0.122112, -4.08939, -0.647266, -4.16759)
 
+[node name="TeleportEnd" parent="." node_paths=PackedStringArray("loc") instance=ExtResource("64_w7hy8")]
+unique_name_in_owner = true
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0.244594, -8.12429, 1.68782)
+loc = NodePath("end")
+is_active = false
+
+[node name="end" type="Node3D" parent="TeleportEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.32748, 0)
+
+[node name="dialogue_btn_based" parent="." instance=ExtResource("63_83wes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.385586, -10.5225, 1.60732)
+text = "This seems like a goodbye."
+btnText = "No, please come back"
+
+[node name="TurnOnCollisionForGround" parent="." node_paths=PackedStringArray("nodesToEnable") instance=ExtResource("67_hupy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41794, 0.4482, -0.728988)
+nodesToEnable = [NodePath("../Ground_1"), NodePath("../Ground_2"), NodePath("../Ground_3"), NodePath("../Ground_4"), NodePath("../Ground_5"), NodePath("../Ground_7"), NodePath("../Ground_8"), NodePath("../Ground_9")]
+
+[node name="Ground_6" parent="." instance=ExtResource("56_wnapj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.205231, -2.81299, 0.837933)
+
+[node name="Teleport" parent="Ground_6" node_paths=PackedStringArray("loc") instance=ExtResource("64_w7hy8")]
+transform = Transform3D(4, 0, 0, 0, 0.5, 0, 0, 0, 4, 0, 1.07096, 0)
+loc = NodePath("../../TurnOnCollisionForGround")
+has_cooldown = true
+emit_end = true
+
+[node name="dialogue_btn_based2" parent="." instance=ExtResource("63_83wes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.764052, 15.7628, -0.555055)
+text = "I don't really want to..."
+btnText = "Come down, I have seen the cloud start moving below us."
+
+[node name="ChangeSoundArea" parent="." instance=ExtResource("66_p0lam")]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 1.4347, -1.24639, 0.861788)
+soundId = 1
+forceOnly = true
+
+[node name="ChangeSoundArea3" parent="." instance=ExtResource("66_p0lam")]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 1.4347, 16.54, 0.861788)
+soundId = 1
+forceOnly = true
+
+[node name="ChangeSoundArea2" parent="." instance=ExtResource("66_p0lam")]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, -0.303049, -8.49619, 2.84474)
+soundId = 2
+forceOnly = true
+
 [connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]
 [connection signal="gem_placed" from="GemTower3" to="." method="_on_gem_tower_gem_placed"]
@@ -1076,3 +1149,4 @@ transform = Transform3D(0.122112, 0, -0.992516, 0, 1, 0, 0.992516, 0, 0.122112, 
 [connection signal="lever_moved" from="Lever" to="sequence" method="_on_gem_visibility_update"]
 [connection signal="lever_moved" from="Lever3" to="sequence" method="_on_gem_visibility_update"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]
+[connection signal="end" from="Ground_6/Teleport" to="." method="on_path_finished"]

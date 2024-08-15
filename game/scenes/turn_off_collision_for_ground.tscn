@@ -4,12 +4,16 @@
 script/source = "extends Area3D
 
 @export var nodesToDisable :Array[Ground]= []
+@export var is_active := false
 
 func _on_body_entered(body):
-	if body is Player:
+	if body is Player and is_active:
 		for n in nodesToDisable:
 			if n is Ground:
 				n.disable_collision()
+
+func set_active():
+	is_active = true
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1at7b"]

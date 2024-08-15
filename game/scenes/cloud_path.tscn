@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://e1v0xvjo6ucj"]
+
+[ext_resource type="Script" path="res://Path3D.gd" id="1_w2ktj"]
+
+[sub_resource type="Curve3D" id="Curve3D_s0kha"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.113999, 0.0314178, -0.148091, 0, 0, 0, 0, 0, 0, 0.141458, -15.0159, -0.770103),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="CloudPath" type="Path3D"]
+curve = SubResource("Curve3D_s0kha")
+script = ExtResource("1_w2ktj")

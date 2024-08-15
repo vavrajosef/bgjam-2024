@@ -36,9 +36,6 @@ func _on_gem_visibility_update(handleIndex: int):
 		visibleCount += 1
 	currentVisibles[handleIndex] = visibleCount
 	var is_win := true
-	print("---")
-	for i in currentVisibles:
-		print(i)
 	for i in 3:
 		if currentVisibles[i] != win_sequence[i]:
 			is_win = false
