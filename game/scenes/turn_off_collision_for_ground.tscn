@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhh75nc45sxw2"]
+
+[sub_resource type="GDScript" id="GDScript_ms1m4"]
+script/source = "extends Area3D
+
+@export var nodesToDisable :Array[Ground]= []
+
+func _on_body_entered(body):
+	if body is Player:
+		for n in nodesToDisable:
+			if n is Ground:
+				n.disable_collision()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1at7b"]
+
+[node name="TurnOffCollisionForGround" type="Area3D"]
+script = SubResource("GDScript_ms1m4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1at7b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
