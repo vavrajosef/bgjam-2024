@@ -172,7 +172,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999355, 0.0359112, 0, -0.0359112, 0.999355
 
 [node name="character-male-b2" parent="." instance=ExtResource("1_haqi1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169658, 16.4944, -0.718394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555481, 0.0804601, -4.25196)
 
 [node name="GemTower3" parent="." node_paths=PackedStringArray("line_array") instance=ExtResource("63_x4lqv")]
 transform = Transform3D(0.612598, 0.00317106, -0.358179, -0.00438536, 0.709617, -0.00121791, 0.358167, 0.00326469, 0.612601, -0.256171, 15.8978, -1.5588)
@@ -368,7 +368,7 @@ transform = Transform3D(1.38573, -0.264843, 0, 0.264843, 1.38573, 0, 0, 0, 1.410
 transform = Transform3D(-0.696872, 0.504846, -0.0372762, 0.101396, 2.64149, 0.265707, 0.0806597, 1.04111, -0.65607, -0.035956, -0.19003, -0.0444341)
 
 [node name="Portal Power" parent="." instance=ExtResource("23_6cf4l")]
-transform = Transform3D(0.30509, -0.305382, 0.0133472, 0.0188757, -1.88778e-08, -0.431462, 0.30509, 0.305382, 0.0133472, -4.45411, 0.0744572, -4.38325)
+transform = Transform3D(0.30509, -0.305382, 0.0133472, 0.0188757, -1.88778e-08, -0.431462, 0.30509, 0.305382, 0.0133472, -4.45411, 0.0904277, -4.38325)
 
 [node name="Cave_stone_35" parent="Portal Power" instance=ExtResource("23_6cf4l")]
 transform = Transform3D(0.00191012, -0.999044, -0.0436647, 0.999044, 5.96046e-08, 0.0437065, -0.0436648, -0.0437064, 0.99809, 0.398984, -0.399366, 0.0174549)
@@ -787,7 +787,7 @@ transform = Transform3D(-0.736522, 0, -0.676413, 0, 1, 0, 0.676413, 0, -0.736522
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.44934, -8.68338, 4.42107)
 
 [node name="Portal_Wooden_Emission" parent="." instance=ExtResource("47_qs2lp")]
-transform = Transform3D(0.839847, 0, 0.542823, 0, 1, 0, -0.542823, 0, 0.839847, -5.05208, -0.020376, -5.1732)
+transform = Transform3D(0.839847, 0, 0.542823, 0, 1, 0, -0.542823, 0, 0.839847, -4.68935, -0.205158, -4.99029)
 
 [node name="Moveing cloud" parent="." instance=ExtResource("47_nem0c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40091, 7.83767, -20.624)
@@ -903,7 +903,7 @@ is_repeatable = false
 
 [node name="dialogue_btn_based Start17" parent="All Dialogue" instance=ExtResource("63_83wes")]
 transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 0.342239, -1.27555, 4.08135)
-text = "What is this im walking inside the floor!"
+text = "What is this I'm walking inside the floor!"
 btnText = "Ah a glitch, with this you can go out of bounds and get places you wouldn't other wise."
 is_repeatable = false
 
@@ -923,7 +923,7 @@ is_repeatable = false
 [node name="dialogue_btn_based Start8" parent="All Dialogue" instance=ExtResource("63_83wes")]
 transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, 0.0951258, -0.253387, 6.00534)
 text = "Who are you talking to?"
-btnText = "I can even rotate the camera by moving the curser to the edges on the screen."
+btnText = "I can even rotate the camera by moving the cursor to the edges on the screen."
 is_repeatable = false
 
 [node name="dialogue_btn_based Start22" parent="All Dialogue" instance=ExtResource("63_83wes")]
@@ -958,7 +958,7 @@ is_repeatable = false
 [node name="dialogue_btn_based Start15" parent="All Dialogue" instance=ExtResource("63_83wes")]
 transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, -0.240537, 15.681, 1.15058)
 text = "No more of this, lets take it easy and get back down..."
-btnText = "Nah we cant wait for that. lets jump."
+btnText = "Nah, we can't wait for that. Let's jump!"
 is_repeatable = false
 
 [node name="dialogue_btn_based Start16" parent="All Dialogue" instance=ExtResource("63_83wes")]
@@ -969,7 +969,7 @@ is_repeatable = false
 
 [node name="dialogue_btn_based Start13" parent="All Dialogue" instance=ExtResource("63_83wes")]
 transform = Transform3D(-0.134633, 0, 4.92785, 0, 4.92968, 0, -4.92785, 0, -0.134633, -3.25292, 3.53655, 2.24748)
-text = "AAAAAAH DANM YOU! I EVEN TOLD YOU, I WONT DO IT! AND YOU DONT LISTEN, YOU DONT EVER LISTEN!"
+text = "AAAAAAH DAMN YOU! I EVEN TOLD YOU, I WON'T DO IT! AND YOU DON'T LISTEN, YOU DON'T EVER LISTEN!"
 btnText = "Take it easy here I'm the one in control here!"
 is_repeatable = false
 
@@ -988,13 +988,13 @@ is_repeatable = false
 [node name="dialogue_btn_based Start12" parent="All Dialogue" instance=ExtResource("63_83wes")]
 transform = Transform3D(-0.0273108, 0, 0.999626, 0, 1, 0, -0.999626, 0, -0.0273108, -3.59613, -8.85377, 2.64781)
 text = "Woah a beam of light!"
-btnText = "We are powered something up!"
+btnText = "We have powered something up!"
 is_repeatable = false
 
 [node name="dialogue_btn_based Start10" parent="All Dialogue" instance=ExtResource("63_83wes")]
 transform = Transform3D(-0.0907127, 0, 3.32024, 0, 3.32148, 0, -3.32024, 0, -0.0907127, 3.69149, -8.84079, 2.21382)
 text = "This is where I came from! The cave collapsed! ... I really wish I could get back home..."
-btnText = "We have to go through the portal at the surface!"
+btnText = "We have to go through the portal to the surface!"
 is_repeatable = false
 
 [node name="Teleport --> Surface" parent="." node_paths=PackedStringArray("loc") instance=ExtResource("64_w7hy8")]
@@ -1005,6 +1005,7 @@ loc = NodePath("Portal to Surface")
 transform = Transform3D(0.996902, 0, -0.0786505, 0, 1, 0, 0.0786505, 0, 0.996902, -3.1882, 8.69198, -0.818017)
 
 [node name="Teleport --> Cave" parent="." node_paths=PackedStringArray("loc") instance=ExtResource("64_w7hy8")]
+unique_name_in_owner = true
 transform = Transform3D(0.694683, 0, -0.719316, 0, 1, 0, 0.719316, 0, 0.694683, 2.40072, 0.394749, 5.0333)
 loc = NodePath("Portal to Cave")
 
@@ -1035,7 +1036,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.477316, -0.534474, -1.07952
 transform = Transform3D(-0.322596, 0, -0.946537, 0, 1, 0, 0.946537, 0, -0.322596, -2.74852, -1.22804, 2.614)
 
 [node name="Ground_3" parent="." instance=ExtResource("58_x43x5")]
-transform = Transform3D(0.721784, 0, -0.692118, 0, 1, 0, 0.692118, 0, 0.721784, 3.09529, -0.538453, 2.46585)
+transform = Transform3D(0.721784, 0, -0.692118, 0, 1, 0, 0.692118, 0, 0.721784, 3.33564, -0.572809, 2.46585)
 
 [node name="Ground_4" parent="." instance=ExtResource("59_v6q35")]
 transform = Transform3D(-0.999394, 0, 0.0348122, 0, 1, 0, -0.0348122, 0, -0.999394, 2.57694, -0.770997, -3.57385)
@@ -1049,9 +1050,29 @@ transform = Transform3D(0.501194, 0, -0.865335, 0, 1, 0, 0.865335, 0, 0.501194, 
 [node name="Finish" parent="." instance=ExtResource("62_5omk5")]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, -2.24975, -15.1653, 2.03618)
 
+[node name="Ground_8" parent="." instance=ExtResource("61_oddid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68995, -0.75767, 3.28982)
+
+[node name="Teleport --> Sky" parent="." node_paths=PackedStringArray("loc") instance=ExtResource("64_w7hy8")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01682, 0.442107, -5.20296)
+loc = NodePath("skyport")
+is_active = false
+
+[node name="skyport" type="Node3D" parent="Teleport --> Sky"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18391, 16.2317, 4.67608)
+
+[node name="Ground_9" parent="." instance=ExtResource("61_oddid")]
+transform = Transform3D(0.122112, 0, -0.992516, 0, 1, 0, 0.992516, 0, 0.122112, -4.08939, -0.647266, -4.16759)
+
 [connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]
+[connection signal="gem_placed" from="GemTower3" to="." method="_on_gem_tower_gem_placed"]
 [connection signal="lever_moved" from="Area3D - Show lever/lever/Lever2" to="sequence" method="_on_gem_visibility_update"]
+[connection signal="gem_placed" from="GemTower" to="." method="_on_gem_tower_gem_placed"]
+[connection signal="gem_placed" from="GemTower4" to="." method="_on_gem_tower_gem_placed"]
+[connection signal="gem_placed" from="GemTower2" to="." method="_on_gem_tower_gem_placed"]
+[connection signal="sequence_win_sig" from="sequence" to="." method="stone_portal_activate"]
 [connection signal="lever_moved" from="Lever" to="sequence" method="_on_gem_visibility_update"]
 [connection signal="lever_moved" from="Lever3" to="sequence" method="_on_gem_visibility_update"]
 [connection signal="player_entered" from="Finish" to="." method="_on_finish_player_entered"]

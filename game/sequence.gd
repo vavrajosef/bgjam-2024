@@ -16,7 +16,7 @@ var win_sequence := [4, 2, 3]
 @onready var stone3handle := [%gem31, %gem32, %gem33, %gem34, %gem35]
 
 @onready var stonesHandles := [stone1handle, stone2handle, stone3handle]
-var currentVisibles := [5, 5, 5, 5]
+var currentVisibles := [5, 5, 5]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stone1.visible = firstVisibility
@@ -36,6 +36,9 @@ func _on_gem_visibility_update(handleIndex: int):
 		visibleCount += 1
 	currentVisibles[handleIndex] = visibleCount
 	var is_win := true
+	print("---")
+	for i in currentVisibles:
+		print(i)
 	for i in 3:
 		if currentVisibles[i] != win_sequence[i]:
 			is_win = false

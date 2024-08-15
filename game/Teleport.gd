@@ -1,4 +1,4 @@
-extends Area3D
+class_name Teleport extends Area3D
 
 @export var loc : Node3D = null
 @export var onlyOnce := false
@@ -14,3 +14,4 @@ func _on_body_entered(body):
 
 func set_active():
 	is_active = true
+	

@@ -6,6 +6,9 @@ signal char_inactive
 @onready var char := %"character-male-b2"
 var is_char_active := true
 
+@onready var stone_portal : Teleport = %"Teleport --> Cave"
+@onready var wood_portal : Teleport = %"Teleport --> Sky"
+
 var placed_gems := 0
 
 # Called when the node enters the scene tree for the first time.
@@ -35,11 +38,18 @@ func _on_finish_player_entered(player):
 
 func _on_gem_tower_gem_placed():
 	placed_gems += 1
+	if placed_gems == 3:
+		cam.get_ui().append_display_text_btn("This could get the wooden portal working", "Let's try it!")
+		wood_portal.set_active()
 	if placed_gems >= 4:
-		cam.get_ui().append_display_text_btn("abc", "answer")
+		start_moving_cloud()
 
 func get_ui() -> Control :
 	return cam.get_ui()
 
 func start_moving_cloud():
 	pass
+
+func stone_portal_activate():
+	stone_portal.set_active()
+	cam.get_ui().append_display_text_btn("Is the stone portal working now?", "Maybe it is")
