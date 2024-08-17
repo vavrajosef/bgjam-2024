@@ -1124,19 +1124,16 @@ text = "I don't really want to..."
 btnText = "Come down, I have seen the cloud start moving below us."
 
 [node name="ChangeSoundArea" parent="." instance=ExtResource("66_p0lam")]
-transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 1.4347, -1.24639, 0.861788)
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 1.4347, 0.00449455, 0.861788)
 soundId = 1
-forceOnly = true
 
 [node name="ChangeSoundArea3" parent="." instance=ExtResource("66_p0lam")]
 transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 1.4347, 16.54, 0.861788)
 soundId = 1
-forceOnly = true
 
 [node name="ChangeSoundArea2" parent="." instance=ExtResource("66_p0lam")]
 transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, -0.303049, -8.49619, 2.84474)
 soundId = 2
-forceOnly = true
 
 [connection signal="char_active" from="." to="Cam" method="_on_mainlevel_char_active"]
 [connection signal="char_inactive" from="." to="Cam" method="_on_mainlevel_char_inactive"]

@@ -11,7 +11,7 @@ func _on_exit_pressed():
 
 
 func _on_start_pressed():
-	SoundPlayer.stop_playing(SoundPlayer.MUSIC)
+	SoundPlayer.volume_down()
 	get_tree().change_scene_to_file("res://scenes/main-level.tscn")
 
 
