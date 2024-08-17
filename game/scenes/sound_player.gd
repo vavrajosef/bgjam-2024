@@ -22,8 +22,18 @@ func start_playing(id: int, only: bool):
 	if not currentSound.playing:
 		currentSound.play()
 	
+func stop_playing_amibence():
+	stop_playing(1)
+	stop_playing(2)
+	stop_playing(3)
 	
 func stop_playing(id: int):
 	var idSound : AudioStreamPlayer = soundArray[id]
 	if idSound.playing:
 		idSound.stop()
+		
+func volume_down():
+	music.volume_db -= 10
+	
+func volume_up():
+	music.volume_db += 10

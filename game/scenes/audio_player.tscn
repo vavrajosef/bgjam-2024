@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crriu3bd6dm54"]
 
 [ext_resource type="Script" path="res://AudioPlayer.gd" id="1_jawpl"]
-[ext_resource type="AudioStream" uid="uid://biwrnkwqjxp68" path="res://sounds_and_music/Mystic Mountain test.mp3" id="2_cpmiq"]
+[ext_resource type="AudioStream" uid="uid://cqemwvabd3ls5" path="res://sounds_and_music/bgm_full_loop.wav" id="2_cpmiq"]
 
 [node name="AudioPlayer" type="Node3D"]
 script = ExtResource("1_jawpl")
